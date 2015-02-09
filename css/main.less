@@ -1,0 +1,431 @@
+@import "lib/lesshat";
+@import "lib/font-awesome.min.css";
+//@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+
+/*=================================
+=            VARIABLES            =
+=================================*/
+
+@background: #000;
+@text: #fff;
+@mainColor: #ec7b1e;
+@complementaryColor: #3a509b;
+@specialFont: 'Quicksand', sans-serif;
+@border-radius: 3px;
+@padding: 15px;
+
+@light: lighten(@complementaryColor,50%);
+
+/*-----  End of VARIABLES  ------*/
+
+
+/*==============================
+=            MIXINS            =
+==============================*/
+
+.shadow(){
+	.box-shadow(0 2px 0 rgba(0,0,0,.15));
+	@media (min-width: 768px) {		
+		.box-shadow(0 2px 5px rgba(0,0,0,.15));
+	}
+}
+
+/*-----  End of MIXINS  ------*/
+
+
+/*===============================
+=            GENERAL            =
+===============================*/
+
+
+body{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	@media (min-width:768px) {
+		background: url(../img/background.jpg);
+		background-size: cover;
+	}
+	padding-top: 110px;
+}
+
+*{
+	outline: none;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.full-width-image{
+	width: 100%;
+	height: auto;
+}
+
+h2, h3, h4, h5, h6{
+	color: @mainColor;
+	font-weight: 700;
+	padding: 0;
+	margin: 0;
+}
+
+h2{
+	//border-bottom: 4px solid lighten(@mainColor, 20%);
+
+	&::after{
+		content: "";
+		display: block;
+		height: 4px;
+		margin-top: 10px;
+		.border-radius(2px);
+		background: lighten(@mainColor, 20%);
+	}
+}
+
+.mainColor{
+	color: @mainColor;
+}
+
+/*==========  Links  ==========*/
+
+a{
+}
+
+a.bubble{
+	.fa{
+		display: block;
+		width: 100%;
+		text-align: center;
+		background: @mainColor;
+		color: #fff;
+		.border-radius(50%);
+		font-size: 25px;
+	}
+
+	p{
+		font-weight: bold;
+		color: @mainColor;
+		text-align: center;
+		line-height: normal;
+		text-transform: uppercase;
+		margin-top: 10px;
+	}
+}
+
+.button{
+	display: block;
+	background: @mainColor;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: @padding;
+	padding: @padding;
+	.border-radius(3px);
+}
+
+/*-----  End of GENERAL  ------*/
+
+
+
+/*=====================================
+=            HEADER#HEADER            =
+=====================================*/
+
+
+#header{
+	background: #eee;
+	height: 110px;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	width: 100%;
+	.shadow;
+	h1{
+		margin: 0;
+		margin-top: 10px;
+		padding: 0 10px;
+		img{
+			height: 90px;
+			width: auto;
+		}
+	}
+
+	#lang{
+		display: none;
+	}
+
+	#nav{
+		float: right;
+		font-family: @specialFont;
+		#triggerMenu{
+			height: 110px;
+			line-height: 110px;
+			padding: 0 30px 0 10px;
+			background: none;
+			border: none;
+			font-size: 24px;
+			font-family: 'Quicksand', sans-serif;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			span{
+				font-size: 16px;
+				position: relative;
+				bottom: 3px;
+				right: 8px;
+			}
+		}
+		>ul{
+			//display: none;
+			position: absolute;
+			left: 0;
+			right: 0;
+			background: @complementaryColor;
+
+			li{
+				a{
+					color: #fff;
+					font-weight: 700;
+					text-transform: uppercase;
+					display: block;
+					padding: 15px;
+				}
+
+				&.active{
+					a{
+						color: @mainColor;
+					}
+				}
+			}
+
+			ul{
+				display: none;
+			}
+
+			&::before{
+				content: "";
+				display: block;
+				position: absolute;
+				top: -10px;
+				right: 31px;
+				height: 0;
+				width: 0;
+				border: solid 10px transparent;
+				border-bottom-color: @complementaryColor;
+				.transition(top 0.3s);
+			}
+
+			&.before::before{
+				top: -20px;
+			}
+		}
+	}
+
+	@media(min-width:768px) {
+		background: none;
+		.box-shadow(none);
+		h1{
+			background: #fff;
+			display: table-cell;
+			vertical-align: bottom;
+			padding: 20px;
+			box-sizing: content-box;
+			position: relative;
+			top: -80px;
+			width: 250px;
+			height: 250px;
+			.border-radius(50%);
+			.shadow();
+
+			.custom-container{
+				display: inline-block;
+				width: 250px;
+				position: relative;
+				bottom: 40px;
+			}
+
+			img{
+				position: relative;
+				z-index: 2;
+			}
+
+			&::before{
+				content: "";
+				background: #fff;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 145px;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+/*-----  End of HEADER  ------*/
+
+
+/*=======================================
+=            SECTION GENERAL            =
+=======================================*/
+
+section{
+	.border-radius(3px);
+	margin-bottom: @padding*2;
+	//background: @light;
+	// .shadow;
+}
+
+/*-----  End of SECTION GENERAL  ------*/
+
+
+
+/*=====================================
+=            Section .actu            =
+=====================================*/
+
+section.actu{
+	article{
+		header{
+			margin-bottom: @padding;
+		}
+		background: @light;
+		padding: @padding;
+		margin-top: @padding;
+		.border-radius(3px);
+
+		aside{
+			font-weight: 700;
+			.fa{
+				margin-right: 10px;
+			}
+			a{
+				display: block;
+				margin: -@padding;
+				padding: @padding;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+/*-----  End of Section .actu  ------*/
+
+
+
+
+/*========================================================
+=            Index Full slider (.full-slider)            =
+=========================================================*/
+
+section.full-slider{
+	padding: 0;
+	.box-shadow(none);
+	.border-radius(0);
+	figure{
+		position: relative;
+		img{
+			z-index: -1;
+		}
+
+		figcaption{
+			font-family: @specialFont;
+			position: absolute;
+			bottom: 0;
+			padding: @padding;
+			width: 100%;
+			background: rgba(0,0,0,.5);
+			font-weight: 700;
+			color: #fff;
+			font-size: 28px;
+			h2{
+				font-weight: 700;
+				margin: 0;
+				padding: 0;
+				color: #fff;
+
+				&::after{
+					display: none;	
+				}
+			}
+			p{
+				font-size: 20px;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+}
+
+/*-----  End of Index Full slider (.full-slider)  ------*/
+
+
+/*=================================
+=            NAV.inset            =
+=================================*/
+
+nav.inset{
+	margin-top: @padding;
+	margin-bottom: @padding;
+}
+
+/*-----  End of NAV.inset  ------*/
+
+
+
+/*======================================
+=            METEO SECTION (#meteo)            =
+======================================*/
+
+#meteo-section{
+	font-weight: 700;
+	//.border-radius(0);
+	padding: @padding;
+	background: @light;
+	border-bottom:solid 3px #ccc;
+	header{
+		text-align: left;
+		margin-bottom: @padding;
+		h2{
+			font-size: 20px;
+			&::after{
+				content: none;
+			}
+		}
+
+		h3{
+			color: darken(@mainColor, 20%);
+		}
+	}
+
+	.temperature{
+		margin: 0;
+		font-size: 28px;
+		text-align: right;
+	}
+	p{
+		text-align: right;
+		margin-bottom: 0;
+	}
+}
+
+/*-----  End of METEO SECTION (#meteo)  ------*/
+
+/*======================================
+=            FOOTER #FOOTER            =
+======================================*/
+
+#footer{
+	text-align: center;
+	background: @light;
+	padding: @padding;
+	color: #888;
+}
+
+/*-----  End of FOOTER #FOOTER  ------*/
+
