@@ -1,6 +1,6 @@
 @import "lib/lesshat";
 @import "lib/font-awesome.min.css";
-//@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
 
 /*=================================
 =            VARIABLES            =
@@ -10,14 +10,22 @@
 @text: #fff;
 @mainColor: #ec7b1e;
 @complementaryColor: #3a509b;
+@light: lighten(@complementaryColor,50%);
+
 @specialFont: 'Quicksand', sans-serif;
+
 @border-radius: 3px;
 @padding: 15px;
 
-@light: lighten(@complementaryColor,50%);
+
+
+/* Media-queries values : */
+@screen-sx-max: 767px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
 
 /*-----  End of VARIABLES  ------*/
-
 
 /*==============================
 =            MIXINS            =
@@ -29,6 +37,12 @@
 		.box-shadow(0 2px 5px rgba(0,0,0,.15));
 	}
 }
+
+.brightness(@brightness) {
+	filter: brightness(@brightness);
+	-webkit-filter: brightness(@brightness);
+}
+
 
 /*-----  End of MIXINS  ------*/
 
@@ -42,7 +56,7 @@ body{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
 	letter-spacing: 1px;
-	@media (min-width:768px) {
+	@media (min-width: @screen-sm-min) {
 		background: url(../img/background.jpg);
 		background-size: cover;
 	}
@@ -154,7 +168,7 @@ a.bubble{
 	}
 
 	#lang{
-		display: none;
+		
 	}
 
 	#nav{
@@ -224,9 +238,9 @@ a.bubble{
 		}
 	}
 
-	@media(min-width:768px) {
+	@media(min-width: @screen-sm-min) {
 		background: none;
-		.box-shadow(none);
+		box-shadow: none;
 		h1{
 			background: #fff;
 			display: table-cell;
@@ -235,6 +249,7 @@ a.bubble{
 			box-sizing: content-box;
 			position: relative;
 			top: -80px;
+			left: 35px;
 			width: 250px;
 			height: 250px;
 			.border-radius(50%);
@@ -243,27 +258,68 @@ a.bubble{
 			.custom-container{
 				display: inline-block;
 				width: 250px;
+				text-align: center;
 				position: relative;
-				bottom: 40px;
+				top: 50px;
 			}
 
 			img{
-				position: relative;
-				z-index: 2;
+				width: 250px;
+				height: 143px;
+				z-index: 1;
+			}
+			
+			.social-buttons {
+				font-size: 25px;
+				.fa-stack {
+					.fa-circle {
+						transition: ease 0.3s all;
+						color: @complementaryColor;
+					}
+				
+					i:last-child {
+						/* Pour avoir la taille des icones comme sur la maquette
+						font-size: 15px;*/
+					}
+					&:hover {
+						.fa-circle {
+							color: darken(@complementaryColor, 10%);
+						}
+					}
+				}
 			}
 
 			&::before{
 				content: "";
-				background: #fff;
+				background: #fff	;
 				display: block;
 				position: absolute;
 				top: 0;
 				left: 0;
 				right: 0;
 				bottom: 145px;
-				z-index: 1;
+				z-index: 0;
 			}
 		}
+		nav#lang {
+			.shadow();
+			position: absolute;
+			top: 170px;
+			left: 25px;
+			border: solid 5px #fff;
+			border-radius: 100%;
+			
+			img {
+				transition: all 0.5s;
+			}
+			
+			&:hover {
+				img {
+					.brightness(1.2);
+				}
+			}
+		}
+		
 	}
 }
 

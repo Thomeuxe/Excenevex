@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,113 +19,157 @@
 	<script src="js/script.js"></script>
 
 </head>
+
 <body class="container-fluid">
-<header id="header" class="row">
-	<h1 class="col-xs-6">
-		<div class="custom-container">
-			<img src="img/logo-OT-Excenevex.png" height="143" width="250" alt="Office de tourisme d'Excenevex">
-		</div>
-	</h1>
-	<!-- <aside id="meteo">
-		<h2>La météo d'Excenevex</h2>
-		<h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
-	</aside> -->
-	<nav id="lang">
-		<a href="#"><img src="img/icons/usa.png" height="32" width="32" alt="English"></a>
-	</nav>
-	<nav id="nav">
-		<button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i></button>
-		<ul>
-			<li class="active"><a href="#">Accueil</a></li>
-			<li><a href="#">Se loger</a></li>
+	<header id="header" class="row">
+		<h1 class="col-xs-6">
+			<div class="custom-container">
+				<img src="img/logo-OT-Excenevex.png" height="143" width="250" alt="Office de tourisme d'Excenevex">
+				<div class="social-buttons hidden-xs">
+					<span class="fa-stack">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="fa-stack">
+					  <i class="fa fa-circle fa-stack-2x"></i>
+					  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+					</span>
+				</div>
+			</div>
+		</h1>
+		<nav id="lang" class="hidden-xs">
+			<a href="#">
+				<img src="img/icons/usa.png" height="32" width="32" alt="English">
+			</a>
+		</nav>
+		<aside id="meteo">
+			<h2>La météo d'Excenevex</h2>
+			<h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
+		</aside>
+		
+		<nav id="nav">
+			<button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
+			</button>
+			<ul>
+				<li class="active"><a href="#">Accueil</a>
+				</li>
+				<li><a href="#">Se loger</a>
+				</li>
 				<ul>
-					<li><a href="#"><img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span></a></li>
-					<li><a href="#"><img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span></a></li>
-					<li><a href="#"><img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span></a></li>
+					<li>
+						<a href="#">
+							<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+						</a>
+					</li>
 				</ul>
-			<li><a href="#">Où manger</a></li>
-			<li><a href="#">Se divertir</a></li>
-		</ul>
+				<li><a href="#">Où manger</a>
+				</li>
+				<li><a href="#">Se divertir</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="visible-xs row full-slider">
+		<figure>
+			<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
+			<figcaption>
+				<h2>Excenevex Plage</h2>
+				<p>La plage ouvre ses portes !</p>
+			</figcaption>
+		</figure>
+	</section>
+
+	<nav class="row inset visible-xs">
+		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-bed"></i><p>Où se loger</p></a>
+		</div>
+		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-cutlery"></i><p>Où Manger</p></a>
+		</div>
+		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-child"></i><p>Se divertir</p></a>
+		</div>
 	</nav>
-</header>
 
-<section class="visible-xs row full-slider">
-	<figure>
-		<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
-		<figcaption><h2>Excenevex Plage</h2><p>La plage ouvre ses portes !</p></figcaption>
-	</figure>
-</section>
-
-<nav class="row inset">
-	<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-bed"></i><p>Où se loger</p></a></div>
-	<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-cutlery"></i><p>Où Manger</p></a></div>
-	<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-child"></i><p>Se divertir</p></a></div>
-</nav>
-
-<section id="meteo-section" class="visible-xs">
-	<header>
-		<h2>La météo d'Excenevex</h2>
-		<h3>18 Jan. 2015</h3>
-	</header>
-	<div class="row">
-		<div class="col-xs-4"><img class="ensoleillement" src="img/meteo/sun.svg" class="full-width-image" alt="Beau temps"></div>
-		<p class="col-xs-8 temperature">
-			15°/18°
-		</p>
-	</div>
-	<p>Lever de soleil <span class="mainColor">9h12</span></p>
-	<p>Coucher de soleil <span class="mainColor">17h35</span></p>
-</section>
-
-<section class="actu">
-	<header>
-		<h2>Les dernières actualités</h2>
-	</header>
-
-	<article>
+	<section id="meteo-section" class="visible-xs">
 		<header>
-			<h3>La programmation des Mardis Sablés annoncée !</h3>
+			<h2>La météo d'Excenevex</h2>
+			<h3>18 Jan. 2015</h3>
 		</header>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
+		<div class="row">
+			<div class="col-xs-4">
+				<img class="ensoleillement" src="img/meteo/sun.svg" class="full-width-image" alt="Beau temps">
+			</div>
+			<p class="col-xs-8 temperature">
+				15°/18°
+			</p>
+		</div>
+		<p>Lever de soleil <span class="mainColor">9h12</span>
 		</p>
-		<aside>
-			<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
-		</aside>
-	</article>
+		<p>Coucher de soleil <span class="mainColor">17h35</span>
+		</p>
+	</section>
 
-	<article>
+	<section class="actu">
 		<header>
-			<h3>La programmation des Mardis Sablés annoncée !</h3>
+			<h2>Les dernières actualités</h2>
 		</header>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
-		</p>
-		<aside>
-			<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
-		</aside>
-	</article>
-	
-	<article>
-		<header>
-			<h3>La programmation des Mardis Sablés annoncée !</h3>
-		</header>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
-		</p>
-		<aside>
-			<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
-		</aside>
-	</article>
 
-	<a href="#" class="button">Voir toutes les actualités de l'office du tourisme</a>
-</section>
+		<article>
+			<header>
+				<h3>La programmation des Mardis Sablés annoncée !</h3>
+			</header>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
+			</p>
+			<aside>
+				<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
+			</aside>
+		</article>
 
-<footer id="footer" class="row">
-	<p><a href="#">Plan du site</a></p>
-	<p><a href="#">Basculer sur le site de la municipalité</a></p>
-	<p>Tous droits réservés &copy; 2015 | Excenevex Plage</p>
-</footer>
+		<article>
+			<header>
+				<h3>La programmation des Mardis Sablés annoncée !</h3>
+			</header>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
+			</p>
+			<aside>
+				<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
+			</aside>
+		</article>
+
+		<article>
+			<header>
+				<h3>La programmation des Mardis Sablés annoncée !</h3>
+			</header>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.
+			</p>
+			<aside>
+				<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
+			</aside>
+		</article>
+
+		<a href="#" class="button">Voir toutes les actualités de l'office du tourisme</a>
+	</section>
+
+	<footer id="footer" class="row">
+		<p><a href="#">Plan du site</a>
+		</p>
+		<p><a href="#">Basculer sur le site de la municipalité</a>
+		</p>
+		<p>Tous droits réservés &copy; 2015 | Excenevex Plage</p>
+	</footer>
 
 </body>
+
 </html>
