@@ -1,11 +1,11 @@
 jQuery(document).ready(function ($) {
-	$('#nav>ul').hide();
+	$('#nav-mobile>ul').hide();
 
 	$('#triggerMenu').click(function (event) {
-		$('#nav>ul').stop().slideToggle(500,
+		$('#nav-mobile>ul').stop().slideToggle(500,
 			function () {
 				//TODO : Corriger le bug du triangle quand on double clique sur MENU
-				$('#nav>ul').toggleClass('before');
+				$('#nav-mobile>ul').toggleClass('before');
 			}
 		);
 	});

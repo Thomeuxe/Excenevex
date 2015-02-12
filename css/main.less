@@ -43,9 +43,56 @@
 	-webkit-filter: brightness(@brightness);
 }
 
+.translate(@x, @y) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
 
 /*-----  End of MIXINS  ------*/
 
+/*==============================
+=        RIPPLE EFFECT         =
+==============================*/
+
+@duration: 0.4s;
+.ripple--effect {
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	outline: none;
+	transition: background-color @duration;
+	
+	&:hover {
+		background-color: @mainColor !important;
+	}
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 0;
+		padding-top: 0;
+		border-radius: 100%;
+		background-color: rgba(236, 123, 30, .3);
+		.translate(-50%, -50%);
+	}
+	
+	&:hover:before {
+		width: 120%;
+		padding-top: 120%;
+		transition: width @duration ease-out, padding-top @duration ease-out;
+	}
+	
+	> *  {
+		position: relative;
+	}
+}
+/*---  End of Ripple-effect  ----*/
 
 /*===============================
 =            GENERAL            =
@@ -53,7 +100,7 @@
 
 
 body{
-	font-family: 'Quicksand', sans-serif;
+	font-family: @specialFont;
 	font-size: 18px;
 	letter-spacing: 1px;
 	@media (min-width: @screen-sm-min) {
@@ -171,7 +218,7 @@ a.bubble{
 		
 	}
 
-	#nav{
+	#nav-mobile{
 		float: right;
 		font-family: @specialFont;
 		#triggerMenu{
@@ -181,7 +228,7 @@ a.bubble{
 			background: none;
 			border: none;
 			font-size: 24px;
-			font-family: 'Quicksand', sans-serif;
+			font-family: @specialFont;
 			font-weight: 700;
 			text-transform: uppercase;
 
@@ -321,6 +368,45 @@ a.bubble{
 		}
 		
 	}
+	
+	#nav-desktop {
+		position: absolute;
+		right: 50px;
+
+		ul {
+			list-style: none;
+
+			li {
+				float: left;
+
+				.btn {
+					display: block;
+					margin: 30px;
+					border-radius: 100%;
+					width: 150px;
+					height: 150px;
+					.shadow();
+					background-color: #fff;
+					text-decoration: none;
+
+					 span {
+						 display: block;
+						 text-align: center;
+						 line-height: 150px;
+						 text-transform: uppercase;
+						 font-family: @specialFont;
+						 font-weight: 700;
+						 color: #000;
+						 transition: all ease 0.3s;
+
+						 &:hover {
+							 color: #fff;
+						 }
+					}
+				}
+			}
+		}
+	}
 }
 
 /*-----  End of HEADER  ------*/
@@ -346,6 +432,10 @@ section{
 =====================================*/
 
 section.actu{
+	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+	margin-top: 200px;
+	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+	
 	article{
 		header{
 			margin-bottom: @padding;
@@ -484,4 +574,9 @@ nav.inset{
 }
 
 /*-----  End of FOOTER #FOOTER  ------*/
+
+
+
+
+
 

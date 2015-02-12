@@ -37,18 +37,18 @@
 				</div>
 			</div>
 		</h1>
-		<nav id="lang" class="hidden-xs">
+		<nav id="lang">
 			<a href="#">
 				<img src="img/icons/usa.png" height="32" width="32" alt="English">
 			</a>
 		</nav>
-		<aside id="meteo">
+		<aside id="meteo" class="hidden-xs" style="display: none;">
 			<h2>La météo d'Excenevex</h2>
 			<h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
 		</aside>
 		
-		<nav id="nav">
-			<button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
+		<nav class="visible-xs" id="nav-mobile">
+			<button id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
 			</button>
 			<ul>
 				<li class="active"><a href="#">Accueil</a>
@@ -75,6 +75,22 @@
 				<li><a href="#">Où manger</a>
 				</li>
 				<li><a href="#">Se divertir</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="hidden-xs" id="nav-desktop">
+			<ul>
+				<li>
+					<a href="#" class="btn ripple--effect" type="button"><span>Accueil</span></a>
+				</li>
+				<li>
+					<a href="#" class="btn ripple--effect" type="button"><span>où se loger</span></a>
+				</li>
+				<li>
+					<a href="#" class="btn ripple--effect" type="button"><span>où manger</span></a>
+				</li>
+				<li>
+					<a href="#" class="btn ripple--effect" type="button"><span>se détendre</span></a>
 				</li>
 			</ul>
 		</nav>
