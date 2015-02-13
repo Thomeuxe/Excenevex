@@ -325,8 +325,8 @@ a.bubble{
 					}
 				
 					i:last-child {
-						/* Pour avoir la taille des icones comme sur la maquette
-						font-size: 15px;*/
+						// Pour avoir la taille des icones comme sur la maquette
+						font-size: 15px;
 					}
 					&:hover {
 						.fa-circle {
@@ -381,13 +381,15 @@ a.bubble{
 
 				.btn {
 					display: block;
-					margin: 30px;
+					margin: 20px;
 					border-radius: 100%;
 					width: 150px;
 					height: 150px;
 					.shadow();
 					background-color: #fff;
 					text-decoration: none;
+					shape-outside: circle(50%);
+					webkit-clip-path: circle(50%);
 
 					 span {
 						 display: block;
@@ -402,6 +404,15 @@ a.bubble{
 						 &:hover {
 							 color: #fff;
 						 }
+					}
+				}
+
+				&.current-menu-item{
+					.btn{
+						background: @mainColor;
+						span{
+							color: #fff;
+						}
 					}
 				}
 			}
