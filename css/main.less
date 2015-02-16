@@ -17,8 +17,6 @@
 @border-radius: 3px;
 @padding: 15px;
 
-
-
 /* Media-queries values : */
 @screen-xs-max: 767px;
 @screen-sm-min: 768px;
@@ -30,7 +28,6 @@
 /*==============================
 =            MIXINS            =
 ==============================*/
-
 .shadow(){
 	.box-shadow(0 2px 0 rgba(0,0,0,.15));
 	@media (min-width: 768px) {		
@@ -49,6 +46,18 @@
 	-ms-transform: translate(@x, @y);
 	-o-transform: translate(@x, @y);
 	transform: translate(@x, @y);
+}
+
+.fa-rotate-45 {
+  -webkit-transform: rotate(405deg);
+  -ms-transform: rotate(405deg);
+  transform: rotate(405deg);
+}
+
+.fa-rotate-90 {
+  -webkit-transform: rotate(450deg);
+  -ms-transform: rotate(450deg);
+  transform: rotate(450deg);
 }
 
 /*-----  End of MIXINS  ------*/
@@ -92,12 +101,12 @@
 		position: relative;
 	}
 }
+
 /*---  End of Ripple-effect  ----*/
 
 /*===============================
 =            GENERAL            =
 ===============================*/
-
 
 body{
 	font-family: @specialFont;
@@ -152,7 +161,7 @@ h2{
 /*==========  Links  ==========*/
 
 a{
-	&:hover {
+	&:hover, &:focus, &:active {
 		text-decoration: none;
 	}
 }
@@ -202,7 +211,7 @@ a.bubble{
 #header{
 	background: #eee;
 	height: 110px;
-	position: fixed;
+	position: absolute;
 	z-index: 9999;
 	top: 0;
 	width: 100%;
@@ -217,11 +226,12 @@ a.bubble{
 		}
 	}
 	@media(max-width: @screen-xs-max) {
+		position: fixed;
 		#lang{
 			display: none;
 		}
 	}
-
+	// h1 for DESKTOP
 	@media(min-width: @screen-sm-min) {
 		
 		background: none;
@@ -306,6 +316,7 @@ a.bubble{
 		}
 	}
 
+	// Menu for MOBILE
 	@media(max-width: @screen-xs-max) {
 		#responsiveMenu{
 			float: right;
@@ -342,17 +353,38 @@ a.bubble{
 						text-transform: uppercase;
 						display: block;
 						padding: 15px;
+						width: 100%;
+						
+						&:not(.sub-item) {
+							span {
+								width: 90%;
+								display: inline-block;
+							}
+
+							i {
+								padding: 7px;
+								transition: transform ease-out 0.333s;
+							}
+						}
 					}
 
-					&.active{
+					&.current-menu-item{
 						a{
 							color: @mainColor;
 						}
 					}
-				}
-
-				ul{
-					display: none;
+					
+					ul{
+						display: none;
+						text-indent: 25px;
+						li a span {
+							margin-left: 20px;
+						}
+						li a img {
+							//petit truc degueux..
+							vertical-align: top;
+						}
+					}
 				}
 
 				&::before{
@@ -374,6 +406,7 @@ a.bubble{
 			}
 		}
 	}
+	// Menu for DESKTOP
 	@media(min-width: @screen-sm-min) {
 
 		#responsiveMenu {
@@ -406,7 +439,7 @@ a.bubble{
 							 text-transform: uppercase;
 							 font-family: @specialFont;
 							 font-weight: 700;
-							 color: #000;
+							 color: #445FA2;
 							 transition: all ease 0.3s;
 
 							 &:hover {
@@ -415,7 +448,7 @@ a.bubble{
 						}
 					}
 
-					&.active{
+					&.current-menu-item{
 						a{
 							background: @mainColor;
 							span{
@@ -423,214 +456,15 @@ a.bubble{
 							}
 						}
 					}
+					
+					ul {
+						// a enlever
+						display: none !important;
+					}
 				}
 			}
-		}
-
-
-		
+		}	
 	}
-
-	/*#nav-mobile{
-		float: right;
-		font-family: @specialFont;
-		#triggerMenu{
-			height: 110px;
-			line-height: 110px;
-			padding: 0 30px 0 10px;
-			background: none;
-			border: none;
-			font-size: 24px;
-			font-family: @specialFont;
-			font-weight: 700;
-			text-transform: uppercase;
-
-			span{
-				font-size: 16px;
-				position: relative;
-				bottom: 3px;
-				right: 8px;
-			}
-		}
-		>ul{
-			//display: none;
-			position: absolute;
-			left: 0;
-			right: 0;
-			background: @complementaryColor;
-
-			li{
-				a{
-					color: #fff;
-					font-weight: 700;
-					text-transform: uppercase;
-					display: block;
-					padding: 15px;
-				}
-
-				&.active{
-					a{
-						color: @mainColor;
-					}
-				}
-			}
-
-			ul{
-				display: none;
-			}
-
-			&::before{
-				content: "";
-				display: block;
-				position: absolute;
-				top: -10px;
-				right: 31px;
-				height: 0;
-				width: 0;
-				border: solid 10px transparent;
-				border-bottom-color: @complementaryColor;
-				.transition(top 0.3s);
-			}
-
-			&.before::before{
-				top: -20px;
-			}
-		}
-	}
-
-	@media(min-width: @screen-sm-min) {
-		background: none;
-		box-shadow: none;
-		h1{
-			background: #fff;
-			display: table-cell;
-			vertical-align: bottom;
-			padding: 20px;
-			box-sizing: content-box;
-			position: relative;
-			top: -80px;
-			left: 35px;
-			width: 250px;
-			height: 250px;
-			.border-radius(50%);
-			.shadow();
-
-			.custom-container{
-				display: inline-block;
-				width: 250px;
-				text-align: center;
-				position: relative;
-				top: 50px;
-			}
-
-			img{
-				width: 250px;
-				height: 143px;
-				z-index: 1;
-			}
-			
-			.social-buttons {
-				font-size: 25px;
-				.fa-stack {
-					.fa-circle {
-						transition: ease 0.3s all;
-						color: @complementaryColor;
-					}
-				
-					i:last-child {
-						// Pour avoir la taille des icones comme sur la maquette
-						font-size: 15px;
-					}
-					&:hover {
-						.fa-circle {
-							color: darken(@complementaryColor, 10%);
-						}
-					}
-				}
-			}
-
-			&::before{
-				content: "";
-				background: #fff	;
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 145px;
-				z-index: 0;
-			}
-		}
-		nav#lang {
-			.shadow();
-			position: absolute;
-			top: 170px;
-			left: 25px;
-			border: solid 5px #fff;
-			border-radius: 100%;
-			
-			img {
-				transition: all 0.5s;
-			}
-			
-			&:hover {
-				img {
-					.brightness(1.2);
-				}
-			}
-		}
-		
-	}
-	
-	#nav-desktop {
-		position: absolute;
-		right: 50px;
-
-		ul {
-			list-style: none;
-
-			li {
-				float: left;
-
-				.btn {
-					display: block;
-					margin: 20px;
-					border-radius: 100%;
-					width: 150px;
-					height: 150px;
-					.shadow();
-					background-color: #fff;
-					text-decoration: none;
-					shape-outside: circle(50%);
-					webkit-clip-path: circle(50%);
-
-					 span {
-						 display: block;
-						 text-align: center;
-						 line-height: 150px;
-						 text-transform: uppercase;
-						 font-family: @specialFont;
-						 font-weight: 700;
-						 color: #000;
-						 transition: all ease 0.3s;
-
-						 &:hover {
-							 color: #fff;
-						 }
-					}
-				}
-
-				&.current-menu-item{
-					.btn{
-						background: @mainColor;
-						span{
-							color: #fff;
-						}
-					}
-				}
-			}
-		}
-	}*/
 }
 
 /*-----  End of HEADER  ------*/
