@@ -1,0 +1,121 @@
+@button-color: #fff;
+@button-color-hover: darken(@button-color, 5%);
+@indigo-700: #303F9F;
+@indigo-600: #3949AB;
+@teal-700: #00796B;
+@teal-600: #00897B;
+ .border-radius(@radius) {
+	border-radius: @radius;
+}
+
+.display-flex {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex-direction(@direction) {
+	-webkit-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+	flex-direction: @direction;
+}
+
+.flex-justify-content_space-around {
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: justify;
+	justify-content: space-around;
+}
+
+//-------------------STYLE---------------------
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(../img/background.png);
+	background-size: cover;
+}
+
+
+#content2 {
+	margin: auto;
+    width: 100vw;
+    height: 100vh;
+	
+	.display-flex;
+	.flex-direction(column);
+	.flex-justify-content_space-around;
+	
+	header, #menu {
+		width: 100%;
+	}
+	
+	header {
+		h1 {
+			text-align: center;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 900;
+			font-size: 70px;
+			color: #fff;
+			text-shadow: 0 0 56px rgba(0, 0, 0, 1);
+		}
+	}
+	nav {
+		.display-flex;
+		.flex-direction(row);
+		
+		&:first-child {
+					margin-left: 50px;
+				}
+				&:last-child {
+					margin-right: 50px;
+				}
+	
+			
+			.tile {
+				background: #fff;
+				.border-radius(4px);
+				text-align: center;
+				margin: auto;
+				width: 350px;
+				height: 260px;
+				.display-flex;
+				.flex-direction(column);
+				.flex-justify-content_space-around;
+				overflow: hidden;
+				
+				a{
+					line-height: 60px;
+					font-family: 'Roboto', sans-serif;
+					text-decoration: none;
+					text-transform: uppercase;
+					color: #fff;
+					/*.border-radius(2px);
+					margin: auto;
+					width: 300px;*/
+					transition: all 0.5s;
+				}
+				
+				img {
+					margin: auto;
+				}
+			}
+			#mairie {
+				a {
+					background: @teal-600;
+					&:hover{
+						background: @teal-700;
+					}
+				}
+			}
+			#ot {
+				a {
+					background: @indigo-600;
+					&:hover{
+						background: @indigo-700;
+					}
+				}
+			}
+		}
+} 
