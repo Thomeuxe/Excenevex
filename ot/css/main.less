@@ -403,15 +403,24 @@ a.bubble{
 			right: 50px;
 
 			ul {
+				margin-top: 20px;
 				display: block !important;
 				list-style: none;
 				
 				li {
+					border-radius: 100%;
+					margin: 0 20px 0 20px;
+					&:hover a:not(.sub-item) {
+						transition: @duration;
+						background-color: @mainColor;
+						span {
+							color: #fff;
+						}
+					}
 					float: left;
 
 					a {
 						display: block;
-						margin: 20px;
 						border-radius: 100%;
 						width: 150px;
 						height: 150px;
@@ -446,7 +455,9 @@ a.bubble{
 						}
 					}
 					.submenu {
+						margin-top: 20px;
 						li {
+							margin: 0;
 							a {
 								width: auto;
 								height: auto;
