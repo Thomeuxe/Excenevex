@@ -416,7 +416,7 @@ a.bubble{
 			ul {
 				display: block !important;
 				list-style: none;
-
+				
 				li {
 					float: left;
 
@@ -456,10 +456,38 @@ a.bubble{
 							}
 						}
 					}
-					
-					ul {
-						// a enlever
-						display: none !important;
+					.submenu {
+						li {
+							a {
+								width: auto;
+								height: auto;
+								background: none;
+								box-shadow: none;
+								border-radius: 0;
+								text-align: center;
+								margin: 0;
+								img {
+									background-color: #fff;
+									border-radius: 100%;
+									padding: 10px;
+									width: 40px;
+									height: 40px;
+								}
+								span {
+									opacity: 0;
+									color: #fff;
+									font-size: 11px;
+									line-height: 20px;
+								}
+								
+								&:hover {
+									span {
+										transition: opacity ease 0.3s;
+										opacity: 1;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

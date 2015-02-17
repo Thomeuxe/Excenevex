@@ -12,10 +12,10 @@ jQuery(document).ready(function ($) {
 	});
 	
 	// Submenu for mobile
-	$('#responsiveMenu #submenu').parent().find(">a").append('<i class="fa fa-angle-right"></i>'); // if there is a submenu, add a plus icon
+	$('#responsiveMenu .submenu').parent().find(">a").append('<i class="fa fa-angle-right"></i>'); // if there is a submenu, add a plus icon
 	$('#responsiveMenu>ul>li i').click(function (event) {
 		$(this).toggleClass('fa-rotate-90');
-		$(this).parent().parent().find('ul#submenu').stop().slideToggle();							 
+		$(this).parent().parent().find('ul.submenu').stop().slideToggle();							 
 	});
 
 	// end of ResponsiveMenu
