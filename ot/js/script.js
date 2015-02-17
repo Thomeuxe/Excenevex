@@ -25,6 +25,7 @@ jQuery(document).ready(function ($) {
 			}
 			$(window).resize(function(event) {
 				if (window.matchMedia("(max-width: 767px)").matches) {
+					$('#responsiveMenu .submenu .sub-item img').removeClass('ripple--effect');
 					$('#responsiveMenu .submenu .sub-item').addClass('ripple--effect');
 				}
 			});
@@ -35,6 +36,7 @@ jQuery(document).ready(function ($) {
 			}
 			$(window).resize(function(event) {
 				if (window.matchMedia("(min-width: 768px)").matches) {
+					$('#responsiveMenu .submenu .sub-item').removeClass('ripple--effect')
 					$('#responsiveMenu .submenu .sub-item img').addClass('ripple--effect');
 				}
 			});
