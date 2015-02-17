@@ -403,6 +403,11 @@ a.bubble{
 			right: 50px;
 
 			ul {
+				&:after {
+					clear: both;
+					display: block;
+					content: '';
+				}
 				margin-top: 20px;
 				display: block !important;
 				list-style: none;
