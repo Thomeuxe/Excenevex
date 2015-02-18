@@ -400,9 +400,10 @@ a.bubble{
 
 		#responsiveMenu {
 			position: absolute;
-			right: 50px;
+			right: 0px;
 
 			ul {
+				//clearfix
 				&:after {
 					clear: both;
 					display: block;
@@ -413,6 +414,7 @@ a.bubble{
 				list-style: none;
 				
 				li {
+					display: inline-block;
 					border-radius: 100%;
 					margin: 0 20px 0 20px;
 					&:hover a:not(.sub-item) {
@@ -422,7 +424,6 @@ a.bubble{
 							color: #fff;
 						}
 					}
-					float: left;
 
 					a {
 						display: block;
@@ -450,7 +451,7 @@ a.bubble{
 							 }
 						}
 					}
-
+					
 					&.current-menu-item{
 						a{
 							background: @mainColor;
@@ -460,8 +461,12 @@ a.bubble{
 						}
 					}
 					.submenu {
-						margin-top: 20px;
+						//display: inline-block;
+						position: absolute;
+						//width: 300px;
+						//text-align: center;
 						li {
+							display: inline-block;
 							margin: 0;
 							a {
 								width: auto;
