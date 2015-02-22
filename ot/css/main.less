@@ -403,6 +403,7 @@ a.bubble{
 			right: 0px;
 
 			ul {
+				height: 150px;
 				//clearfix
 				&:after {
 					clear: both;
@@ -422,7 +423,7 @@ a.bubble{
 						background-color: @mainColor;
 						span {
 							color: #fff;
-						}
+						}	
 					}
 
 					a {
@@ -460,15 +461,26 @@ a.bubble{
 							}
 						}
 					}
+
+					&:hover .submenu {
+						li {
+							a {
+								opacity: 1;
+								padding-top: 70px;
+							}
+						}
+					}
+
 					.submenu {
-						//display: inline-block;
 						position: absolute;
-						//width: 300px;
-						//text-align: center;
+						top: 100px;
+						z-index: -1;
 						li {
 							display: inline-block;
 							margin: 0;
 							a {
+								transition: padding ease-out 0.2s, opacity ease-out 0.3s;
+								opacity: 0;
 								width: auto;
 								height: auto;
 								background: none;
