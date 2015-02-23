@@ -41,7 +41,15 @@ jQuery(document).ready(function ($) {
 				}
 			});
 	// end of fix
-
+	
+	//à mettre en js pour centrer le .submenu
+	//.submenu li a {
+	//pour 1 item : left: 45px;
+	//pour 2 items : left: 10px;
+	//pour 3 items : left: -20px;
+	//pour 4 items : left: -50px;
+	//pour 5 items : left: -88px;
+	//}
 // end of ResponsiveMenu
 	
 // Caculate size of bubbles
