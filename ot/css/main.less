@@ -131,6 +131,10 @@ h2, h3, h4, h5, h6{
 }
 
 h2{
+	padding-bottom: 5px;
+}
+
+h3{
 	//border-bottom: 4px solid lighten(@mainColor, 20%);
 
 	&::after{
@@ -563,6 +567,16 @@ section{
 	margin-bottom: @padding*2;
 	//background: @light;
 	// .shadow;
+	header {
+		h2{
+			color: @light;
+			background: rgba(0, 0, 0, 0.3);
+			display: block;
+			margin: auto;
+			text-align: center;
+			width: 500px;
+		}
+	}
 }
 
 /*-----  End of SECTION GENERAL  ------*/
