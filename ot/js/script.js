@@ -50,9 +50,9 @@ jQuery(document).ready(function ($) {
 						//when mouse hover
 							$(this).find('a').addClass('transition-delay' + index);
 						//when mouse unhover
-							delay = 5; //time between each "a"
-							delay2 = 20 //time between unhover instant and the start of animation
-							timer = (delay*index + delay2)/100; 
+							var delay = 5; //time between each "a"
+							var delay2 = 20 //time between unhover instant and the start of animation
+							var timer = (delay*index + delay2)/100; 
 							$(this).find('a').css('transition-delay', timer + 's');
 					});
 				});
@@ -66,11 +66,19 @@ jQuery(document).ready(function ($) {
 	// end
 	
 	// Method to center the .submenu compared to responsiveMenu for desktop
-		if (window.matchMedia("(min-width: 768px)").matches) {
-				//.submenu {
-				//	margin-left: Int((-230/7)*x+545/7));
-				//}
-		}
+		function centerSubmenu() {
+			if (window.matchMedia("(min-width: 768px)").matches) {
+				$('#responsiveMenu ul li').each(function() {
+					var x = $(this).find('.submenu li').length;
+					$(this).find('.submenu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
+				});
+			}
+		};
+		
+		centerSubmenu();
+		$(window).resize(function() {
+			centerSubmenu();
+		});
 	// end of center method
 	
 // end of ResponsiveMenu
