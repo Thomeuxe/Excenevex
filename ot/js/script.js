@@ -43,20 +43,7 @@ jQuery(document).ready(function ($) {
 	// end of fix
 	
 	// Adding animation for .submenu for desktop
-		if (window.matchMedia("(min-width: 768px)").matches) {
-			$('#responsiveMenu ul li').each(function() {
-				$(this).find('.submenu li').each(function(index) {
-					//when mouse hover
-						$(this).find('a').addClass('transition-delay' + index);
-					//when mouse unhover
-						delay = 5; //time between each "a"
-						delay2 = 20 //time between unhover instant and the start of animation
-						timer = (delay*index + delay2)/100; 
-						$(this).find('a').css('transition-delay', timer + 's');
-				});
-			});
-		}
-		$(window).resize(function(event) {
+		function animatedSubmenu() {
 			if (window.matchMedia("(min-width: 768px)").matches) {
 				$('#responsiveMenu ul li').each(function() {
 					$(this).find('.submenu li').each(function(index) {
@@ -70,6 +57,11 @@ jQuery(document).ready(function ($) {
 					});
 				});
 			}
+		};
+		
+		animatedSubmenu();
+		$(window).resize(function() {
+			animatedSubmenu();
 		});
 	// end
 	
@@ -84,19 +76,19 @@ jQuery(document).ready(function ($) {
 // end of ResponsiveMenu
 	
 // Caculate size of bubbles
-	var $bubble = $('a.bubble i');
-	$bubble.css({
-		'height': $bubble.width(),
-		'line-height': $bubble.width() + 'px'
-	});
-
-	$(window).resize(function ($bubble) {
+	function bubblesSize() {
 		var $bubble = $('a.bubble i');
 		$bubble.css({
 			'height': $bubble.width(),
 			'line-height': $bubble.width() + 'px'
 		});
+	};
+	
+	bubblesSize();
+	$(window).resize(function() { 
+		bubblesSize()
 	});
+
 // End of bubbles
 	
 // Forecasts
