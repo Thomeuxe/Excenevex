@@ -476,7 +476,6 @@ a.bubble{
 								height: auto;
 								position: relative;
 								top: 0;
-								left: -88px;
 								background: none;
 								box-shadow: none;
 								border-radius: 0;
@@ -502,11 +501,6 @@ a.bubble{
 								}
 							}
 						}
-						li:nth-child(1) a {transition-delay: .3s;}
-						li:nth-child(2) a {transition-delay: .25s;}
-						li:nth-child(3) a {transition-delay: .2s;}
-						li:nth-child(4) a {transition-delay: .15s;}
-						li:nth-child(5) a {transition-delay: .1s;}
 					}
 					
 					&:hover .submenu {
@@ -515,11 +509,17 @@ a.bubble{
 							top: 100px;
 							transition: all .1s ease-out;
 						}
-						li:nth-child(1) a {transition-delay: 0;	}
-						li:nth-child(2) a {transition-delay: .05s;}
-						li:nth-child(3) a {transition-delay: .1s;}
-						li:nth-child(4) a {transition-delay: .15s;}
-						li:nth-child(5) a {transition-delay: .2s;}
+						li a.transition-delay0 {transition-delay: 0 !important;}
+						li a.transition-delay1 {transition-delay: .05s !important;}
+						li a.transition-delay2 {transition-delay: .1s !important;}
+						li a.transition-delay3 {transition-delay: .15s !important;}
+						li a.transition-delay4 {transition-delay: .2s !important;}
+						li a.transition-delay5 {transition-delay: .25s !important;}
+						li a.transition-delay6 {transition-delay: .3s !important;}
+						li a.transition-delay7 {transition-delay: .35s !important;}
+						li a.transition-delay8 {transition-delay: .4s !important;}
+						li a.transition-delay9 {transition-delay: .45s !important;}
+						li a.transition-delay10 {transition-delay: .5s !important;}
 					}
 					
 					&:last-child .submenu {
