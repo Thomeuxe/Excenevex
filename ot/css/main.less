@@ -130,21 +130,42 @@ h2, h3, h4, h5, h6{
 	margin: 0;
 }
 
-h2{
-	padding-bottom: 5px;
-	padding-top: 5px;
+@media(max-width: @screen-xs-max) {
+	h2{
+		//border-bottom: 4px solid lighten(@mainColor, 20%);
+		&::after{
+			content: "";
+			display: block;
+			height: 4px;
+			margin-top: 10px;
+			.border-radius(2px);
+			background: lighten(@mainColor, 20%);
+		}
+	}
 }
 
-h3{
-	//border-bottom: 4px solid lighten(@mainColor, 20%);
-
-	&::after{
-		content: "";
-		display: block;
-		height: 4px;
-		margin-top: 10px;
+@media(min-width: @screen-sm-min) {
+	h2  {
 		.border-radius(2px);
-		background: lighten(@mainColor, 20%);
+		padding: 5px @padding;
+		width: 700px;
+		display: block;
+		margin: 0 auto;
+		text-transform: uppercase;
+		text-align: center;
+		color: @text;
+		background-color: rgba(0,0,0,0.3);
+	}
+	h3{
+		text-transform: uppercase;
+		&::after{
+			content: "";
+			display: block;
+			height: 4px;
+			margin-top: 10px;
+			.border-radius(2px);
+			background: lighten(@mainColor, 20%);
+		}
 	}
 }
 
@@ -550,10 +571,10 @@ a.bubble{
 
 section{
 	.border-radius(3px);
-	// margin-bottom: @padding*2;
+	margin-bottom: @padding*2;
 	//background: @light;
 	// .shadow;
-	header {
+	/*header { //en mediaqueries
 		h2{
 			color: @light;
 			background: rgba(0, 0, 0, 0.3);
@@ -565,7 +586,7 @@ section{
 			
 
 		}
-	}
+	}*/
 }
 
 /*-----  End of SECTION GENERAL  ------*/
@@ -576,10 +597,10 @@ section{
 =            Section .actu            =
 =====================================*/
 
-section div#fond-actu{
+/*section div#fond-actu{
 	background: @light;
 
-}
+}*/
 
 section.actu{
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
@@ -591,15 +612,15 @@ section.actu{
 			margin-bottom: @padding;
 		}
 		background: @light;
-		padding: @padding;
-		margin-top: @padding;
-		.border-radius(3px);
+		padding: 15px;
 
 		aside{
 			font-weight: 700;
-
 			.fa{
 				margin-right: 10px;
+			}
+			.fa-stack{
+				margin-left: 10px;
 			}
 			a{
 				display: block;
@@ -608,16 +629,38 @@ section.actu{
 				margin-top: 0;
 				color: @mainColor;
 			}
-			span{
-				color: @text;
-				background-color:@mainColor;
-				width: 38px;
-				height: 38px;
-				display: inline-block; 
-				text-align: center;
-				border-radius: 100%;
-				font-size: 25px;
-
+		}
+	}
+	
+	@media(max-width: @screen-xs-max) {
+		article {
+			margin-top: @padding;
+			.border-radius(3px);
+		}
+	}
+	
+	@media(min-width: @screen-sm-min) {
+		article {
+			background: #fff;
+			//margin-bottom: @padding;
+			font-size: 0;
+			
+			img {
+				display: inline-block;
+				widht: 50%;
+			}
+			
+			p {
+				display: inline-block;
+				font-size: 18px;
+				width: 50%;
+				margin: 0 @padding;
+			}
+			
+			aside {
+				display: inline-block;
+				font-size: 18px;
+				width: 200px;
 			}
 		}
 	}
@@ -631,8 +674,12 @@ section.actu{
 =            Sidebar à droite des articles               =
 =========================================================*/
 
-section.sidebar{
+aside#sidebar{
 	background-color: #B9B9B9;
+	height: 1000px;	
+	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+	margin-top: 243px;
+	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
 }
 
 
@@ -697,7 +744,7 @@ nav.inset{
 
 
 /*======================================
-=            METEO SECTION (#meteo)            =
+=            METEO SECTION (#meteo)    =
 ======================================*/
 
 #meteo-section{
