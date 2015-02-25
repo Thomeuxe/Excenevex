@@ -132,6 +132,7 @@ h2, h3, h4, h5, h6{
 
 h2{
 	padding-bottom: 5px;
+	padding-top: 5px;
 }
 
 h3{
@@ -564,7 +565,7 @@ a.bubble{
 
 section{
 	.border-radius(3px);
-	margin-bottom: @padding*2;
+	// margin-bottom: @padding*2;
 	//background: @light;
 	// .shadow;
 	header {
@@ -575,6 +576,9 @@ section{
 			margin: auto;
 			text-align: center;
 			width: 500px;
+			text-transform: uppercase;
+			
+
 		}
 	}
 }
@@ -586,6 +590,11 @@ section{
 /*=====================================
 =            Section .actu            =
 =====================================*/
+
+section div#fond-actu{
+	background: @light;
+
+}
 
 section.actu{
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
@@ -603,6 +612,7 @@ section.actu{
 
 		aside{
 			font-weight: 700;
+
 			.fa{
 				margin-right: 10px;
 			}
@@ -611,6 +621,18 @@ section.actu{
 				margin: -@padding;
 				padding: @padding;
 				margin-top: 0;
+				color: @mainColor;
+			}
+			span{
+				color: @text;
+				background-color:@mainColor;
+				width: 38px;
+				height: 38px;
+				display: inline-block; 
+				text-align: center;
+				border-radius: 100%;
+				font-size: 25px;
+
 			}
 		}
 	}
@@ -618,6 +640,15 @@ section.actu{
 
 /*-----  End of Section .actu  ------*/
 
+
+
+/*========================================================
+=            Sidebar à droite des articles               =
+=========================================================*/
+
+section.sidebar{
+	background-color: #B9B9B9;
+}
 
 
 
