@@ -407,7 +407,7 @@ a.bubble{
 		#responsiveMenu {
 			position: absolute;
 			right: 0px;
-
+			
 			ul {
 				height: 150px;
 				//clearfix
@@ -420,6 +420,7 @@ a.bubble{
 				display: block !important;
 				list-style: none;
 				
+				@media(max-width: 1110px) {li{margin: 0 10px;}}
 				li {
 					display: inline-block;
 					border-radius: 100%;
@@ -431,7 +432,8 @@ a.bubble{
 							color: #fff;
 						}	
 					}
-
+					
+					@media(max-width: 1110px) {a{width: 100px; height: 100px;}}
 					a {
 						display: block;
 						border-radius: 100%;
@@ -442,7 +444,8 @@ a.bubble{
 						text-decoration: none;
 						shape-outside: circle(50%);
 						webkit-clip-path: circle(50%);
-
+						
+						@media(max-width: 1110px) {span{line-height: 100px; font-size: 12px;}}
 						 span {
 							 display: block;
 							 text-align: center;
@@ -474,6 +477,7 @@ a.bubble{
 						li {
 							display: inline-block;
 							margin: 0;
+							//@media(max-width: 1110px) {a{padding-top: 0px;}}
 							a {
 								transition: all .1s ease-in;
 								opacity: 0;
@@ -509,6 +513,7 @@ a.bubble{
 					}
 					
 					&:hover .submenu {
+						//@media(max-width: 1110px) {li a {transform: translateY(100px);}}
 						li a {
 							opacity: 1;
 							transform: translateY(100px);
@@ -529,26 +534,6 @@ a.bubble{
 					
 					&:last-child .submenu {
 						right: 5px;
-					}
-				}
-			}
-			
-			@media(max-width: 1110px) { //TODO : à débuger
-				li {
-					margin: 0 10px !important;
-					a:not(.sub-item) {
-						width: 100px !important;
-						height: 100px !important;
-						span {
-							line-height: 100px !important;
-							font-size: 12px;
-						}
-					}
-					&:hover {
-						padding-bottom: 20px;
-					}
-					&:hover .submenu a {
-						padding-top: 10px !important;
 					}
 				}
 			}
