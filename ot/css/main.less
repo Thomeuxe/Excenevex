@@ -507,7 +507,7 @@ a.bubble{
 						li {
 							display: inline-block;
 							margin: 0;
-							//@media(max-width: 1110px) {a{padding-top: 0px;}}
+							@media(max-width: 1110px) {a{padding-top: 50px;}}
 							a {
 								transition: all .1s ease-in;
 								opacity: 0;
@@ -529,7 +529,7 @@ a.bubble{
 									height: 40px;
 								}
 								span {
-									opacity: 0;
+									//opacity: 0;
 									color: #fff;
 									font-size: 11px;
 									line-height: 20px;
@@ -543,7 +543,8 @@ a.bubble{
 					}
 					
 					&:hover .submenu {
-						//@media(max-width: 1110px) {li a {transform: translateY(100px);}}
+						z-index: 1;
+						@media(max-width: 1110px) {li a {transform: translateY(70px);}}
 						li a {
 							opacity: 1;
 							transform: translateY(100px);
