@@ -1,6 +1,6 @@
 $(document).ready(function() {
  
-  $("#owl-demo").owlCarousel({
+  $("#slider-owl").owlCarousel({
  
       navigation : true, // Show next and prev buttons
       slideSpeed : 300,
