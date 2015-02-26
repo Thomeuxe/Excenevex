@@ -98,7 +98,7 @@ jQuery(document).ready(function ($) {
 	});
 
 // End of bubbles
-	
+
 // Forecasts
 	var $ensoleillement = $('#meteo-section .ensoleillement');
 	var $temperature = $('#meteo-section .temperature');

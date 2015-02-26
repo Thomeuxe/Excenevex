@@ -101,10 +101,6 @@ body{
 	font-family: @specialFont;
 	font-size: 18px;
 	letter-spacing: 1px;
-	@media (min-width: @screen-sm-min) {
-		background: url(../img/background.jpg);
-		background-size: cover;
-	}
 	padding-top: 110px;
 }
 
@@ -604,7 +600,7 @@ section{
 
 section.actu{
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-	margin-top: 200px;
+	margin-top:85vh;
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
 	
 	article{
@@ -678,7 +674,7 @@ aside#sidebar{
 	background-color: #B9B9B9;
 	height: 1000px;	
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-	margin-top: 243px;
+	margin-top: 100vh;
 	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
 }
 
@@ -687,6 +683,11 @@ aside#sidebar{
 /*========================================================
 =            Index Full slider (.full-slider)            =
 =========================================================*/
+
+section.pc-slider{
+	position: absolute;
+	top:0px;
+}
 
 section.full-slider{
 	padding: 0;
