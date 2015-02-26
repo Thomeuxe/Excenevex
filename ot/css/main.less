@@ -597,24 +597,33 @@ section{
 }*/
 
 section.actu{
-	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-	margin-top:85vh;
-	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-	
+
 	article{
 		header{
 			margin-bottom: @padding;
 		}
 		background: @light;
 		padding: 15px;
-
+		img {
+			//Pourquoi ça ne marche pas pour les medias xs ??
+			.border-radius(3px);
+		}
 		aside{
 			font-weight: 700;
-			.fa{
+			.fa-angle-right{
+				//display: none;
 				margin-right: 10px;
 			}
 			.fa-stack{
 				margin-left: 10px;
+				
+				i:first-child {
+					font-size: 50px;
+					line-height: 35px;
+				}
+				i:last-child {
+					text-indent: 7px;
+				}
 			}
 			a{
 				display: block;
@@ -638,8 +647,8 @@ section.actu{
 			
 			div {
 				text-align: left;
-				p {
-					
+				aside {
+					text-align: right;
 				}
 			}
 		}
@@ -664,11 +673,11 @@ section.actu{
 				img {
 					display: inline-block;
 					vertical-align: top;
-					width: 50%;
+					width: 100%;
 				}
 
 				div {
-					width: 50%;
+					width: 100%;
 					display: inline-block;
 					padding: 0 @padding;
 
@@ -678,6 +687,40 @@ section.actu{
 				}
 			}
 		}
+	}
+	
+	@media (min-width: @screen-sm-min) {
+		div article {
+			img {
+				margin-bottom: @padding;
+			}
+		}
+	}
+	@media (min-width: @screen-md-min) { 
+		div article {
+			img{
+				width: 40%;
+			}
+			div {
+				width: 60%;
+			}
+		}
+	}
+	
+	@media (min-width: @screen-lg-min) {
+		div article {
+			img, div {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media (min-width: @screen-sm-min) {
+	section.actu {
+		/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+		margin-top:85vh;
+		/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
 	}
 }
 
