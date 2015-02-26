@@ -70,6 +70,7 @@ jQuery(document).ready(function ($) {
 			if (window.matchMedia("(min-width: 768px)").matches) {
 				$('#responsiveMenu ul li').each(function() {
 					var x = $(this).find('.submenu li').length;
+					//TODO : ajouter la méthode pour centrer également entre min-width: 768px et max-width: 1110px
 					$(this).find('.submenu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
 				});
 			}
