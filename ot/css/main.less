@@ -10,6 +10,7 @@
 @text: #fff;
 @mainColor: #ec7b1e;
 @complementaryColor: #3a509b;
+@greyColor:#B9B9B9;
 @light: lighten(@complementaryColor,50%);
 
 @specialFont: 'Quicksand', sans-serif;
@@ -857,6 +858,46 @@ nav.inset{
 }
 
 /*-----  End of METEO SECTION (#meteo)  ------*/
+/*======================================
+=            PUCES NAVIGATIONS #navDots =
+========================================*/
+
+#navDots{
+	margin-top: 30px;
+	text-align: center;
+	ul{
+		display: inline-block;
+
+		li:first-child a{
+			color: @greyColor;
+		}
+		li:last-child a{
+			color:@greyColor;
+		}
+		li{
+			float:left;
+			margin:0px 10px;
+			a{
+				text-transform: uppercase;	
+				line-height: 30px;
+				color:@text;
+			}
+
+		}
+		.nav a{
+			display: inline-block;
+			width:30px;
+			height: 30px;
+			background: @mainColor;
+			overflow: visible;
+			border-radius: 50%;
+			opacity: 0.7;
+			&:hover{
+				opacity: 1;
+			}
+		}	
+	}
+}
 
 /*======================================
 =            FOOTER #FOOTER            =
