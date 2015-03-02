@@ -3,9 +3,9 @@ jQuery(document).ready(function ($) {
 	$(function(){
 		$('#maximage').maximage({
 			cycleOptions: {
-				fx:'scrollHorz',
+				fx:'fade',
 				speed: 800,
-				timeout: 8000,
+				timeout: 10,
 				prev: '#arrow_left',
 				next: '#arrow_right'
 			},
