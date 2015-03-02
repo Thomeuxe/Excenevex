@@ -725,10 +725,10 @@ section.actu{
 }
 
 @media (min-width: @screen-sm-min) {
-	section.actu {
-		/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-		margin-top:85vh;
-		/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+	#content-page {
+		position: absolute;
+		margin-top: 70vh;
+		z-index: 999;
 	}
 }
 
@@ -742,10 +742,7 @@ section.actu{
 
 aside#sidebar{
 	background-color: #B9B9B9;
-	height: 1000px;	
-	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
-	margin-top: 100vh;
-	/* A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER A SUPPRIMER  */
+	height: 1000px;
 }
 
 
@@ -824,6 +821,8 @@ nav.inset{
 /*======================================
 =            METEO SECTION (#meteo)    =
 ======================================*/
+
+#maximage {}
 
 #meteo-section{
 	font-weight: 700;
@@ -912,7 +911,6 @@ nav.inset{
 
 /*-----  End of FOOTER #FOOTER  ------*/
 
-
 #cycle-loader {
 	height:32px;
 	left:50%;
@@ -923,29 +921,30 @@ nav.inset{
 	z-index:999;
 }
 
-/*I want to avoid jumpiness as the JS loads, so I initially hide my cycle*/
+///*I want to avoid jumpiness as the JS loads, so I initially hide my cycle*/
+//#maximage {
+//	display:none;/* Only use this if you fade it in again after the images load */
+//	position:fixed !important;
+//}
+
 #maximage {
-	display:none;/* Only use this if you fade it in again after the images load */
-	position:fixed !important;
+	position: absolute;
 }
 
 #arrow_left, #arrow_right {
-	bottom:30px;
+	bottom: 150px;
 	height:67px;
 	position:absolute;
 	right:30px;
 	width:36px;
 	z-index:1000;
+	
+	&:hover, &:active {
+		bottom: 149px;
+	}
 }
 #arrow_left {
 	right:86px;
-}
-
-#arrow_left:hover, #arrow_right:hover {
-	bottom:29px;
-}
-#arrow_left:active, #arrow_right:active {
-	bottom:28px;
 }
 
 .in-slide-content { 
