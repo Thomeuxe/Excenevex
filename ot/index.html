@@ -33,33 +33,29 @@
 </head>
 
 <body class="container-fluid">
-<!--
-	<div id="slider-owl" class="owl-carousel owl-theme">
-		<div class="item"><img src="img/slider/3.jpg" alt=""></div>
-		<div class="item"><img src="img/slider/2.jpg" alt=""></div>
-		<div class="item"><img src="img/slider/1.jpg" alt=""></div>
-	</div>
--->
-	<a href="" id="arrow_left"><img src="../img/slider/arrow_left.png" alt="Slide Left" /></a>
-	<a href="" id="arrow_right"><img src="../img/slider/arrow_right.png" alt="Slide Right" /></a>
-	<img id="cycle-loader" src="../img/slider/ajax-loader.gif" />
-	<div id="maximage">
-		<div>
-			<img src="img/slider/3.jpg" alt="" />
-			<div class="in-slide-content" style="display:none;">
-				<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+	<div id="maximage-container" class="hidden-xs">
+		<a href="" id="arrow_left"><img src="../img/slider/arrow_left.png" alt="Slide Left" /></a>
+		<a href="" id="arrow_right"><img src="../img/slider/arrow_right.png" alt="Slide Right" /></a>
+		<img id="cycle-loader" src="../img/slider/ajax-loader.gif" />
+
+		<div id="maximage">
+			<div>
+				<img src="img/slider/3.jpg" alt="" />
+				<div class="in-slide-content" style="display:none;">
+					<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+				</div>
 			</div>
-		</div>
-		<div>
-			<img src="img/slider/2.jpg" alt="" />
-			<div class="in-slide-content" style="display:none;">
-				<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+			<div>
+				<img src="img/slider/2.jpg" alt="" />
+				<div class="in-slide-content" style="display:none;">
+					<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+				</div>
 			</div>
-		</div>
-		<div>
-			<img src="img/slider/1.jpg" alt="" />
-			<div class="in-slide-content" style="display:none;">
-				<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+			<div>
+				<img src="img/slider/1.jpg" alt="" />
+				<div class="in-slide-content" style="display:none;">
+					<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -154,52 +150,82 @@
 			</ul>
 		</nav>
 	</header>
-
-	<section class="visible-xs row full-slider">
-		<figure>
-			<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
-			<figcaption>
-				<h2>Excenevex Plage</h2>
-				<p>La plage ouvre ses portes !</p>
-			</figcaption>
-		</figure>
-	</section>
-
-	<nav class="row inset visible-xs">
-		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-bed"></i><p>Où se loger</p></a>
-		</div>
-		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-cutlery"></i><p>Où Manger</p></a>
-		</div>
-		<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-child"></i><p>Se divertir</p></a>
-		</div>
-	</nav>
-
-	<section id="meteo-section" class="visible-xs">
-		<header>
-			<h2>La météo d'Excenevex</h2>
-			<h3>18 Jan. 2015</h3>
-		</header>
-		<div class="row">
-			<div class="col-xs-4">
-				<img class="ensoleillement" src="img/meteo/sun.svg" class="full-width-image" alt="Beau temps">
-			</div>
-			<p class="col-xs-8 temperature">
-				15°/18°
-			</p>
-		</div>
-		<p>Lever de soleil <span class="mainColor">9h12</span>
-		</p>
-		<p>Coucher de soleil <span class="mainColor">17h35</span>
-		</p>
-	</section>
-	<div class="row">
-
-
-<!--
-		<section class="pc-slider visible-sm visible-md visible-lg">
-			<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
+	<div id="content-page">
+		<section class="visible-xs row full-slider">
+			<figure>
+				<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
+				<figcaption>
+					<h2>Excenevex Plage</h2>
+					<p>La plage ouvre ses portes !</p>
+				</figcaption>
+			</figure>
 		</section>
--->
+
+		<nav class="row inset visible-xs">
+			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-bed"></i><p>Où se loger</p></a>
+			</div>
+			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-cutlery"></i><p>Où Manger</p></a>
+			</div>
+			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-child"></i><p>Se divertir</p></a>
+			</div>
+		</nav>
+
+		<section id="meteo-section" class="visible-xs">
+			<header>
+				<h2>La météo d'Excenevex</h2>
+				<h3>18 Jan. 2015</h3>
+			</header>
+			<div class="row">
+				<div class="col-xs-4">
+					<img class="ensoleillement" src="img/meteo/sun.svg" class="full-width-image" alt="Beau temps">
+				</div>
+				<p class="col-xs-8 temperature">
+					15°/18°
+				</p>
+			</div>
+			<p>Lever de soleil <span class="mainColor">9h12</span>
+			</p>
+			<p>Coucher de soleil <span class="mainColor">17h35</span>
+			</p>
+		</section>
+		<div class="row">
+	<!--
+			<section class="pc-slider visible-sm visible-md visible-lg">
+				<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
+			</section>
+	-->
+			<section class="actu col-sm-9">
+	
+				<!--<header>
+					<h2><span>Les dernières actualités</span></h2>
+				</header>-->
+	
+				<div>
+					<article>
+						<header>
+							<a href="#"><h3>La programmation des Mardis Sablés annoncée !</h3></a>
+						</header>
+						<img src="img/article/soiree.jpg">
+						<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
+						<aside>
+							<a href="#"><i class="fa fa-angle-right"></i>En savoir<span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x fa-inverse"></i></span></a>
+						</aside>
+						</div>
+					</article>
+
+					<article>
+						<header>
+							<a href="#"><h3>La programmation des Mardis Sablés annoncée !</h3></a>
+						</header>
+						<img class="hidden-xs" src="img/article/soiree.jpg">
+						<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
+						<aside>
+							<a href="#"><i class="fa fa-angle-right"></i>En savoir<span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x fa-inverse"></i></span></a>
+						</aside>
+						</div>
+					</article>
 
 
 		<section id="actus" class="actu col-sm-9">
@@ -222,35 +248,36 @@
 					</div>
 				</article>
 
-				<article>
-					<header>
-						<a href="#"><h3>La programmation des Mardis Sablés annoncée !</h3></a>
-					</header>
-					<img class="hidden-xs" src="img/article/soiree.jpg">
-					<div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
-					<aside>
-						<a href="#"><i class="fa fa-angle-right"></i>En savoir<span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x fa-inverse"></i></span></a>
-					</aside>
-					</div>
-				</article>
+					<article>
+						<header>
+							<a href="#"><h3>La programmation des Mardis Sablés annoncée !</h3></a>
+						</header>
+						<img src="img/article/soiree.jpg">
+						<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
+						<aside>
+							<a href="#"><i class="fa fa-angle-right"></i>En savoir<span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x fa-inverse"></i></span></a>
+						</aside>
+						</div>
+					</article>
+				</div>
 
-				<article>
-					<header>
-						<a href="#"><h3>La programmation des Mardis Sablés annoncée !</h3></a>
-					</header>
-					<img src="img/article/soiree.jpg">
-					<div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
-					<aside>
-						<a href="#"><i class="fa fa-angle-right"></i>En savoir<span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x fa-inverse"></i></span></a>
-					</aside>
-					</div>
-				</article>
-			</div>
+				<a href="#" class="button visible-xs">Voir toutes les actualités de l'office du tourisme</a>
 
-			<a href="#" class="button visible-xs">Voir toutes les actualités de l'office du tourisme</a>
+				<nav id="navDots" class="hidden-xs">
+					<ul class="">
+						<li><a href="#">&lt;Page précédente</a></li>
+						<li class="nav"><a href="#">1</a></li>
+						<li class="nav"><a href="#">1</a></li>
+						<li class="nav"><a href="#">1</a></li>
+						<li class="nav"><a href="#">1</a></li>
+						<li><a href="#">Page suivante&gt;</a></li>
+					</ul>
+			</section>
 
+			<aside class="hidden-xs col-sm-3" id="sidebar">
+
+<<<<<<< HEAD
 			<nav id="navDots" class="hidden-xs">
 				<ul class="">
 					<li><a href="#">&lt;Page précédente</a></li>
@@ -262,20 +289,19 @@
 				</ul>
 			</nav>
 		</section>
+=======
+			</aside>
+		</div>
+>>>>>>> origin/master
 
-		<aside class="hidden-xs col-sm-3" id="sidebar">
-			
-		</aside>
+		<footer id="footer" class="row">
+			<p><a href="#">Plan du site</a>
+			</p>
+			<p><a href="#">Basculer sur le site de la municipalité</a>
+			</p>
+			<p>Tous droits réservés &copy; 2015 | Excenevex Plage</p>
+		</footer>
 	</div>
-
-	<footer id="footer" class="row">
-		<p><a href="#">Plan du site</a>
-		</p>
-		<p><a href="#">Basculer sur le site de la municipalité</a>
-		</p>
-		<p>Tous droits réservés &copy; 2015 | Excenevex Plage</p>
-	</footer>
-
 </body>
 
 </html>
