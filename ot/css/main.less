@@ -593,16 +593,7 @@ section{
 =            Section .actu            =
 =====================================*/
 
-/*section div#fond-actu{
-	background: @light;
-
-}*/
-.row{
-	margin-right: 0px;
-}
-
 section.actu{
-	padding:0;
 	article{
 		header{
 			margin-bottom: @padding;
@@ -667,7 +658,7 @@ section.actu{
 	
 	@media(min-width: @screen-sm-min) {
 		>div {
-			.shadow();
+			//.shadow();
 			
 			article {
 				background: #fff;
@@ -729,9 +720,12 @@ section.actu{
 
 @media (min-width: @screen-sm-min) {
 	#content-page {
-		position: absolute;
-		margin-top: 70vh;
-		z-index: 999;
+		position: relative;
+		margin-top: 80vh;
+	}
+	
+	section.actu {
+		padding-right: 0;//pour coller la sidebar
 	}
 }
 
@@ -744,8 +738,14 @@ section.actu{
 =========================================================*/
 
 aside#sidebar{
-	background-color: #B9B9B9;
+	padding-left: 0; //pour coller la sidebar
 	height: 1000px;
+	p {
+		background: #b9b9b9;
+		display: inline-block;
+		height: 1000px;
+		width: 100%;
+	}
 }
 
 
@@ -838,34 +838,32 @@ section.full-slider{
 	}
 }
 
-slider-owl {
-	position: absolute;
-	z-index: -1;
-	top:0;
-	left: 0;
-}
-
 /*-----  End of Index Full slider (.full-slider)  ------*/
 
 /*=================================
 =			Dropdown #dropdown    =
 =================================*/
-nav#dropdown{
-	position: absolute;
-	margin-top: 60vh;
-	text-align:center;
-	width: 100%;
-	a{
-		display: inline-block;
-		border-radius: 50%;
-		background-color: @mainColor;
-		color: white;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+nav#dropdown-link {
+	text-align: center;
+	position: relative;
+	top: 60vh;
+	a {
+		.fa-stack{
+			margin-left: 10px;
+
+			i:first-child {
+				font-size: 50px;
+				line-height: 35px;
+				color: @mainColor;
+			}
+			i:last-child {
+				text-indent: 7px;
+			}
+		}
 	}
 }
+
 
 /*=================================
 =            NAV.inset            =
