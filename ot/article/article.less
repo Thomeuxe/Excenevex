@@ -25,3 +25,62 @@
 @screen-lg-min: 1200px;
 
 /*-----  End of VARIABLES  ------*/
+
+.row{
+	margin-right: -15px;
+}
+
+.background{
+	background: url("../img/background.jpg");
+	position: absolute;
+	top: 0px;
+	left:0px;
+	z-index: -1;
+	width:100%;
+	height: 100vh;
+	background-position: -100px;
+
+}
+
+.articleContent{
+	background: white;
+	margin: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	margin-top:30vh;
+	article{
+		padding: 0px;
+		header{
+			height: 1000px;
+			.imgUne{
+				background: url("../../img/article/canoe.jpg");
+				background-position:70% 60%;
+				background-size: cover;
+				width: 100%;
+				height:50vh;
+			}
+			.titre{
+				padding: 0 10px;
+				background:#f0954b;
+			h1{
+				line-height:50px;
+				margin:0;
+				text-transform: uppercase;
+				color:white;
+				font-family: @specialFont;
+				font-weight: 700;
+				font-size:30px;
+				@media (max-width:@screen-xs-max){
+					font-size: 15px;
+				}
+			}
+			}
+		}
+		
+	}
+	aside{
+		color:grey;
+	}
+
+}
+
+
