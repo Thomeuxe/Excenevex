@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	});
-	
+
 // ResponsiveMenu
 	$('#responsiveMenu>ul').hide();
 
