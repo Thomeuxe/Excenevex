@@ -924,39 +924,38 @@ nav.inset{
 #navDots{
 	margin-top: 30px;
 	text-align: center;
-	ul{
-		display: inline-block;
-
-		li:first-child a{
-			color: @greyColor;
-		}
-		li:last-child a{
-			color:@greyColor;
-		}
-		li{
-			float:left;
-			margin:0px 10px;
-			a{
-				text-transform: uppercase;	
-				line-height: 30px;
-				color:@text;
-			}
-
-		}
-		.nav a{
+	ul {
+		li {
 			display: inline-block;
-			width:30px;
-			height: 30px;
-			background: @mainColor;
-			transition: all ease-out 0.3s;
-			overflow: visible;
-			border-radius: 50%;
-			opacity: 0.7;
-			&:hover{
-				transition: all ease-in 0.3s;
-				opacity: 1;
+			a {
+				letter-spacing: -1px;
+				font-weight: 700;
 			}
-		}	
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+			&:first-child a, &:last-child a{
+				text-transform: uppercase;
+				color: @mainColor;
+				&[href=""]{
+					color: @greyColor
+				}
+			}
+
+		}
+		.dots {
+			a {
+				background: @mainColor;
+				border-radius: 100%;
+				width: 30px; height: 30px;
+				display: block;
+				color: #fff;
+				line-height: 30px;
+			}
+			&.current a, &.visited a {
+				background: @greyColor;
+			}
+		}
 	}
 }
 
