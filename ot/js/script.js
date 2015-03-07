@@ -4,16 +4,22 @@ jQuery(document).ready(function ($) {
 		$('#maximage').maximage({
 			cycleOptions: {
 				fx:'fade',
-				speed: 800,
-				timeout: 10,
+				speed: 1000,
+				timeout: 5000, // 1s = 1000
 				prev: '#arrow_left',
-				next: '#arrow_right'
+				next: '#arrow_right',
+				pause: 1
 			},
 			onFirstImageLoaded: function(){
 				jQuery('#cycle-loader').hide();
 				jQuery('#maximage').fadeIn('fast');
-			}
+			},
+			// cssBackgroundSize might be causing choppiness in retina display safari
+			// cssBackgroundSize: false <-- ajoute un scroll horizontal donc à voir si c'est vraiment utile...
 		});
+		
+		// To show it is dynamic html text
+		jQuery('.in-slide-content').delay(1200).fadeIn();
 	});
 
 // ResponsiveMenu

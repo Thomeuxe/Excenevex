@@ -108,34 +108,34 @@
 =        BOUNCE EFFECT         =
 ==============================*/
 
-@-webkit-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {
-		.translate(0, 0);
-	}
-	40% {
-		.translate(0, -15px);
-	}
-	60% {
-		.translate(0, -7px);
-	}
-}
-
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {
-		.translate(0, 0);
-	}
-	40% {
-		.translate(0, -15px);
-	}
-	60% {
-		.translate(0, -7px);
-	}
-}
-
-.bounce {
-	animation: bounce 2s infinite;
-	-webkit-animation: bounce 2s infinite;
-}
+//@-webkit-keyframes bounce {
+//	0%, 20%, 50%, 80%, 100% {
+//		.translate(0, 0);
+//	}
+//	40% {
+//		.translate(0, -15px);
+//	}
+//	60% {
+//		.translate(0, -7px);
+//	}
+//}
+//
+//@keyframes bounce {
+//	0%, 20%, 50%, 80%, 100% {
+//		.translate(0, 0);
+//	}
+//	40% {
+//		.translate(0, -15px);
+//	}
+//	60% {
+//		.translate(0, -7px);
+//	}
+//}
+//
+//.bounce {
+//	animation: bounce 2s infinite;
+//	-webkit-animation: bounce 2s infinite;
+//}
 
 /*---  End of Bounce-effect  ----*/
 
@@ -783,8 +783,6 @@ aside#sidebar{
 	}
 }
 
-
-
 /*========================================================
 =            Index Full slider (.full-slider)            =
 =========================================================*/
@@ -828,21 +826,20 @@ aside#sidebar{
 	#maximage {
 		position: absolute;
 		
-		.in-slide-content { 
-//			color:#333;
-//			float:right;
-//			font-family:'Helvetica Neue', helvetica;
-//			font-size:60px;
-//			font-weight:bold;
-//			right:0;
-//			margin:40px;
-//			padding:20px;
-//			position:absolute;
-//			top:0;
-//			width:700px;
-//			z-index:9999; /* Show above .gradient */
-//			text-shadow: 0 1px 0 #fff;
-//			-webkit-font-smoothing:antialiased;
+		.in-slide-content {
+			color: #fff;
+			.border-radius(5px);
+			background: rgba(0,0,0,0.5);
+			padding: 20px;
+			text-shadow: 0 2px 3px #000;
+			float:right;
+			font-size:30px;
+			right:20px;
+			position:absolute;
+			bottom: 150px;
+			width: 35%;
+			z-index:9999; /* Show above .gradient */
+			-webkit-font-smoothing:antialiased;
 		}
 	}
 }
@@ -897,7 +894,6 @@ nav#dropdown-link {
 	position: relative;
 	top: 70vh;
 	
-	.bounce;
 	a {
 		.fa-stack{
 			margin-left: 10px;
