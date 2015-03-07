@@ -104,6 +104,41 @@
 
 /*---  End of Ripple-effect  ----*/
 
+/*==============================
+=        BOUNCE EFFECT         =
+==============================*/
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		.translate(0, 0);
+	}
+	40% {
+		.translate(0, -15px);
+	}
+	60% {
+		.translate(0, -7px);
+	}
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		.translate(0, 0);
+	}
+	40% {
+		.translate(0, -15px);
+	}
+	60% {
+		.translate(0, -7px);
+	}
+}
+
+.bounce {
+	animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+}
+
+/*---  End of Bounce-effect  ----*/
+
 /*===============================
 =            GENERAL            =
 ===============================*/
@@ -545,10 +580,10 @@ a.bubble{
 					
 					&:hover .submenu {
 						z-index: 1;
-						@media(max-width: 1110px) {li a {transform: translateY(70px);}}
+						@media(max-width: 1110px) {li a {.translate(0, 70px);}}
 						li a {
 							opacity: 1;
-							transform: translateY(100px);
+							.translate(0, 100px);
 							transition: all .1s ease-out;
 						}
 						li a.transition-delay0 {transition-delay: 0 !important;}
@@ -762,20 +797,33 @@ aside#sidebar{
 		position: absolute;
 		z-index:999;
 	}
+	
 	#arrow_left, #arrow_right {
-		bottom: 150px;
+		bottom:30px;
+		height:67px;
 		position:absolute;
 		right:30px;
+		width:36px;
 		z-index:1000;
-		transition: all ease-out 0.3s;
-
-		&:hover, &:active {
-			transition: all ease-in 0.3s;
+		transition: all 0.3s ease-out;
+		
+		&:hover {
+			transition: all 0.3s ease-in;
 		}
 	}
 	#arrow_left {
-		right:70px;
+		right:100px;
+		&:hover {
+			.translate(0, -3px);
+		}
 	}
+	
+	#arrow_right {
+		&:hover {
+			.translate(0, -3px);			
+		}
+	}
+
 	
 	#maximage {
 		position: absolute;
@@ -847,7 +895,9 @@ section.full-slider{
 nav#dropdown-link {
 	text-align: center;
 	position: relative;
-	top: 60vh;
+	top: 70vh;
+	
+	.bounce;
 	a {
 		.fa-stack{
 			margin-left: 10px;
