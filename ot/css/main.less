@@ -640,12 +640,20 @@ section{
 
 section.actu{
 	article{
+		padding: @padding;
+		@media(max-width: @screen-xs-max) {
+			background: @light;
+			border-bottom:solid 3px #ccc;
+			.border-radius(3px);
+			margin-bottom: 15px;
+		}
 		header{
 			margin-bottom: @padding;
 			font-size: 0;
 			a.title {
 				color: @mainColor;
 				display: inline-block;
+				text-transform: uppercase;
 			}
 
 			.social-buttons {
@@ -669,122 +677,73 @@ section.actu{
 				}
 			}	
 		}
-		background: @light;
-		padding: 15px;
-		img {
-			//Pourquoi ça ne marche pas pour les medias xs ??
-			.border-radius(3px);
-		}
-		aside{
-			font-weight: 700;
-			.fa-angle-right{
-				//display: none;
-				margin-right: 10px;
-			}
-			.fa-stack{
-				margin-left: 10px;
-				
-				i:first-child {
-					font-size: 50px;
-					line-height: 35px;
+		section {
+			@media(max-width: @screen-xs-max){
+				text-align: center;
+				img{ width: 90%;}
+				p {
+					text-align: left;
 				}
-				i:last-child {
-					text-indent: 7px;
-				}
+				aside {text-align:right;}
 			}
-			a{
-				display: block;
-				margin: -@padding;
-				padding: @padding;
-				margin-top: 0;
-				color: @mainColor;
-			}
-		}
-	}
-	
-	>a {
-		&:hover {
-		color: #fff;
-	}
-	}
-	
-	@media(max-width: @screen-xs-max) {
-		article {
-			margin-top: @padding;
-			.border-radius(3px);
-			text-align: center;
-			img {
-				width: 100%;
-				padding: @padding;
-			}
-			
-			div {
-				text-align: left;
-				aside {
-					text-align: right;
-				}
-			}
-		}
-	}
-	
-	@media(min-width: @screen-sm-min) {
-		>div {
-			//.shadow();
-			
-			article {
-				background: #fff;
-				//margin-bottom: @padding;
-				font-size: 0;
 
-				&:first-child {
-					.border-top-radius(3px);				
-				}
-				&:last-child {
-					.border-bottom-radius(3px;)
-				}
-
-				img {
-					display: inline-block;
-					vertical-align: top;
+			@media(min-width: @screen-sm-min){
+				img{
 					width: 100%;
+					float: left;
+					margin-right: 15px;
+					margin-bottom: 5px;
+					
 				}
+				&:after {
+				   content: " "; /* Older browser do not support empty content */
+				   visibility: hidden;
+				   display: block;
+				   height: 0;
+				   clear: both;
+				}
+			}
+			@media(min-width: @screen-md-min){
+				img{ width: 50%;}
+			}
+			img{
+				.border-radius(3px);
+				margin-bottom: 15px;
+			}
+			p{
+				font-size: 16px;
+			}
+			aside{
+				a {
+					color: @mainColor;
+					font-weight: 700;
 
-				div {
-					width: 100%;
-					display: inline-block;
-					padding: 0 @padding;
-
-					p, aside {
-						font-size: 18px;
+					span.text {
+						text-transform: uppercase;
+						font-size: 14px;
+					}
+					.fa-angle-right{
+						display: none;
+						margin-right: 10px;
+					}
+					.fa-stack{
+						margin-left: 5px;
+						i:first-child{
+							font-size: 50px;
+							line-height: 35px;
+						}
+						i:last-child{
+							text-indent: 7px;
+						}
 					}
 				}
 			}
 		}
 	}
 	
-	@media (min-width: @screen-sm-min) {
-		div article {
-			img {
-				margin-bottom: @padding;
-			}
-		}
-	}
-	@media (min-width: @screen-md-min) { 
-		div article {
-			img{
-				width: 40%;
-			}
-			div {
-				width: 60%;
-			}
-		}
-	}
-	
-	@media (min-width: @screen-lg-min) {
-		div article {
-			img, div {
-				width: 50%;
-			}
+	>a {
+		&:hover , &:active, &:focus{
+			color: #fff;
 		}
 	}
 }
