@@ -11,6 +11,7 @@
 @mainColor: #ec7b1e;
 @complementaryColor: #3a509b;
 @greyColor:#B9B9B9;
+@greyBrownColor: #b5ada2;
 @light: lighten(@complementaryColor,50%);
 
 @specialFont: 'Quicksand', sans-serif;
@@ -641,6 +642,32 @@ section.actu{
 	article{
 		header{
 			margin-bottom: @padding;
+			font-size: 0;
+			a.title {
+				color: @mainColor;
+				display: inline-block;
+			}
+
+			.social-buttons {
+				padding: 0;
+				width: auto;
+				display: inline-block;
+				right: 0;
+
+				span {
+					vertical-align: middle;
+					margin-left: 5px;
+					color: #fff;
+					background-color: @greyBrownColor;
+					.border-radius(5px);
+					padding: 3px 5px;
+					font-size: 18px;
+					font-weight: 100;
+					i {
+						margin-right: 5px;
+					}
+				}
+			}	
 		}
 		background: @light;
 		padding: 15px;
