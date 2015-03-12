@@ -474,6 +474,12 @@ a.bubble{
 				&.before::before{
 					top: -20px;
 				}
+
+				&.colorFix {
+					&::before{
+						border-bottom-color: @mainColor;
+					}
+				}
 			}
 		}
 	}

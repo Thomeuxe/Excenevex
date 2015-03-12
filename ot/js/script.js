@@ -24,7 +24,8 @@ jQuery(document).ready(function ($) {
 
 // ResponsiveMenu
 	$('#responsiveMenu>ul').hide();
-
+	if ($("#responsiveMenu>ul>li:first-child").hasClass("current-menu-item"))
+		$("#responsiveMenu>ul").addClass("colorFix");
 	$('#triggerMenu').click(function (event) {
 		$('#responsiveMenu>ul').stop().slideToggle(500,
 			function () {
