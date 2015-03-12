@@ -496,8 +496,9 @@ a.bubble{
 				display: block !important;
 				list-style: none;
 				
-				@media(max-width: 1110px) {li{margin: 0 10px;}}
 				li {
+					@media(max-width: 1110px) {margin: 0 10px;}
+					vertical-align: top;
 					display: inline-block;
 					border-radius: 100%;
 					margin: 0 20px 0 20px;
@@ -509,8 +510,8 @@ a.bubble{
 						}	
 					}
 					
-					@media(max-width: 1110px) {a{width: 100px; height: 100px;}}
 					a {
+						@media(max-width: 1110px) {width: 100px; height: 100px;}
 						display: block;
 						border-radius: 100%;
 						width: 150px;
@@ -521,8 +522,9 @@ a.bubble{
 						shape-outside: circle(50%);
 						webkit-clip-path: circle(50%);
 						
-						@media(max-width: 1110px) {span{line-height: 100px; font-size: 12px;}}
+						
 						 span {
+						 	@media(max-width: 1110px) {line-height: 100px; font-size: 12px;}
 							 display: block;
 							 text-align: center;
 							 line-height: 150px;
@@ -553,8 +555,8 @@ a.bubble{
 						li {
 							display: inline-block;
 							margin: 0;
-							@media(max-width: 1110px) {a{padding-top: 50px;}}
 							a {
+								@media(max-width: 1110px) {padding-top: 50px;}
 								transition: all .1s ease-in;
 								opacity: 0;
 								width: auto;
@@ -590,8 +592,8 @@ a.bubble{
 					
 					&:hover .submenu {
 						z-index: 1;
-						@media(max-width: 1110px) {li a {.translate(0, 70px);}}
 						li a {
+							@media(max-width: 1110px) {.translate(0, 70px);}
 							opacity: 1;
 							.translate(0, 100px);
 							transition: all .1s ease-out;
@@ -742,6 +744,9 @@ section.actu{
 	}
 	
 	>a {
+		@media (max-width: @screen-xs-max) {
+			border-bottom:solid 3px darken(@mainColor, 10%);
+		}
 		&:hover , &:active, &:focus{
 			color: #fff;
 		}
