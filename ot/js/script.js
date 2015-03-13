@@ -132,5 +132,27 @@ jQuery(document).ready(function ($) {
 		'height': $ensoleillement.height(),
 		'line-height': $ensoleillement.height() + 'px'
 	});
+// End of forecasts
+// Share-menu
+//    <aside class="social-buttons">
+//        <section class="share">
+//            <a href="#" title="Partager l'article sur les réseaux sociaux"><span><i class="fa fa-share-alt"></i>10</span></a>
+//            <div class="share-menu">
+//                <h6>Partager sur :</h6>
+//                <ul>
+//                    <li><i class="fa fa-facebook"></i> Facebook</li>
+//                    <li><i class="fa fa-twitter"></i> Twitter</li>
+//                </ul>
+//            </div>
+//        </section>
+//        <section class="comment">
+//            <a href="#" title="Commenter l'article"><span><i class="fa fa-comments-o"></i>12</span></a>
+//        </section>
+//    </aside>
+    $('.social-button .share-menu').hide();
+  $('.social-buttons .share>a').click(function() {
+      $(this).parent().find('.share-menu').slideDown();
+  });
+
 
 });
