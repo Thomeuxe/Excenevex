@@ -112,43 +112,43 @@
 =        BOUNCE EFFECT         =
 ==============================*/
 
-//@-webkit-keyframes bounce {
-//	0%, 20%, 50%, 80%, 100% {
-//		-webkit-transform: translateY(0);
-//    	transform: translateY(0);
-//	}
-//	40% {
-//		-webkit-transform: translateY(-15px);
-//    	transform: translateY(-15px);
-//	}
-//	60% {
-//		-webkit-transform: translateY(-7px);
-//		transform: translateY(-7px);
-//	}
-//}
-//
-//@keyframes bounce {
-//	0%, 20%, 50%, 80%, 100% {
-//		-webkit-transform: translateY(0);
-//		-ms-transform: translateY(0);
-//		transform: translateY(0);
-//	}
-//	40% {
-//		-webkit-transform: translateY(-15px);
-//		-ms-transform: translateY(-15px);
-//		transform: translateY(-15px);
-//	}
-//	60% {
-//		-webkit-transform: translateY(-7px);
-//		-ms-transform: translateY(-7px);
-//		transform: translateY(-7px);
-//	}
-//}
-//
-//.bounce {
-//	animation: bounce 2s infinite;
-//	-webkit-animation: bounce 2s infinite;
-//}
+@-webkit-keyframes bounce {
+	0%, 10%, 25%, 40%, 50%, 60%, 75%, 90%, 100% {
+		-webkit-transform: translateY(0);
+    	transform: translateY(0);
+	}
+	20%, 70% {
+		-webkit-transform: translateY(-30px);
+    	transform: translateY(-30px);
+	}
+	30%, 80 {
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+
+@keyframes bounce {
+	0%, 10%, 20%, 25%, 40%, 50%, 80%, 100% {
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+	20%, 40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	30%, 60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+
+.bounce {
+	animation: bounce 4s;
+	-webkit-animation: bounce 4s;
+}
 
 /*---  End of Bounce-effect  ----*/
 
@@ -1013,6 +1013,7 @@ nav#dropdown-link {
 	top: 70vh;
 	
 	a {
+        .bounce;
 		.fa-stack{
 			margin-left: 10px;
 
