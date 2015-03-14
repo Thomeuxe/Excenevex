@@ -13,6 +13,9 @@
 @greyColor:#B9B9B9;
 @greyBrownColor: #b5ada2;
 @light: lighten(@complementaryColor,50%);
+@facebookColor: #3b5998;
+@twitterColor: #33CCFF;
+@googlePlusColor: #DD4B39;
 
 @specialFont: 'Quicksand', sans-serif;
 
@@ -410,7 +413,6 @@ a.bubble{
 				}
 			}
 			>ul{
-				//display: none;
 				position: absolute;
 				left: 0;
 				right: 0;
@@ -452,7 +454,6 @@ a.bubble{
 							margin-left: 20px;
 						}
 						li a img {
-							//petit truc degueux..
 							vertical-align: top;
 						}
 					}
@@ -673,6 +674,7 @@ section.actu{
                 }
                 a {
                     &:hover{
+                        cursor: pointer;
                         span {
                             transition: all ease-in 0.3s;
                             background-color: darken(@greyBrownColor, 10%);
@@ -684,7 +686,7 @@ section.actu{
                     color: #fff;
                     background-color: @greyBrownColor;
                     .border-radius(5px);
-                    padding: 3px 5px;
+                    padding: 5px 5px 3px 5px;
                     font-weight: 100;
                     font-size: 18px;
                     i.fa {
@@ -696,58 +698,70 @@ section.actu{
                         content: "";
                         display: block;
                         position: absolute;
-                        top: -13px;
+                        top: 0px;
                         height: 0;
                         width: 0;
                         border: solid 7px transparent;
-                        border-bottom-color: rgba(181,173,162,0.9);
+                        border-bottom-color: rgba(181,173,162,1);
                         .transition(top 0.3s);
+                    }
+                    
+                    &.before::before{
+                        top: -13px;
                     }
                     position: absolute;
                     margin-top: 10px;
-                    background-color: rgba(181,173,162,0.9);
+                    background-color: rgba(181,173,162,1);
                     .border-radius(5px);
                     padding: 15px 20px;
                     
                     h6 {
                         color: #fff;
-                        margin-bottom: 10px;
+                        margin-bottom: 7px;
                     }
                     ul {
-                        text-align: center;
-                        font-weight: 100;
+                        text-indent: 35px;
                         font-size: 10px;
                         color: #fff;
                         li {
+                            a{
+                                width: 100%;
+                                display: block;
+                                background-color: #fff;
+                                .border-radius(20px);
+                                padding: 5px 0;
+                                .transition(all ease-out .3s);
+                                 &:hover {
+                                    letter-spacing: 2px;
+                                    transition-timing-function: ease-in;
+                                }
+                                &[title=facebook] {
+                                    color: @facebookColor;
+                                }
+                                &[title=twitter] {
+                                    color: @twitterColor;
+                                }
+                                &[title=googlePlus] {
+                                    color: @googlePlusColor;
+                                }
+                                i {
+                                    margin-right: 5px;
+                                    font-size: 12px;
+                                    position: absolute;
+                                    left: 0px;
+                                }
+                            }
+                            a, &:hover, &:focus, &:active {
+                                color: #fff;
+                            }
                             &:not(:last-child) {
-                                margin-bottom: 5px;
+                                margin-bottom: 7px;
                             }
                             
                         }
                     }
                 }
-            }
-
-//			.social-buttons {
-//				padding: 0;
-//				width: auto;
-//				display: inline-block;
-//				right: 0;
-//
-//				span {
-//					vertical-align: middle;
-//					margin-left: 5px;
-//					color: #fff;
-//					background-color: @greyBrownColor;
-//					.border-radius(5px);
-//					padding: 3px 5px;
-//					font-size: 18px;
-//					font-weight: 100;
-//					i {
-//						margin-right: 5px;
-//					}
-//				}
-//			}	
+            }	
 		}
 		section {
 			@media(max-width: @screen-xs-max){
