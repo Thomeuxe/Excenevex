@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
 			cycleOptions: {
 				fx:'fade',
 				speed: 1000,
-				timeout: 5000, // 1s = 1000
+				timeout: 10000, // 1s = 1000
 				prev: '#arrow_left',
 				next: '#arrow_right',
 				pause: 1
@@ -136,7 +136,8 @@ jQuery(document).ready(function ($) {
 // Social menus
     $('.social-buttons .share-menu').hide();
     $('.social-buttons .share>a').click(function (event) {
-        $(this).parent().find('.share-menu').slideToggle(100,
+        $(this).toggleClass('active');
+        $(this).parent().find('.share-menu').slideToggle(200,
             function (){
                 $(this).toggleClass('before');
             }

@@ -558,7 +558,7 @@ a.bubble{
 						height: auto;
 						position: absolute;
 						top: 0;
-						z-index: -1;
+						z-index: -1 !important;
 						li {
 							display: inline-block;
 							margin: 0;
@@ -673,27 +673,31 @@ section.actu{
                     margin: 0;
                 }
                 a {
-                    &:hover{
+                    
+                    &:hover, &.active{
                         cursor: pointer;
-                        span {
-                            transition: all ease-in 0.3s;
+                        span.buttons {
+                            text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+                            transition-timing-function: ease-in;
                             background-color: darken(@greyBrownColor, 10%);
                         }
                     }
-                }
-                span {
-                    margin-left: 5px;
-                    color: #fff;
-                    background-color: @greyBrownColor;
-                    .border-radius(5px);
-                    padding: 5px 5px 3px 5px;
-                    font-weight: 100;
-                    font-size: 18px;
-                    i.fa {
-                        margin-right: 5px;
+                    span.buttons {
+                        transition: all ease-out 0.3s;
+                        margin-left: 5px;
+                        color: #fff;
+                        background-color: @greyBrownColor;
+                        .border-radius(5px);
+                        padding: 5px 5px 3px 5px;
+                        font-weight: 100;
+                        font-size: 18px;
+                        i.fa {
+                            margin-right: 5px;
+                        }
                     }
                 }
                 .share-menu {
+                    .shadow();
                     &::before{
                         content: "";
                         display: block;
@@ -702,16 +706,15 @@ section.actu{
                         height: 0;
                         width: 0;
                         border: solid 7px transparent;
-                        border-bottom-color: rgba(181,173,162,1);
+                        border-bottom-color: darken(@greyBrownColor, 10%);
                         .transition(top 0.3s);
                     }
-                    
                     &.before::before{
                         top: -13px;
                     }
                     position: absolute;
                     margin-top: 10px;
-                    background-color: rgba(181,173,162,1);
+                    background-color: darken(@greyBrownColor, 10%);
                     .border-radius(5px);
                     padding: 15px 20px;
                     
@@ -720,39 +723,70 @@ section.actu{
                         margin-bottom: 7px;
                     }
                     ul {
-                        text-indent: 35px;
                         font-size: 10px;
                         color: #fff;
                         li {
                             a{
                                 width: 100%;
                                 display: block;
+                                overflow: hidden;
                                 background-color: #fff;
                                 .border-radius(20px);
                                 padding: 5px 0;
-                                .transition(all ease-out .3s);
-                                 &:hover {
-                                    letter-spacing: 2px;
-                                    transition-timing-function: ease-in;
-                                }
+                                .transition(all ease-out .2s);
+                                
                                 &[title=facebook] {
                                     color: @facebookColor;
+                                    span i::after {
+                                        background: @facebookColor;
+                                    }
                                 }
                                 &[title=twitter] {
                                     color: @twitterColor;
+                                    span i::after {
+                                        background: @twitterColor;
+                                    }
                                 }
                                 &[title=googlePlus] {
                                     color: @googlePlusColor;
+                                    span i::after {
+                                        background: @googlePlusColor;
+                                    }
                                 }
-                                i {
-                                    margin-right: 5px;
-                                    font-size: 12px;
-                                    position: absolute;
-                                    left: 0px;
+                                span {
+                                    .transition(all ease-in .2s);
+                                    i {
+                                        position: relative;
+                                        left: -20px;
+                                        opacity: 0;
+                                        font-size: 12px;
+                                        .transition(all ease-out .05s);
+                                        &::after{
+                                            content: "";
+                                            opacity: 0.4;
+                                            display: inline-block;
+                                            position: absolute;
+                                            top: -5px;
+                                            left: 17px;
+                                            width: 1px;
+                                            height: 22px;
+                                            z-index: 999;
+                                        }
+                                    }
                                 }
-                            }
-                            a, &:hover, &:focus, &:active {
-                                color: #fff;
+                                &:hover {
+                                    .shadow();
+                                    transition-timing-function: ease-in-out;
+                                    span {
+                                        margin-left: 20px;
+                                        i {
+                                            .transition(all ease-out .1s);
+                                            transition-delay: 0.25s;
+                                            opacity: 1;
+                                            left: -15px;
+                                        }
+                                    }
+                                }
                             }
                             &:not(:last-child) {
                                 margin-bottom: 7px;
