@@ -65,10 +65,56 @@
 /*==============================
 =            LISTHOTEL        =
 ==============================*/
+@media(max-width: @screen-md-min) {
+	.hoteltitle {
+		text-align: center; 
+	}
+}
 
-h1 {
-	color: @text;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: @mainColor;
+
+#listhotel{
+
+	h1 {
+		color: @text;
+		text-transform: uppercase;
+		text-align: left;
+		background-color: @mainColor;
+	}
+
+	.hotel {
+		img {
+			border-radius: 5%;
+		}
+
+		.hoteldescription {
+			.hoteltitle {
+
+				color: @greyColor;
+
+				h4 {
+					color: @greyColor;
+					display: inline-block;
+					text-transform: uppercase;
+				}
+				ul {
+					display: inline-block;
+				}
+				li {
+					display: inline-block;
+				}
+
+				h2 {
+					color: @mainColor;
+					text-transform: uppercase;
+					text-align: left;
+					padding: 0;
+				}
+			}
+			.hotelinfo {
+				h4 {
+					color: @text;
+				}
+			}
+		}
+	}
 }

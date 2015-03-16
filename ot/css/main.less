@@ -239,6 +239,30 @@ a{
 	}
 }
 
+a.more {
+	color: @mainColor;
+	font-weight: 700;
+
+	span.text {
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	.fa-angle-right{
+		display: none;
+		margin-right: 10px;
+	}
+	.fa-stack{
+		margin-left: 5px;
+		i:first-child{
+			font-size: 50px;
+			line-height: 35px;
+		}
+		i:last-child{
+			text-indent: 7px;
+		}
+	}
+}
+
 a.bubble{
 	.fa{
 		display: block;
@@ -834,29 +858,7 @@ section.actu{
 				font-size: 16px;
 			}
 			aside{
-				a {
-					color: @mainColor;
-					font-weight: 700;
-
-					span.text {
-						text-transform: uppercase;
-						font-size: 14px;
-					}
-					.fa-angle-right{
-						display: none;
-						margin-right: 10px;
-					}
-					.fa-stack{
-						margin-left: 5px;
-						i:first-child{
-							font-size: 50px;
-							line-height: 35px;
-						}
-						i:last-child{
-							text-indent: 7px;
-						}
-					}
-				}
+				
 			}
 		}
 	}
