@@ -1,0 +1,74 @@
+@import "lib/lesshat";
+@import "lib/font-awesome.min.css";
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+
+/*=================================
+=            VARIABLES            =
+=================================*/
+
+@background: #000;
+@text: #fff;
+@mainColor: #ec7b1e;
+@complementaryColor: #3a509b;
+@greyColor:#B9B9B9;
+@light: lighten(@complementaryColor,50%);
+
+@specialFont: 'Quicksand', sans-serif;
+
+@border-radius: 3px;
+@padding: 15px;
+
+/* Media-queries values : */
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+/*-----  End of VARIABLES  ------*/
+
+/*==============================
+=            MIXINS            =
+==============================*/
+.shadow(){
+	.box-shadow(0 2px 0 rgba(0,0,0,.15));
+	@media (min-width: 768px) {		
+		.box-shadow(0 2px 5px rgba(0,0,0,.15));
+	}
+}
+
+.brightness(@brightness) {
+	filter: brightness(@brightness);
+	-webkit-filter: brightness(@brightness);
+}
+
+.translate(@x, @y) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+.border-top-radius(@radius) {
+	border-top-left-radius: @radius;
+	border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius) {
+	border-bottom-left-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+
+
+/*-----  End of MIXINS  ------*/
+
+/*==============================
+=            LISTHOTEL        =
+==============================*/
+
+h1 {
+	color: @text;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: @mainColor;
+}
