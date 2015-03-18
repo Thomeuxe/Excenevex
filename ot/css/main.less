@@ -200,6 +200,11 @@ h2, h3, h4, h5, h6{
 }
 
 @media(min-width: @screen-sm-min) {
+    #content-page {
+		position: relative;
+		margin-top: 80vh;
+	}
+
 	h2  {
 		box-sizing: border-box;
 		padding: 0 @padding;
@@ -411,6 +416,25 @@ a.bubble{
 				}
 			}
 		}
+        #meteo {
+            div {
+                background: rgba(0,0,0,0.5);
+                display: block;
+                h2, h3 {
+                    display: inline-block;
+                }
+                h2 {
+                    font-size: 14px;
+                }
+                h3 {
+                    font-size: 14px;
+                }
+            }
+            .day {
+            }
+            .year {
+            }
+        }
 	}
 
 	// Menu for MOBILE
@@ -578,7 +602,7 @@ a.bubble{
 						}
 					}
 
-					.submenu {
+					.sub-menu {
 						height: auto;
 						position: absolute;
 						top: 0;
@@ -586,6 +610,7 @@ a.bubble{
 						li {
 							display: inline-block;
 							margin: 0;
+                            width: 60px;
 							a {
 								@media(max-width: 1110px) {padding-top: 50px;}
 								transition: all .1s ease-in;
@@ -608,7 +633,7 @@ a.bubble{
 									height: 40px;
 								}
 								span {
-									//opacity: 0;
+									opacity: 0;
 									color: #fff;
 									font-size: 11px;
 									line-height: 20px;
@@ -621,7 +646,7 @@ a.bubble{
 						}
 					}
 					
-					&:hover .submenu {
+					&:hover .sub-menu {
 						z-index: 1;
 						li a {
 							@media(max-width: 1110px) {.translate(0, 70px);}
@@ -642,7 +667,7 @@ a.bubble{
 						li a.transition-delay10 {transition-delay: .5s !important;}
 					}
 					
-					&:last-child .submenu {
+					&:last-child .sub-menu {
 						right: 5px;
 					}
 				}
@@ -874,11 +899,6 @@ section.actu{
 }
 
 @media (min-width: @screen-sm-min) {
-	#content-page {
-		position: relative;
-		margin-top: 80vh;
-	}
-	
 	section.actu {
 		padding-right: 0;//pour coller la sidebar
 	}
@@ -1049,9 +1069,7 @@ nav.inset{
 =            METEO SECTION (#meteo)    =
 ======================================*/
 
-#maximage {}
-
-#meteo-section{
+#meteo-mobile{
 	font-weight: 700;
 	//.border-radius(0);
 	padding: @padding;
