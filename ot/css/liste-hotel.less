@@ -11,6 +11,7 @@
 @mainColor: #ec7b1e;
 @complementaryColor: #3a509b;
 @greyColor:#B9B9B9;
+@yellowColor:#f0bc4b;
 @light: lighten(@complementaryColor,50%);
 
 @specialFont: 'Quicksand', sans-serif;
@@ -73,9 +74,18 @@
 		text-transform: uppercase;
 		text-align: left;
 		background-color: @mainColor;
+		width: 100%;
+		padding: 0;
 	}
 
 	.hotel {
+
+		padding-bottom: 3vh;
+		padding-top: 3vh;
+		&:hover {
+			background-color: rgba(185, 185, 185, 0.3)
+		}
+
 		img {
 			border-radius: 5%;
 		}
@@ -113,6 +123,89 @@
 					text-align: right;
 				}
 			}
+		}
+	}
+}
+
+#sidebar {
+	margin-top: 3vh;
+	background-color: @yellowColor;
+	border-radius: @border-radius;
+
+	h2 {
+		padding-top: 2vh;
+	}
+	form {
+		margin-top: 4vh;
+		text-align: center;
+
+		label {
+			margin-top: 4vh;
+			text-transform: uppercase;
+			color: @text;
+		}
+
+		input {
+			border: none;
+			border-radius: @border-radius;
+		}
+
+		/*=================================
+		=     DESIGN INPUT TYPE RANGE     =
+		=================================*/
+
+		input[type=range]{
+			-webkit-appearance: none;
+		}
+
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+		}
+
+		input[type=range]:focus {
+			outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+		}
+
+		/* Special styling for WebKit/Blink */
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			border: 1px solid @mainColor;
+			border-radius: 3px;
+			cursor: pointer;
+			margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+		}
+
+		/* All the same stuff for Firefox */
+		input[type=range]::-moz-range-thumb {
+			border: 1px solid @mainColor;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		/* All the same stuff for IE */
+		input[type=range]::-ms-thumb {
+			border: 1px solid @mainColor;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		input[type=range]::-moz-range-track {
+			width: 70%;
+			cursor: pointer;
+			background: @text;
+		}
+
+		input[type=range]::-ms-track {
+			width: 70%;
+			cursor: pointer;
+			background: transparent;
+			color: transparent;
+		}
+		input[type=range]::-ms-fill-lower {
+			background: #3071a9;
+		}
+		input[type=range]::-ms-fill-upper {
+			background: #3071a9;
 		}
 	}
 }
