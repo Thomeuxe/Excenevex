@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
 	});
 	
 	// sub-menu for mobile
-	$('#responsiveMenu .sub-menu').parent().find(">a").append('<i class="visible-xs fa fa-angle-right"></i>'); // if there is a sub-menu, add a plus icon
+	$('#responsiveMenu .sub-menu').parent().find(">a").append('<i class="fa fa-angle-right"></i>'); // if there is a sub-menu, add a plus icon
 	$('#responsiveMenu>ul>li i').click(function (event) {
 		$(this).toggleClass('fa-rotate-90');
 		$(this).parent().parent().find('ul.sub-menu').stop().slideToggle();							 
