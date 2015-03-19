@@ -10,8 +10,8 @@
 @text: #fff;
 @mainColor: #ec7b1e;
 @complementaryColor: #3a509b;
-@greyColor:#B9B9B9;
-@yellowColor:#f0bc4b;
+@greyColor:#B9B9B9
+;@yellowColor:#f0bc4b;
 @light: lighten(@complementaryColor,50%);
 
 @specialFont: 'Quicksand', sans-serif;
@@ -128,12 +128,14 @@
 }
 
 #sidebar {
+	padding: 0;
 	margin-top: 3vh;
 	background-color: @yellowColor;
 	border-radius: @border-radius;
 
 	h2 {
 		padding-top: 2vh;
+		text-align: center;
 	}
 	form {
 		margin-top: 4vh;
@@ -148,64 +150,91 @@
 		input {
 			border: none;
 			border-radius: @border-radius;
+
+			&:focus {
+				border: 1px solid @mainColor;
+				box-shadow: 1px 1px 10px @mainColor;
+			}
 		}
 
 		/*=================================
 		=     DESIGN INPUT TYPE RANGE     =
 		=================================*/
 
-		input[type=range]{
+		input[type=range] {
 			-webkit-appearance: none;
+			margin: 14px auto 0 auto;
+			width: 70%;
 		}
-
-		input[type=range]::-webkit-slider-thumb {
-			-webkit-appearance: none;
-		}
-
 		input[type=range]:focus {
-			outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+			outline: none;
+			border: none;
+			box-shadow: none;
 		}
-
-		/* Special styling for WebKit/Blink */
-		input[type=range]::-webkit-slider-thumb {
-			-webkit-appearance: none;
-			border: 1px solid @mainColor;
-			border-radius: 3px;
+		input[type=range]::-webkit-slider-runnable-track {
+			width: 70%;
+			height: 8.4px;
 			cursor: pointer;
-			margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+			animate: 0.2s;
+			background: @text;
+			border-radius: 1.3px;
 		}
-
-		/* All the same stuff for Firefox */
-		input[type=range]::-moz-range-thumb {
-			border: 1px solid @mainColor;
-			border-radius: 3px;
-			cursor: pointer;
-		}
-
-		/* All the same stuff for IE */
-		input[type=range]::-ms-thumb {
-			border: 1px solid @mainColor;
-			border-radius: 3px;
-			cursor: pointer;
-		}
-
+		// input[type=range]:focus::-webkit-slider-runnable-track {
+		// 	background: @text;
+		// }
 		input[type=range]::-moz-range-track {
 			width: 70%;
+			height: 8.4px;
 			cursor: pointer;
+			animate: 0.2s;
 			background: @text;
+			border-radius: @border-radius;
 		}
-
 		input[type=range]::-ms-track {
 			width: 70%;
+			height: 8.4px;
 			cursor: pointer;
+			animate: 0.2s;
 			background: transparent;
+			border-color: transparent;
+			border-width: 16px 0;
 			color: transparent;
 		}
+		input[type=range]::-webkit-slider-thumb {
+			border: 1px solid @mainColor;
+			height: 16px;
+			width: 16px;
+			border-radius: @border-radius;
+			background: #ffffff;
+			cursor: pointer;
+			-webkit-appearance: none;
+			margin-top: -4px;
+		}
+		input[type=range]::-moz-range-thumb {
+			border: 1px solid @mainColor;
+			height: 16px;
+			width: 16px;
+			border-radius: @border-radius;
+			background: #ffffff;
+			cursor: pointer;
+		}
+		input[type=range]::-ms-thumb {
+			border: 1px solid #000000;
+			height: 16px;
+			width: 16px;
+			border-radius: @border-radius;
+			background: @text;
+			cursor: pointer;
+		}
 		input[type=range]::-ms-fill-lower {
-			background: #3071a9;
+			background: @mainColor;
+			border-radius: 2.6px;
 		}
-		input[type=range]::-ms-fill-upper {
-			background: #3071a9;
+		input[type=range]::-ms-fill-lower {
+			background: @mainColor;
+			border-radius: 2.6px;
 		}
+		
+
 	}
 }
