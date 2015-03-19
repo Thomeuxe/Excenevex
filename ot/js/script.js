@@ -35,42 +35,42 @@ jQuery(document).ready(function ($) {
 		);
 	});
 	
-	// Submenu for mobile
-	$('#responsiveMenu .submenu').parent().find(">a").append('<i class="xs-visible fa fa-angle-right"></i>'); // if there is a submenu, add a plus icon
+	// sub-menu for mobile
+	$('#responsiveMenu .sub-menu').parent().find(">a").append('<i class="visible-xs fa fa-angle-right"></i>'); // if there is a sub-menu, add a plus icon
 	$('#responsiveMenu>ul>li i').click(function (event) {
 		$(this).toggleClass('fa-rotate-90');
-		$(this).parent().parent().find('ul.submenu').stop().slideToggle();							 
+		$(this).parent().parent().find('ul.sub-menu').stop().slideToggle();							 
 	});
 
-	// Fix for ripple-effect on submenu
+	// Fix for ripple-effect on sub-menu
 		// for mobile
 			if (window.matchMedia("(max-width: 767px)").matches) {
-				$('#responsiveMenu .submenu .sub-item').addClass('ripple--effect');
+				$('#responsiveMenu .sub-menu .sub-item').addClass('ripple--effect');
 			}
 			$(window).resize(function(event) {
 				if (window.matchMedia("(max-width: 767px)").matches) {
-					$('#responsiveMenu .submenu .sub-item img').removeClass('ripple--effect');
-					$('#responsiveMenu .submenu .sub-item').addClass('ripple--effect');
+					$('#responsiveMenu .sub-menu .sub-item img').removeClass('ripple--effect');
+					$('#responsiveMenu .sub-menu .sub-item').addClass('ripple--effect');
 				}
 			});
 
 		//for desktop
 			if (window.matchMedia("(min-width: 768px)").matches) {
-				$('#responsiveMenu .submenu .sub-item img').addClass('ripple--effect');
+				$('#responsiveMenu .sub-menu .sub-item img').addClass('ripple--effect');
 			}
 			$(window).resize(function(event) {
 				if (window.matchMedia("(min-width: 768px)").matches) {
-					$('#responsiveMenu .submenu .sub-item').removeClass('ripple--effect')
-					$('#responsiveMenu .submenu .sub-item img').addClass('ripple--effect');
+					$('#responsiveMenu .sub-menu .sub-item').removeClass('ripple--effect')
+					$('#responsiveMenu .sub-menu .sub-item img').addClass('ripple--effect');
 				}
 			});
 	// end of fix
 	
-	// Adding animation for .submenu for desktop
+	// Adding animation for .sub-menu for desktop
 		function animatedSubmenu() {
 			if (window.matchMedia("(min-width: 768px)").matches) {
 				$('#responsiveMenu ul li').each(function() {
-					$(this).find('.submenu li').each(function(index) {
+					$(this).find('.sub-menu li').each(function(index) {
 						//when mouse hover
 							$(this).find('a').addClass('transition-delay' + index);
 						//when mouse unhover
@@ -89,13 +89,13 @@ jQuery(document).ready(function ($) {
 		});
 	// end
 	
-	// Method to center the .submenu compared to responsiveMenu for desktop
+	// Method to center the .sub-menu compared to responsiveMenu for desktop
 		function centerSubmenu() {
 			if (window.matchMedia("(min-width: 768px)").matches) {
 				$('#responsiveMenu ul li').each(function() {
-					var x = $(this).find('.submenu li').length;
+					var x = $(this).find('.sub-menu li').length;
 					//TODO : ajouter la méthode pour centrer également entre min-width: 768px et max-width: 1110px
-					$(this).find('.submenu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
+					$(this).find('.sub-menu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
 				});
 			}
 		};
@@ -143,4 +143,15 @@ jQuery(document).ready(function ($) {
             }
         );
     });
+//End Social menus
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+	$(function () {
+		$('#dropdown-link a').bind('click', function (event) {
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 1500, 'easeInOutExpo');
+			event.preventDefault();
+		});
+	});
 });

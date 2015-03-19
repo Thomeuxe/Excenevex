@@ -1,6 +1,7 @@
 @import "lib/lesshat";
 @import "lib/font-awesome.min.css";
 @import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /*=================================
 =            VARIABLES            =
@@ -200,6 +201,11 @@ h2, h3, h4, h5, h6{
 }
 
 @media(min-width: @screen-sm-min) {
+    #content-page {
+        position: relative;
+        top: 80vh;
+	}
+
 	h2  {
 		box-sizing: border-box;
 		padding: 0 @padding;
@@ -306,6 +312,9 @@ a.bubble{
 
 
 #header{
+    @media(min-width: @screen-sm-min) {
+        min-height: 100%;
+    }
 	background: #eee;
 	height: 110px;
 	position: absolute;
@@ -411,6 +420,52 @@ a.bubble{
 				}
 			}
 		}
+        #meteo {
+            font-family: 'Montserrat', sans-serif;
+            margin-left: 40px;
+            margin-top: 5px;
+            display: inline-block;
+            header {
+                background: rgba(0,0,0,0.3);
+                .border-radius(2px);
+                width: auto;
+                padding: 5px;
+                h2, h3 {
+                    vertical-align: middle;
+                    font-weight: 400;
+                    display: inline-block;
+                }
+                h2 {
+                    text-align: left;
+                    padding: 0 5px;
+                    width: 90px;
+                    font-size: 10px;
+                }
+                h3 {
+                    width: 75px;
+                    font-size: 14px;
+                    text-align: right;
+                    color: #000;
+                    span.day {
+                        display: block;
+                        font-size: 18px;
+                    }
+                    span.year {
+                        display: block;
+                        font-size: 25px;
+                        opacity: .55;
+                        font-weight: 700;
+                    }
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+            .day {
+            }
+            .year {
+            }
+        }
 	}
 
 	// Menu for MOBILE
@@ -513,8 +568,8 @@ a.bubble{
 
 		#responsiveMenu {
 			position: absolute;
-			right: 0px;
-			
+            right: 0;
+            
 			ul {
 				height: 150px;
 				//clearfix
@@ -578,7 +633,7 @@ a.bubble{
 						}
 					}
 
-					.submenu {
+					.sub-menu {
 						height: auto;
 						position: absolute;
 						top: 0;
@@ -586,6 +641,7 @@ a.bubble{
 						li {
 							display: inline-block;
 							margin: 0;
+                            width: 60px;
 							a {
 								@media(max-width: 1110px) {padding-top: 50px;}
 								transition: all .1s ease-in;
@@ -608,7 +664,7 @@ a.bubble{
 									height: 40px;
 								}
 								span {
-									//opacity: 0;
+									opacity: 0;
 									color: #fff;
 									font-size: 11px;
 									line-height: 20px;
@@ -621,7 +677,7 @@ a.bubble{
 						}
 					}
 					
-					&:hover .submenu {
+					&:hover .sub-menu {
 						z-index: 1;
 						li a {
 							@media(max-width: 1110px) {.translate(0, 70px);}
@@ -642,7 +698,7 @@ a.bubble{
 						li a.transition-delay10 {transition-delay: .5s !important;}
 					}
 					
-					&:last-child .submenu {
+					&:last-child .sub-menu {
 						right: 5px;
 					}
 				}
@@ -874,11 +930,6 @@ section.actu{
 }
 
 @media (min-width: @screen-sm-min) {
-	#content-page {
-		position: relative;
-		margin-top: 80vh;
-	}
-	
 	section.actu {
 		padding-right: 0;//pour coller la sidebar
 	}
@@ -1049,9 +1100,7 @@ nav.inset{
 =            METEO SECTION (#meteo)    =
 ======================================*/
 
-#maximage {}
-
-#meteo-section{
+#meteo-mobile{
 	font-weight: 700;
 	//.border-radius(0);
 	padding: @padding;

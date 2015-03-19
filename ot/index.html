@@ -24,11 +24,7 @@
 	
 	<script src="../js/jquery.cycle.all.js"></script>
 	<script src="../js/jquery.maximage.min.js"></script>
-<!--
-	<script type="text/javascript" src="../js/owl-carousel/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="../js/owl-carousel-config.js"></script>
--->
-
+	<script src="../js/jquery.easing.min.js"></script>
 
 </head>
 
@@ -83,9 +79,11 @@
 				<img src="img/icons/usa.png" height="32" width="32" alt="English">
 			</a>
 		</nav>
-		<aside id="meteo" class="hidden-xs" style="display: none;">
-			<h2>La météo d'Excenevex</h2>
-			<h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
+		<aside id="meteo" class="hidden-xs">
+            <header>
+                <h2>La météo d'Excenevex</h2>
+                <h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
+            </header>
 		</aside>
 		
 		<nav id="responsiveMenu">
@@ -97,7 +95,7 @@
 				</li>
 				<li>
 					<a href="#" class="ripple--effect"><span>Se loger</span></a>
-					<ul class="submenu">
+					<ul class="sub-menu">
 						<li>
 							<a href="#" class="sub-item">
 								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
@@ -120,7 +118,7 @@
 				</li>
 				<li>
 					<a href="#" class="ripple--effect"><span>Se divertir</span></a>
-					<ul class="submenu">
+					<ul class="sub-menu">
 						<li>
 							<a href="#" class="sub-item">
 								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
@@ -176,7 +174,7 @@
 			</div>
 		</nav>
 
-		<section id="meteo-section" class="visible-xs">
+		<section id="meteo-mobile" class="visible-xs">
 			<header>
 				<h2>La météo d'Excenevex</h2>
 				<h3>18 Jan. 2015</h3>
@@ -243,7 +241,7 @@
 						<img src="img/article/soiree.jpg">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
 						<aside>
-							<a href="#">
+							<a class="more" href="#">
 								<i class="fa fa-angle-right"></i>
 								<span class="text">En savoir</span>
 								<span class="fa-stack">
@@ -295,7 +293,7 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, id. Quasi ratione nobis esse minima labore totam earum excepturi, voluptas distinctio mollitia nisi est aliquid porro sed ipsa optio aperiam!</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nulla culpa, maiores beatae adipisci quae voluptatum, saepe, amet distinctio commodi excepturi. A eum asperiores unde, corporis incidunt nostrum officia placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quod omnis quas, expedita perspiciatis non, voluptatibus libero at fugit, rerum reprehenderit temporibus id dolore illum minima corrupti quo facilis! Totam.</p>
 						<aside>
-							<a href="#">
+							<a class="more" href="#">
 								<i class="fa fa-angle-right"></i>
 								<span class="text">En savoir</span>
 								<span class="fa-stack">
