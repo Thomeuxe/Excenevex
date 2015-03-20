@@ -125,7 +125,6 @@ jQuery(document).ready(function ($) {
 // End of bubbles
 
 // Zoombox
-	$('a.zoombox').zoombox();
 // Forecasts
 	var $ensoleillement = $('#meteo-section .ensoleillement');
 	var $temperature = $('#meteo-section .temperature');
