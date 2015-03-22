@@ -161,7 +161,6 @@ body{
 	font-family: @specialFont;
 	font-size: 18px;
 	letter-spacing: 1px;
-	padding-top: 110px;
 }
 
 *{
@@ -201,11 +200,6 @@ h2, h3, h4, h5, h6{
 }
 
 @media(min-width: @screen-sm-min) {
-    #content-page {
-        position: relative;
-        top: 80vh;
-	}
-
 	h2  {
 		box-sizing: border-box;
 		padding: 0 @padding;
@@ -310,11 +304,7 @@ a.bubble{
 =            HEADER#HEADER            =
 =====================================*/
 
-
 #header{
-    @media(min-width: @screen-sm-min) {
-        min-height: 100%;
-    }
 	background: #eee;
 	height: 110px;
 	position: absolute;
@@ -567,8 +557,15 @@ a.bubble{
 	@media(min-width: @screen-sm-min) {
 
 		#responsiveMenu {
-			position: absolute;
-            right: 0;
+            display: inline-block;
+            float: right;
+            &:after {
+               content: " "; /* Older browser do not support empty content */
+               visibility: hidden;
+               display: block;
+               height: 0;
+               clear: both;
+            }
             
 			ul {
 				height: 150px;
@@ -703,7 +700,33 @@ a.bubble{
 					}
 				}
 			}
-		}	
+		}
+        nav#dropdown-link {
+            width: 0;
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 90vh;
+
+            a {
+                .bounce;
+                .fa-stack{
+                    margin-left: 10px;
+
+                    i:first-child {
+                        font-size: 50px;
+                        line-height: 35px;
+                        color: @mainColor;
+                    }
+                    i:last-child {
+                        text-indent: 7px;
+                    }
+                }
+            }
+        }
 	}
 }
 
@@ -959,6 +982,7 @@ aside#sidebar{
 =========================================================*/
 
 #maximage-container {
+    min-height: 100vh;
 	#cycle-loader {
 		top: 50%;
 		left: 50%;
@@ -968,6 +992,7 @@ aside#sidebar{
 	}
 	
 	#arrow_left, #arrow_right {
+        z-index: 999;
 		bottom:30px;
 		height:67px;
 		position:absolute;
@@ -1055,33 +1080,6 @@ section.full-slider{
 }
 
 /*-----  End of Index Full slider (.full-slider)  ------*/
-
-/*=================================
-=			Dropdown #dropdown    =
-=================================*/
-
-nav#dropdown-link {
-	text-align: center;
-	position: relative;
-	top: 70vh;
-	
-	a {
-        .bounce;
-		.fa-stack{
-			margin-left: 10px;
-
-			i:first-child {
-				font-size: 50px;
-				line-height: 35px;
-				color: @mainColor;
-			}
-			i:last-child {
-				text-indent: 7px;
-			}
-		}
-	}
-}
-
 
 /*=================================
 =            NAV.inset            =
