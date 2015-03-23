@@ -92,18 +92,26 @@ jQuery(document).ready(function ($) {
 	// Method to center the .sub-menu compared to responsiveMenu for desktop
 		function centerSubmenu() {
 			if (window.matchMedia("(min-width: 768px)").matches) {
-				$('#responsiveMenu ul li').each(function() {
-					var x = $(this).find('.sub-menu li').length;
-					//TODO : ajouter la méthode pour centrer également entre min-width: 768px et max-width: 1110px
-					$(this).find('.sub-menu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
-				});
+				if (window.matchMedia("(max-width: 1289px)").matches) {
+					$('#responsiveMenu ul li').each(function() {
+						var x = $(this).find('.sub-menu li').length;
+						$(this).find('.sub-menu').css('margin-left', -33*x+53 + 'px');
+					});
+				}
+				else {
+					$('#responsiveMenu ul li').each(function() {
+						var x = $(this).find('.sub-menu li').length;
+						$(this).find('.sub-menu').css('margin-left', ((-230/7)*x)+(545/7) + 'px');
+					});
+				}
 			}
 		};
 		
 		centerSubmenu();
 		$(window).resize(function() {
 			centerSubmenu();
-		});
+		});  
+
 	// end of center method
 	
 // end of ResponsiveMenu

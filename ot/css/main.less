@@ -306,7 +306,6 @@ a.bubble{
 
 #header{
 	background: #eee;
-	height: 110px;
 	position: absolute;
 	z-index: 9999;
 	top: 0;
@@ -417,10 +416,12 @@ a.bubble{
             margin-top: 5px;
             display: inline-block;
             header {
-                background: rgba(0,0,0,0.3);
-                .border-radius(2px);
-                width: auto;
-                padding: 5px;
+                div {
+                	background: rgba(0,0,0,0.3);
+                	display: inline-block;
+                	.border-radius(2px);
+                	padding: 5px;
+                }
                 h2, h3 {
                     vertical-align: middle;
                     font-weight: 400;
@@ -447,10 +448,17 @@ a.bubble{
                         opacity: .55;
                         font-weight: 700;
                     }
-                    &::after {
-                        content: none;
-                    }
+                    &::after {content: none;}
                 }
+                a {
+                	margin-left: 5px;
+	            	color: rgba(0, 0, 0, 0.5);
+	            	font-size: 25px;
+	            	transition: all 0.3s;
+	            	&:hover {
+	            		color: rgba(0, 0, 0, 1);
+	            	}
+	            }
             }
             section{
                 margin-top: 10px;
@@ -571,8 +579,10 @@ a.bubble{
 	@media(min-width: @screen-sm-min) {
 
 		#responsiveMenu {
-            display: inline-block;
-            float: right;
+            z-index: 999;
+            position: absolute;
+            right: 20px;
+            top: 0;
             &:after {
                content: " "; /* Older browser do not support empty content */
                visibility: hidden;
@@ -582,7 +592,6 @@ a.bubble{
             }
             
 			ul {
-				height: 150px;
 				//clearfix
 				&:after {
 					clear: both;
@@ -598,7 +607,7 @@ a.bubble{
 					vertical-align: top;
 					display: inline-block;
 					border-radius: 100%;
-					margin: 0 20px 0 20px;
+					margin: 0 20px;
 					&:hover a:not(.sub-item) {
 						transition: @duration;
 						background-color: @mainColor;
@@ -1037,6 +1046,7 @@ aside#sidebar{
 		position: absolute;
 		
 		.in-slide-content {
+			display: none;
 			color: #fff;
 			.border-radius(5px);
 			background: rgba(0,0,0,0.5);
