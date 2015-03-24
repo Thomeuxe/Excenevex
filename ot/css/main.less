@@ -936,7 +936,10 @@ section.actu{
 			margin-top: @padding;
 			@media(max-width: @screen-xs-max){
 				text-align: center;
-				img{ width: 90%;}
+				img{ 
+					width: 90%;
+					height: auto;
+				}
 				p {
 					text-align: left;
 				}
@@ -946,6 +949,7 @@ section.actu{
 			@media(min-width: @screen-sm-min){
 				img{
 					width: 100%;
+					height: auto;
 					float: left;
 					margin-right: 15px;
 					margin-bottom: 5px;
@@ -960,7 +964,10 @@ section.actu{
 				}
 			}
 			@media(min-width: @screen-md-min){
-				img{ width: 50%;}
+				img{ 
+					width: 50%;
+					height: auto;
+				}
 			}
 			img{
 				.border-radius(3px);
