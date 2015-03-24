@@ -35,91 +35,106 @@
 
 <body class="container-fluid">
 	<header id="header" class="row">
-		<h1 class="col-xs-6">
-			<div class="custom-container">
-				<a href="#">
-					<img src="img/logo-OT-Excenevex.png" height="143" width="250" alt="Office de tourisme d'Excenevex">
-				</a>
-				<div class="social-buttons hidden-xs">
-					<span class="fa-stack">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-					</span>
-					<span class="fa-stack">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-					</span>
-				</div>
-			</div>
-		</h1>
-		<nav id="lang">
-			<a href="#">
-				<img src="img/icons/usa.png" height="32" width="32" alt="English">
-			</a>
-		</nav>
-		<aside id="meteo" class="hidden-xs" style="display: none;">
-			<h2>La météo d'Excenevex</h2>
-			<h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
-		</aside>
-		
-		<nav id="responsiveMenu">
-			<button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
-			</button>
-			<ul>
-				<li class="current-menu-item">
-					<a href="#" class="ripple--effect"><span>Accueil</span></a>
-				</li>
-				<li>
-					<a href="#" class="ripple--effect"><span>Se loger</span></a>
-					<ul class="sub-menu">
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" class="ripple--effect"><span>Où manger</span></a>
-				</li>
-				<li>
-					<a href="#" class="ripple--effect"><span>Se divertir</span></a>
-					<ul class="sub-menu">
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="sub-item">
-								<img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</header>
+        <h1 class="col-xs-6">
+            <div class="custom-container">
+                <a href="#">
+                    <img src="img/logo-OT-Excenevex.png" height="143" width="250" alt="Office de tourisme d'Excenevex">
+                </a>
+                <div class="social-buttons hidden-xs">
+                    <span class="fa-stack">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+        </h1>
+        <nav id="lang">
+            <a href="#">
+                <img src="img/icons/usa.png" height="32" width="32" alt="English">
+            </a>
+        </nav>
+        <aside id="meteo" class="hidden-xs">
+            <header>
+                <div>
+                    <h2>La météo d'Excenevex</h2>
+                    <h3><span class="day">18 JAN.</span><span class="year">2015</span></h3>
+                </div>
+                <a id="calendar" href="#"><i class="fa fa-calendar"></i></a>
+            </header>
+            <section>
+                <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <img class="ensoleillement" src="img/meteo/sun-white.svg" class="full-width-image" alt="Beau temps">
+                    </div>
+                    <p class="col-xs-6 temperature">15°/18°</p>
+                </div>
+                <p>Lever de soleil <b>9h12</b></p>
+                <p>Coucher de soleil <b>17h35</b></p>
+            </section>
+        </aside>
+
+        <nav id="responsiveMenu">
+            <button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
+            </button>
+            <ul>
+                <li class="current-menu-item">
+                    <a href="#" class="ripple--effect"><span>Accueil</span></a>
+                </li>
+                <li>
+                    <a href="#" class="ripple--effect"><span>Se loger</span></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="ripple--effect"><span>Où manger</span></a>
+                </li>
+                <li>
+                    <a href="#" class="ripple--effect"><span>Se divertir</span></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sub-item">
+                                <img src="img/icons/camping.png" height="22" width="22" alt="Camping"><span>Camping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 	
 	<section class="background">
 	</section>
