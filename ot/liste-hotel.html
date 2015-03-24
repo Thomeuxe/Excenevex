@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Excenevex | Hôtels</title>
 
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="CDN_local/bootstrap.min.css">
-
-	<link rel="stylesheet/less" type="text/css" href="css/main.less">
-	<link rel="stylesheet/less" type="text/css" href="css/liste-hotel.less">
 	
-	<link rel="stylesheet" href="../css/jquery.maximage.min.css">
+	<!-- <link rel="stylesheet" href="../css/jquery.maximage.min.css"> -->
+	<!-- <link href="../js/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" /> -->
+	<link rel="stylesheet/less" href="css/main.less">
+	<link rel="stylesheet/less" href="css/liste-hotel.less">
 	<!--	<link rel="stylesheet" href="../js/owl-carousel/owl.carousel.css">-->
 
-	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script> -->
 	<script src="CDN_local/less.min.js"></script>
 
-	<!-- // <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script> -->
-	<script src="CDN_local/jquery.min.js"></script>
-	<script src="js/script.js"></script>
-	
+	<!-- <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script> -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="js/hotel.js"></script>
+
+	<script type="text/javascript" src="../js/zoombox/zoombox.js"></script>
 	<script src="../js/jquery.cycle.all.js"></script>
 	<script src="../js/jquery.maximage.min.js"></script>
 <!--
@@ -34,33 +34,6 @@
 </head>
 
 <body class="container-fluid">
-	<div id="maximage-container" class="hidden-xs">
-		<a href="" id="arrow_left"><img src="../img/slider/arrow_left.png" alt="Slide Left" /></a>
-		<a href="" id="arrow_right"><img src="../img/slider/arrow_right.png" alt="Slide Right" /></a>
-		<i id="cycle-loader" class="fa fa-circle-o-notch fa-spin"></i>
-
-		<div id="maximage">
-			<div>
-				<img src="img/slider/3.jpg" alt="" />
-				<div class="in-slide-content" style="display:none;">
-					<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
-				</div>
-			</div>
-			<div>
-				<img src="img/slider/2.jpg" alt="" />
-				<div class="in-slide-content" style="display:none;">
-					<p>Remember, you are not limited to image elements.</p>
-				</div>
-			</div>
-			<div>
-				<img src="img/slider/1.jpg" alt="" />
-				<div class="in-slide-content" style="display:none;">
-					<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
 	<header id="header" class="row">
 		<h1 class="col-xs-6">
 			<div class="custom-container">
@@ -93,10 +66,10 @@
 			<button class="visible-xs" id="triggerMenu"><span>Menu</span><i class="fa fa-bars"></i>
 			</button>
 			<ul>
-				<li>
+				<li class="current-menu-item">
 					<a href="#" class="ripple--effect"><span>Accueil</span></a>
 				</li>
-				<li class="current-menu-item">
+				<li>
 					<a href="#" class="ripple--effect"><span>Se loger</span></a>
 					<ul class="sub-menu">
 						<li>
@@ -148,73 +121,26 @@
 		</nav>
 	</header>
 	
-	<nav id="dropdown-link" class="hidden-xs">
-		<a href="#actus">
-			<span class="fa-stack">
-				<i class="fa fa-circle fa-stack-2x"></i>
-				<i class="fa fa-arrow-down fa-stack-1x fa-inverse"></i>
-			</span>
-		</a>
-	</nav>
-	
-	<div id="content-page">
-		<section class="visible-xs row full-slider">
-			<figure>
-				<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
-				<figcaption>
-					<h2>Excenevex Plage</h2>
-					<p>La plage ouvre ses portes !</p>
-				</figcaption>
-			</figure>
-		</section>
+	<section class="background">
+	</section>
 
-		<nav class="row inset visible-xs">
-			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-bed"></i><p>Où se loger</p></a>
-			</div>
-			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-cutlery"></i><p>Où Manger</p></a>
-			</div>
-			<div class="col-xs-4"><a href="#" class="bubble"><i class="fa fa-child"></i><p>Se divertir</p></a>
-			</div>
-		</nav>
-
-		<section id="meteo-section" class="visible-xs">
-			<header>
-				<h2>La météo d'Excenevex</h2>
-				<h3>18 Jan. 2015</h3>
-			</header>
-			<div class="row">
-				<div class="col-xs-4">
-					<img class="ensoleillement" src="img/meteo/sun.svg" class="full-width-image" alt="Beau temps">
-				</div>
-				<p class="col-xs-8 temperature">
-					15°/18°
-				</p>
-			</div>
-			<p>Lever de soleil <span class="mainColor">9h12</span>
-			</p>
-			<p>Coucher de soleil <span class="mainColor">17h35</span>
-			</p>
-		</section>
-		<div class="row">
-	<!--
-			<section class="pc-slider visible-sm visible-md visible-lg">
-				<img src="img/background.jpg" class="full-width-image" alt="Excenevex Plage">
-			</section>
-		-->
-		<section id="listhotel" class="listhotel col-sm-9">
+	<div class="row content">
+		<section id="listhotel" class="listhotel col-md-9 col-sm-12">
 			
 			<h1>tous les hotels d'excevenex</h1>
 
 			<div class="row hotel col-md-12">
-				<img src="./img/liste-hotel/hotel.jpg" alt="" class="col-md-4 col-xs-12">
-				<div class="hoteldescription col-md-8 col-xs-12">
+				<img src="./img/liste-hotel/hotel.jpg" alt="" class="col-lg-4 col-md-6 col-xs-12">
+				<div class="hoteldescription col-lg-8  col-md-6 col-xs-12">
 					<div class="hoteltitle">
-						<h4>Hotel-Restaurant</h4>
-						<ul>
-							<li><i class='fa fa-star'></i></li>
-							<li><i class='fa fa-star'></i></li>
-							<li><i class='fa fa-star'></i></li>
-						</ul>
+						<div>
+							<h4>Hotel-Restaurant</h4>
+							<ul>
+								<li><i class='fa fa-star'></i></li>
+								<li><i class='fa fa-star'></i></li>
+								<li><i class='fa fa-star'></i></li>
+							</ul>
+						</div>
 						<h2>hotel du cacou</h2>
 					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifend bibendum tellus, eu imperdiet massa sagittis sit amet. Etiam dapibus accumsan purus, ut tincidunt justo accumsan eu. Vestibulum blandit id velit sit amet placerat. Vestibulum diam ex, convallis ac mauris</p>
@@ -239,12 +165,14 @@
 				<img src="./img/liste-hotel/hotel.jpg" alt="" class="col-md-4 col-xs-12">
 				<div class="hoteldescription col-md-8 col-xs-12">
 					<div class="hoteltitle">
-						<h4>Hotel-Restaurant</h4>
-						<ul>
-							<li><i class='fa fa-star'></i></li>
-							<li><i class='fa fa-star'></i></li>
-							<li><i class='fa fa-star'></i></li>
-						</ul>
+						<div>
+							<h4>Hotel-Restaurant</h4>
+							<ul>
+								<li><i class='fa fa-star'></i></li>
+								<li><i class='fa fa-star'></i></li>
+								<li><i class='fa fa-star'></i></li>
+							</ul>
+						</div>
 						<h2>hotel du cacou</h2>
 					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifend bibendum tellus, eu imperdiet massa sagittis sit amet. Etiam dapibus accumsan purus, ut tincidunt justo accumsan eu. Vestibulum blandit id velit sit amet placerat. Vestibulum diam ex, convallis ac mauris</p>
@@ -277,8 +205,7 @@
 			</nav>
 		</section>
 
-		<aside class="hidden-xs col-sm-3" id="sidebar">
-			<div class="col-md-12">
+		<aside class="col-md-3 col-sm-12" id="sidebar">
 			<h2>affinez votre recherche</h2>
 			<form method="post" "col-md-12">
 				<label>date d'arrivée</label><br/>
@@ -290,7 +217,6 @@
 				<label>chambres</label><br/>
 				<input type="number"><br/>
 			</form>
-			</div>
 		</aside>
 	</div>
 
@@ -301,7 +227,6 @@
 		</p>
 		<p>Tous droits réservés &copy; 2015 | Excenevex Plage</p>
 	</footer>
-</div>
 </body>
 
 </html>
