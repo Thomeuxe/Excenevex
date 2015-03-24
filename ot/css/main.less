@@ -203,7 +203,6 @@ h2, h3, h4, h5, h6{
 	h2  {
 		box-sizing: border-box;
 		padding: 0 @padding;
-		//padding: 5px @padding; avec un écart entre le titre et le corps des articles
 		text-transform: uppercase;
 		text-align: center;
 		color: @text;
@@ -216,14 +215,6 @@ h2, h3, h4, h5, h6{
 	}
 	h3{
 		text-transform: uppercase;
-		&::after{
-			content: "";
-			display: block;
-			height: 4px;
-			margin-top: 10px;
-			.border-radius(2px);
-			background: lighten(@mainColor, 20%);
-		}
 	}
 }
 
@@ -781,9 +772,22 @@ section.actu{
 			border-bottom:solid 3px #ccc;
 			.border-radius(3px);
 			margin-bottom: 15px;
+			h3 {
+				text-align: center;
+				margin-bottom: @padding;
+			}
 		}
 		header{
-			margin-bottom: @padding;
+			&::after{
+				content: "";
+				display: block;
+				height: 4px;
+				margin-top: 40px;
+				margin-right: 10px;
+				.border-radius(2px);
+				background: lighten(@mainColor, 20%);
+				@media(max-width: @screen-xs-max) {content: none;}
+			}
 			font-size: 0;
 			a.title {
 				color: @mainColor;
@@ -792,8 +796,10 @@ section.actu{
 			}
             
             .social-buttons {
+            	text-align: right;
+            	padding-right: 20px;
+            	position: absolute;
                 display: inline-block;
-                margin-top: 5px;
                 section {
                     display: inline-block;
                     margin: 0;
@@ -838,6 +844,9 @@ section.actu{
                     &.before::before{
                         top: -13px;
                     }
+                    text-align: left;
+                    width: 150px;
+                    z-index: 999;
                     position: absolute;
                     margin-top: 10px;
                     background-color: darken(@greyBrownColor, 10%);
@@ -924,6 +933,7 @@ section.actu{
             }	
 		}
 		section {
+			margin-top: @padding;
 			@media(max-width: @screen-xs-max){
 				text-align: center;
 				img{ width: 90%;}
