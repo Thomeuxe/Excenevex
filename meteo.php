@@ -2,7 +2,7 @@
 
 <?php 
 
-$json =file_get_contents('http://www.prevision-meteo.ch/services/json/basel');
+$json =file_get_contents('http://www.prevision-meteo.ch/services/json/excenevex');
 
 $data = json_decode($json, true);
 $cond = $data['current_condition']['condition'];
