@@ -13,6 +13,7 @@
 @complementaryColor: #3a509b;
 @greyColor:#B9B9B9;
 @greyBrownColor: #b5ada2;
+@yellowColor: #f0bc4b;
 @light: lighten(@complementaryColor,50%);
 @facebookColor: #3b5998;
 @twitterColor: #33CCFF;
@@ -1236,7 +1237,421 @@ nav.inset{
 }
 /*-----  End of FOOTER #FOOTER  ------*/
 
+/*======================================
+=            OTHER PAGES               =
+======================================*/
 
+.background{
+	background: url("../img/background.jpg");
+	position: absolute;
+	top: 0px;
+	left:0px;
+	z-index: -1;
+	width:100%;
+	height: 100vh;
+	background-position: -100px;
+}
+
+/*======================================
+=            ARTICLES PAGES            =
+======================================*/
+
+.articleContent{
+	background: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	margin:300px 20px 20px;
+	article{
+		padding:0 0 30px 0;
+		header{
+			.imgUne{
+				background: url("../../img/article/canoe.jpg");
+				background-position:70% 60%;
+				background-size: cover;
+				width: 100%;
+				height:50vh;
+			}
+			.titre{
+				padding: 0 15px;
+				background:#f0954b;
+				h1{
+					line-height:50px;
+					margin:0;
+					text-transform: uppercase;
+					color:white;
+					font-family: @specialFont;
+					font-weight: 700;
+					font-size:30px;
+					@media (max-width:@screen-xs-max){
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		div{
+			padding: 15px;
+			.quote{
+				margin:15px 0px;
+				h4{
+					text-align: center;
+					color:black;
+					&::before{
+						display: inline-block;
+						content: "";
+						font-family: "FontAwesome";
+						transform:translateY(-10px);
+					}
+					&::after{
+						display: inline-block;
+						content: "";
+						font-family: "FontAwesome";
+						transform:translateY(10px);
+					}
+				}
+				p{
+					margin-left: 70px;
+					margin-top: 10px;
+					font-size: 12px;
+					text-align:center;
+					&::before{
+						content: "- ";
+					}
+				}				
+			}
+			a{
+				text-decoration: underline;
+				color:#3394e7;
+				&:hover{
+					text-decoration: none;
+				}
+			
+			}
+			h3.subtitle{
+				margin: 20px 0;
+				color: #bd753a;
+				text-transform: uppercase;
+				text-align: left;
+				&::after{
+					content:none;
+				}
+			}
+		}
+		
+	}
+	aside{
+		background-color:#e5e5e5;
+		min-height: 100%;
+	}
+
+}
+
+/*======================================
+=             HOTEL PAGES              =
+======================================*/
+
+.hotelContent{
+	background: white;
+	margin: 300px 20px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	.imgUne{
+		background: url("../../img/article/canoe.jpg");
+		background-position:70% 60%;
+		background-size: cover;
+		width: 100%;
+		height:50vh;
+	}
+	article{
+		padding:0 0 30px 0;
+		text-align: justify;
+		header{
+			.titre{
+				padding: 0 15px;
+				background:#f0954b;
+				h1{
+					line-height:50px;
+					margin:0;
+					text-transform: uppercase;
+					color:white;
+					font-family: @specialFont;
+					font-weight: 700;
+					font-size:30px;
+					@media (max-width:@screen-xs-max){
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		div{
+			padding: 15px;
+			.chapeau{
+				font-weight: 700;
+			}
+			a{
+				text-decoration: underline;
+				color:#3394e7;
+				&:hover{
+					text-decoration: none;
+				}
+			
+			}
+			h3{
+				margin: 20px 0px 10px 0;
+				color: #bd753a;
+				text-transform: uppercase;
+				text-align: left;
+				&::after{
+					content:none;
+				}
+			}
+			.contact{
+				i{
+					margin-right: 5px;
+				}
+			}
+			
+		}
+		.zoombox{
+			margin: 0 auto;
+			display: flex;
+			align-items:center;
+			justify-content:center;	
+			@media screen and (max-width: 900px){
+				flex-direction:column;
+			} 
+			img{
+				display: inline-block;
+				padding: 10px;
+				max-width: 250px;
+				max-height: 250px;
+			}
+		}
+	}
+	aside{
+		background-color:#e5e5e5;
+		padding: 0;
+		header{
+			background: @mainColor;
+			width: 100%;
+			h2{
+				font-style: italic;
+				font-size: 16px;
+				line-height: 50px;
+				color: white;
+				text-align: center;
+				text-transform: uppercase;
+				&::after{
+					content: none;
+				}
+			}
+		}
+		article{
+			h3{
+				margin: 0px;
+			}
+			.tarifs{
+				font-size: 15px;
+			}
+			i{
+				margin-right: 8px;
+			}
+		}
+	}
+}
+
+
+/*======================================
+=          LISTE HOTELS PAGES          =
+======================================*/
+
+.listeHotelsContent {
+    background: white;
+    margin: 300px 20px 20px;
+    #listhotel {
+        padding: 0;
+        h1 {
+            margin: 0 0 10px 0;
+            color: @text;
+            text-transform: uppercase;
+            text-align: left;
+            background-color: @mainColor;
+            padding: 0 15px;
+            font-family: @specialFont;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 50px;
+            @media (max-width: @screen-xs-max) {
+                font-size: 15px;
+            }
+        }
+        .hotel {
+            float: none;
+            margin: 0;
+            padding-bottom: 3vh;
+            padding-top: 3vh;
+            &:hover {
+                background-color: rgba(185, 185, 185, 0.3);
+            }
+            img {
+                padding: 0;
+                display: block;
+                border-radius: 3px;
+                @media (max-width: @screen-md-min) {
+                    width: 75%;
+                    height: 75%;
+                    margin-left: 12%;
+                }
+            }
+            .hoteldescription {
+                .hoteltitle {
+                    color: @greyColor;
+                    text-align: center;
+                    @media (min-width: @screen-md-min) {
+                        text-align: left;
+                    }
+                    @media (max-width: @screen-md-min) {
+                        padding: 3vh 0 3vh 0;
+                    }
+                    h4 {
+                        color: @greyColor;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                    ul {
+                        display: inline-block;
+                    }
+                    li {
+                        display: inline-block;
+                    }
+                    h2 {
+                        color: @mainColor;
+                        text-transform: uppercase;
+                        padding: 0;
+                        @media (min-width: @screen-md-min) {
+                            text-align: left;
+                        }
+                    }
+                }
+                .hotelinfo {
+                    h4 {
+                        color: black;
+                    }
+                    aside {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+    aside#sidebar {
+        margin-top: 0 !important;
+        padding: 0;
+        background-color: @yellowColor;
+        @media(max-width: @screen-md-min) {
+            height: inherit;
+            padding-bottom: 20px;
+        }
+        h2 {
+            padding-top: 2vh;
+            text-align: center;
+        }
+        form {
+            margin-top: 4vh;
+            text-align: center;
+            label {
+                margin-top: 4vh;
+                text-transform: uppercase;
+                color: @text;
+            }
+            input {
+                border: none;
+                border-radius: @border-radius;
+                &:focus {
+                    border: 1px solid @mainColor;
+                    box-shadow: 1px 1px 10px @mainColor;
+                }
+            }
+            /*=================================
+		=     DESIGN INPUT TYPE RANGE     =
+		=================================*/
+            
+            input[type=range] {
+                -webkit-appearance: none;
+                margin: 14px auto 0 auto;
+                width: 70%;
+            }
+            input[type=range]:focus {
+                outline: none;
+                border: none;
+                box-shadow: none;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                // width: 70%;
+                height: 8.4px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: @text;
+                border-radius: 1.3px;
+            }
+            // input[type=range]:focus::-webkit-slider-runnable-track {
+            // 	background: @text;
+            // }
+            input[type=range]::-moz-range-track {
+                // width: 70%;
+                height: 8.4px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: @text;
+                border-radius: @border-radius;
+            }
+            input[type=range]::-ms-track {
+                // width: 70%;
+                height: 8.4px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: transparent;
+                border-color: transparent;
+                border-width: 16px 0;
+                color: transparent;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                border: 1px solid @mainColor;
+                height: 16px;
+                width: 16px;
+                border-radius: @border-radius;
+                background: #ffffff;
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -4px;
+            }
+            input[type=range]::-moz-range-thumb {
+                border: 1px solid @mainColor;
+                height: 16px;
+                width: 16px;
+                border-radius: @border-radius;
+                background: #ffffff;
+                cursor: pointer;
+            }
+            input[type=range]::-ms-thumb {
+                border: 1px solid #000000;
+                height: 16px;
+                width: 16px;
+                border-radius: @border-radius;
+                background: @text;
+                cursor: pointer;
+            }
+            input[type=range]::-ms-fill-lower {
+                background: @mainColor;
+                border-radius: 2.6px;
+            }
+            input[type=range]::-ms-fill-lower {
+                background: @mainColor;
+                border-radius: 2.6px;
+            }
+        }
+    }
+}
+
+/*-----  End of OTHER PAGES  ------*/
 
 
 
