@@ -72,9 +72,9 @@
 	}
 }
 
-.content {
+.pageContent {
 	background: white;
-	margin: 30vh 20px 0 20px;
+	margin: 300px 20px 0 20px;
 }
 
 .background{
@@ -109,6 +109,7 @@
 	}
 
 	.hotel {
+		float: none;
 		margin: 0;
 		padding-bottom: 3vh;
 		padding-top: 3vh;
@@ -117,8 +118,9 @@
 		}
 
 		img {
+			padding: 0;
 			display: block;
-			border-radius: 5%;
+			border-radius: 3px;
 			@media (max-width:@screen-md-min) {
 				width: 75%;
 				height: 75%;
@@ -173,10 +175,13 @@
 	}
 }
 
+aside.sidebar-list-hotel {
+	margin-top: 0 !important;
+}
+
 aside#sidebar {
 	padding: 0;
 	background-color: @yellowColor;
-	border-radius: @border-radius;
 	@media(max-width:@screen-md-min) {
 		height: inherit;
 		padding-bottom: 20px;

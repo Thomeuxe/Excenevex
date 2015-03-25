@@ -1008,12 +1008,11 @@ section.actu{
 
 aside#sidebar{
 	padding-left: 0; //pour coller la sidebar
-	height: 1000px;
 	margin-top: @padding;
 	background: #b9b9b9;
+	min-height: 100%;
 	p {
 		display: inline-block;
-		height: 1000px;
 		width: 100%;
 	}
 }
@@ -1227,6 +1226,14 @@ nav.inset{
 	color: #888;
 }
 
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
 /*-----  End of FOOTER #FOOTER  ------*/
 
 
