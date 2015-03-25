@@ -2,7 +2,7 @@
 
 <?php 
 
-$json =file_get_contents('http://www.prevision-meteo.ch/services/json/lat=46.354lng=6.352');
+$json =file_get_contents('http://www.prevision-meteo.ch/services/json/excenevex');
 
 $data = json_decode($json, true);
 
@@ -10,7 +10,7 @@ $data = json_decode($json, true);
 <aside id="meteo" class="hidden-xs">
 	<header>
 		<div>
-			<h2>La météo d &#039; Excenevex</h2>
+			<h2>La météo d&#039; Excenevex</h2>
 			<h3><span class="day"><?php echo $data['current_condition']['date'] ?></span><span class="year"><?php echo $data['current_condition']['date'] ?></span></h3>
 		</div>
 		<a id="calendar" href="#"><i class="fa fa-calendar"></i></a>
@@ -26,5 +26,3 @@ $data = json_decode($json, true);
 		<p>Coucher de soleil <b><?php echo $data['city_info']['sunset'] ?></b></p>
 	</section>
 </aside>
-
-<?php var_dump($data); ?>
