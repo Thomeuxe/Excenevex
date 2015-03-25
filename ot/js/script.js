@@ -1,26 +1,26 @@
 jQuery(document).ready(function ($) {
 //Maximage2 carousel
-	$(function(){
-		$('#maximage').maximage({
-			cycleOptions: {
-				fx:'fade',
-				speed: 1000,
-				timeout: 10000, // 1s = 1000
-				prev: '#arrow_left',
-				next: '#arrow_right',
-				pause: 1
-			},
-			onFirstImageLoaded: function(){
-				jQuery('#cycle-loader').hide();
-				jQuery('#maximage').fadeIn('fast');
-			},
-			// cssBackgroundSize might be causing choppiness in retina display safari
-			// cssBackgroundSize: false <-- ajoute un scroll horizontal donc à voir si c'est vraiment utile...
-		});
-		
-		// To show it is dynamic html text
-		jQuery('.in-slide-content').delay(1200).fadeIn();
+
+	$('#maximage').maximage({
+		cycleOptions: {
+			fx:'fade',
+			speed: 1000,
+			timeout: 10000, // 1s = 1000
+			prev: '#arrow_left',
+			next: '#arrow_right',
+			pause: 1
+		},
+		onFirstImageLoaded: function(){
+			jQuery('#cycle-loader').hide();
+			jQuery('#maximage').fadeIn('fast');
+		},
+		// cssBackgroundSize might be causing choppiness in retina display safari
+		// cssBackgroundSize: false <-- ajoute un scroll horizontal donc à voir si c'est vraiment utile...
 	});
+	
+	// To show it is dynamic html text
+	jQuery('.in-slide-content').delay(1200).fadeIn();
+
 
 // ResponsiveMenu
 	$('#responsiveMenu>ul').hide();

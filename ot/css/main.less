@@ -953,9 +953,16 @@ section.actu{
 			margin-top: @padding;
 			@media(max-width: @screen-xs-max){
 				text-align: center;
-				img{ 
+				a.img-link {
+					margin: auto;
+					margin-bottom: 10px;
+					overflow: hidden;
 					width: 90%;
+					max-height: 200px;				
+				}
+				img{
 					height: auto;
+					width: 100%;
 				}
 				p {
 					text-align: left;
@@ -964,13 +971,17 @@ section.actu{
 			}
 
 			@media(min-width: @screen-sm-min){
-				img{
+				a.img-link {
+					overflow: hidden;
 					width: 100%;
-					height: auto;
+					max-height: 800px;
 					float: left;
 					margin-right: 15px;
 					margin-bottom: 5px;
-					
+				}
+				img{
+					width: 100%;
+					height: auto;
 				}
 				&:after {
 				   content: " "; /* Older browser do not support empty content */
@@ -981,10 +992,19 @@ section.actu{
 				}
 			}
 			@media(min-width: @screen-md-min){
-				img{ 
+				a.img-link {
+					overflow: hidden;
 					width: 50%;
+					max-height: 500px;
+				}
+				img{ 
+					width: 100%;
 					height: auto;
 				}
+			}
+			a.img-link {
+				display: block;
+				.border-radius(3px);
 			}
 			img{
 				.border-radius(3px);
@@ -1586,7 +1606,7 @@ nav.inset{
                     box-shadow: 1px 1px 10px @mainColor;
                 }
             }
-            /*=================================
+       	/*=================================
 		=     DESIGN INPUT TYPE RANGE     =
 		=================================*/
             
@@ -1666,13 +1686,15 @@ nav.inset{
         }
     }
 }
+/*
+nb etoiles
+parking
+services
+	wifi
+	demi pension 
+	pension complète
+	petit déjeuner
+langue parlée
+
 
 /*-----  End of OTHER PAGES  ------*/
-
-
-
-
-
-
-
-

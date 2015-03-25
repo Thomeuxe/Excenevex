@@ -248,8 +248,11 @@
                     </aside>
                 </header>
                 <section>
-                    <img src="img/article/soiree.jpg">
+                    <a class="img-link" href="#"><img src="img/article/soiree.jpg"></a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores sit unde. Minus dolorem veritatis saepe at odit maiores unde praesentium, sunt optio impedit quasi quidem! Possimus eveniet, vero asperiores.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laborum cum magni officiis voluptatum iste aliquid quam autem quae voluptatibus molestiae, ex fuga, dolores saepe perspiciatis nisi modi ducimus odit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores corporis rerum, deserunt nihil non eum tempore quam corrupti amet quisquam laborum excepturi unde aspernatur, nesciunt ut praesentium doloribus cumque ex?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, ullam delectus, repellat repellendus illo excepturi, fuga autem itaque ratione similique eum. Perferendis esse aliquid ipsa ducimus porro culpa quis blanditiis.</p>
                     <aside>
                         <a class="more" href="#">
                             <i class="fa fa-angle-right"></i>
@@ -379,9 +382,67 @@
             </nav>
         </section>
 
-        <aside class="hidden-xs col-sm-3" id="sidebar">
-            <p>content</p>
+        <aside class="hidden-xs col-sm-3" id="sidebar" role="complementary">
+            <ul>
+                <li>
+                    <form role="search" method="get" class="search-form" action="http://localhost/Excenevex/tourisme/">
+                        <label>
+                            <span class="screen-reader-text">Rechercher&nbsp;:</span>
+                            <input type="search" class="search-field" placeholder="Recherche…" value="" name="s" title="Rechercher&nbsp;:">
+                        </label>
+                        <input type="submit" class="search-submit" value="Rechercher">
+                    </form>         
+                </li>
+
+                <!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+                <li><h2>Auteur</h2>
+                <p>A little something about you, the author. Nothing lengthy, just an overview.</p>
+                </li>
+                -->
+            </ul>
+            <ul role="navigation">
+                <li>
+                    <h2>Archives</h2>
+                    <ul>
+                        <li><a href="http://localhost/Excenevex/tourisme/2015/01/">janvier 2015</a></li>
+                    </ul>
+                </li>
+
+                <li class="categories">
+                    <h2>Catégories</h2>
+                    <ul>  
+                        <li class="cat-item cat-item-1">
+                            <a href="http://localhost/Excenevex/tourisme/category/non-classe/">Non classé</a> (2)
+                        </li>
+                    </ul>
+                </li>      
+            </ul>
+            <ul>
+                <li>
+                    <h2>Méta</h2>
+                    <ul>
+                        <li>
+                            <a href="http://localhost/Excenevex/tourisme/wp-admin/">Admin. du Site</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost/Excenevex/tourisme/wp-login.php?action=logout&amp;_wpnonce=07e9d42882">Déconnexion</a>
+                        </li>
+                        <li>
+                            <a href="http://validator.w3.org/check/referer" title="Cette page est en XHTML 1.0 Transitional valide"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr> valide</a>
+                        </li>
+                        <li>
+                            <a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a>
+                        </li>
+                        <li>
+                            <a href="https://wordpress.org/" title="Propulsé par WordPress, plate-forme de publication personnelle sémantique de pointe.">WordPress</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </aside>
+
+
+
     </div>
 
     <footer id="footer" class="row">
