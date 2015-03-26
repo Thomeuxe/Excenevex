@@ -10,8 +10,8 @@ $cond = $data['current_condition']['condition'];
 <aside id="meteo" class="hidden-xs">
 	<header>
 		<div>
-			<h2>La météo d&#039; Excenevex</h2>
-			<h3><span class="day"><?php echo date('d-M')?></span><span class="year"><?php echo date('Y') ?></span></h3>
+			<h2>La météo d&#039; Excenevex</h2
+>			<h3><span class="day"><?php echo date('d-M')?></span><span class="year"><?php echo date('Y') ?></span></h3>
 		</div>
 		<a id="calendar" href="#"><i class="fa fa-calendar"></i></a>
 	</header>
@@ -68,7 +68,10 @@ $cond = $data['current_condition']['condition'];
 				}
 				elseif ($cond=="Neige modérée" || $cond=="Neige forte" || $cond=="Pluie et neige mêlée modérée" || $cond=="Pluie et neige mêlée forte") {
 					echo "img/meteo/neige.png";
-				}?>>
+
+					Elseif CACOU = 1000 = :)
+					<php hash(
+						, data) }?>>
 			</div>
 			<p class="col-xs-6 temperature"><?php echo $data['current_condition']['tmp'] ?></p>
 		</div>
