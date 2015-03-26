@@ -429,7 +429,7 @@ a.bubble{
                 	display: inline-block;
                 	.border-radius(2px);
                 	padding: 5px;
-                	min-width: 190px;
+                    min-width: 190px;
                 }
                 h2, h3 {
                     vertical-align: middle;
@@ -446,7 +446,7 @@ a.bubble{
                     width: 75px;
                     font-size: 14px;
                     text-align: right;
-                	color: #fff;
+                    color: #fff;
                     span.day {
                         display: block;
                         font-size: 18px;
@@ -470,7 +470,7 @@ a.bubble{
 	            }
             }
             section{
-            	padding: 10px 5px;
+                padding: 10px 5px;
                 background: rgba(0,0,0,0.3);
                 margin-top: 10px;
                 margin-bottom: 0;
@@ -1049,13 +1049,66 @@ section.actu{
 
 aside#sidebar{
 	padding-left: 0; //pour coller la sidebar
-	margin-top: @padding;
-	background: #b9b9b9;
+    padding-right: 0;
+	background: #e5e5e5;
 	min-height: 100%;
-	p {
-		display: inline-block;
-		width: 100%;
-	}
+    
+    input {
+        border: 1px solid rgba(0,0,0,0);
+        border-radius: @border-radius;
+        &:focus {
+            border: 1px solid @mainColor;
+            box-shadow: 1px 1px 10px @mainColor;
+        }
+    }
+
+    ul {
+        padding: @padding;
+        li {
+            form.search-form {
+                font-size: 0;
+                label {
+                    width: 80%;
+                    margin: 0;
+                }
+                input {
+                    font-size: 18px;
+                    display: inline-block;
+                    &.search-field {
+                        width: 100%;
+                        text-indent: 10px;
+                        padding: 10px 0;
+                        border-bottom-right-radius: 0;
+                        border-top-right-radius: 0;
+                    }
+                    &.search-submit {
+                        width: 20%;
+                        padding: 10px;
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                        background: @mainColor;
+                        color: #fff;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            h2, span.screen-reader-text {
+                font-size: 24px;
+                color: #bd753a;
+                text-transform: uppercase;
+                text-align: left;
+                padding: 0;
+            }
+            span.screen-reader-text {
+                display: none;
+            }
+            a {
+                font-family: 'Quicksand', sans-serif;
+                font-size: 18px;
+                color: #000;
+            }
+        }
+    }
 }
 
 /*========================================================
@@ -1283,13 +1336,8 @@ nav.inset{
 
 .background{
 	background: url("../img/background.jpg");
-	position: absolute;
-	top: 0px;
-	left:0px;
-	z-index: -1;
-	width:100%;
-	height: 100vh;
-	background-position: -100px;
+	background-attachment: fixed;
+    background-size: cover;
 }
 
 /*======================================
@@ -1508,7 +1556,7 @@ nav.inset{
     #listhotel {
         padding: 0;
         h1 {
-            margin: 0 0 10px 0;
+            margin: 0;
             color: @text;
             text-transform: uppercase;
             text-align: left;
@@ -1601,14 +1649,6 @@ nav.inset{
                 margin-top: 4vh;
                 text-transform: uppercase;
                 color: @text;
-            }
-            input {
-                border: none;
-                border-radius: @border-radius;
-                &:focus {
-                    border: 1px solid @mainColor;
-                    box-shadow: 1px 1px 10px @mainColor;
-                }
             }
        	/*=================================
 		=     DESIGN INPUT TYPE RANGE     =
