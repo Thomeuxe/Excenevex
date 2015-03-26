@@ -6,14 +6,12 @@ $json =file_get_contents('http://www.prevision-meteo.ch/services/json/excenevex'
 
 $data = json_decode($json, true);
 $cond = $data['current_condition']['condition'];
-echo $cond;
-
 ?>
 <aside id="meteo" class="hidden-xs">
 	<header>
 		<div>
 			<h2>La météo d&#039; Excenevex</h2>
-			<h3><span class="day"><?php echo $data['current_condition']['date'] ?></span><span class="year"><?php echo $data['current_condition']['date'] ?></span></h3>
+			<h3><span class="day"><?php echo date('d-M')?></span><span class="year"><?php echo date('Y') ?></span></h3>
 		</div>
 		<a id="calendar" href="#"><i class="fa fa-calendar"></i></a>
 	</header>
@@ -23,7 +21,7 @@ echo $cond;
 				<img src=<?php if($cond=="Ensoleillé") {
 					echo "img/meteo/ensoleille.png";
 				}
-				elseif ($cond=="Eclaircies") {
+				elseif ($cond=="Ciel voilé" || $cond=="Eclaircies") {
 					echo "img/meteo/eclaircies.png";
 				}
 				elseif ($cond=="Nuit claire" || $cond=="Nuit bien dégagée") {
@@ -41,8 +39,11 @@ echo $cond;
 				elseif ($cond=="Nuit avec averses de neige faible") {
 					echo "img/meteo/nuitneige.png";
 				}
-				elseif ($cond=="Ciel voilé" || $cond=="Stratus" || $cond=="Stratus se dissipant" || $cond=="Faibles passages nuageux" || $cond=="Développement nuageux" || $cond=="Faiblement nuageux") {
+				elseif ($cond=="Stratus" || $cond=="Stratus se dissipant" || $cond=="Faibles passages nuageux" || $cond=="Développement nuageux" || $cond=="Faiblement nuageux") {
 					echo "img/meteo/nuage.png";
+				}
+				elseif ($cond=="Fortement nuageux") {
+					echo "img/meteo/nuagefort.png";
 				}
 				elseif ($cond=="Brouillard") {
 					echo "img/meteo/brouillard.png";
@@ -67,9 +68,7 @@ echo $cond;
 				}
 				elseif ($cond=="Neige modérée" || $cond=="Neige forte" || $cond=="Pluie et neige mêlée modérée" || $cond=="Pluie et neige mêlée forte") {
 					echo "img/meteo/neige.png";
-				}?> alt=<?php echo $cond ?>>
-
-				<p><?php echo $cond ?></p>
+				}?>>
 			</div>
 			<p class="col-xs-6 temperature"><?php echo $data['current_condition']['tmp'] ?></p>
 		</div>
