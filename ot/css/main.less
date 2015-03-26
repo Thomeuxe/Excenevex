@@ -239,6 +239,10 @@ h2, h3, h4, h5, h6{
 	color: @mainColor;
 }
 
+.table-container{
+	display: table;
+}
+
 /*==========  Links  ==========*/
 
 a{
@@ -786,6 +790,8 @@ section{
 =====================================*/
 
 section.actu{
+	display: table-cell;
+	float: none;
 	article{
 		padding: @padding;
 		@media(max-width: @screen-xs-max) {
@@ -1051,7 +1057,8 @@ aside#sidebar{
 	padding-left: 0; //pour coller la sidebar
     padding-right: 0;
 	background: #e5e5e5;
-	min-height: 100%;
+	display: table-cell;
+	float: none;
     
     input {
         border: 1px solid rgba(0,0,0,0);
@@ -1273,6 +1280,7 @@ nav.inset{
 
 #navDots{
 	margin-top: 30px;
+	margin-bottom: 30px;
 	text-align: center;
 	ul {
 		li {
