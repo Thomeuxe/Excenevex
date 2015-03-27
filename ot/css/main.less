@@ -1385,11 +1385,12 @@ nav.inset{
 		}
 		div{
 			padding: 15px;
-			.quote{
+			blockquote{
 				margin:15px 0px;
-				h4{
+				p{
 					text-align: center;
 					color:black;
+					font-weight: bold;	
 					&::before{
 						display: inline-block;
 						content: "";
@@ -1402,16 +1403,7 @@ nav.inset{
 						font-family: "FontAwesome";
 						transform:translateY(10px);
 					}
-				}
-				p{
-					margin-left: 70px;
-					margin-top: 10px;
-					font-size: 12px;
-					text-align:center;
-					&::before{
-						content: "- ";
-					}
-				}				
+				}		
 			}
 			a{
 				text-decoration: underline;
