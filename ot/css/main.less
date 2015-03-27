@@ -1387,21 +1387,22 @@ nav.inset{
 			padding: 15px;
 			blockquote{
 				margin:15px 0px;
+				border: none;
 				p{
 					text-align: center;
 					color:black;
-					font-weight: bold;	
+					font-weight: bold;
 					&::before{
 						display: inline-block;
-						content: "";
+						content: "\f10d";
 						font-family: "FontAwesome";
-						transform:translateY(-10px);
+						transform:translate(-10px, -10px);
 					}
 					&::after{
 						display: inline-block;
-						content: "";
+						content: "\f10e";
 						font-family: "FontAwesome";
-						transform:translateY(10px);
+						transform:translate(10px, 10px);
 					}
 				}		
 			}
