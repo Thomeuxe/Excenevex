@@ -178,6 +178,7 @@ body{
 	font-family: @specialFont;
 	font-size: 18px;
 	letter-spacing: 1px;
+	position: relative;
 }
 
 *{
@@ -237,6 +238,10 @@ h2, h3, h4, h5, h6{
 
 .mainColor{
 	color: @mainColor;
+}
+
+.table-container{
+	display: table;
 }
 
 /*==========  Links  ==========*/
@@ -319,6 +324,11 @@ a.bubble{
 	top: 0;
 	width: 100%;
 	.shadow;
+
+	&.single{
+		position: relative;
+	}
+
 	h1{
 		margin: 0;
 		margin-top: 10px;
@@ -1120,6 +1130,8 @@ aside#sidebar{
 
 #maximage-container {
     min-height: 100vh;
+    position: relative;
+    margin: 0 -15px;
 	#cycle-loader {
 		top: 50%;
 		left: 50%;
@@ -1351,9 +1363,11 @@ nav.inset{
 .articleContent{
 	background: white;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	margin:300px 20px 20px;
-	article{
+	margin:0px 20px 20px;
+	#article{
 		padding:0 0 30px 0;
+		display: table-cell;
+		float: none;
 		header{
 			.imgUne{
 				background: url("../../img/article/canoe.jpg");
@@ -1631,6 +1645,9 @@ nav.inset{
         margin-top: 0 !important;
         padding: 0;
         background-color: @yellowColor;
+        display: table-cell;
+        float: none;
+        vertical-align: top;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
