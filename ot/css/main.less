@@ -1712,8 +1712,111 @@ nav.inset{
         form {
             margin-top: 4vh;
             text-align: center;
+
+			.rating-stars ul {
+				list-style-type:none;
+			  	padding:0;
+			  	-moz-user-select:none;
+			  	-webkit-user-select:none;
+
+			  	> li.star {
+			  		display: inline-block;
+			  		cursor: pointer;
+
+			  		&.selected > i.fa {
+			  			color: @mainColor;
+			  			text-shadow: 
+			  				0 0 1px #fff,
+			  				0 0 10px rgba(255, 255, 255, 0.5);
+			  			transition: all .3s;
+
+			  		}
+			  		&.hover > i.fa {
+			  			color: @mainColor;
+			  			text-shadow: 
+			  				0 0 1px #fff,
+			  				0 0 20px #fff;
+			  			transition: all .3s;
+
+			  		}
+			  		> i.fa {
+			  			font-size: 25px;
+			  			color: #fff;
+			  			transition: all .5s;
+			  		}
+			  	}
+			}
+
+            .multiselect {
+		        width: 200px;
+		        margin: auto;
+		    }
+		    .selectBox {
+		        position: relative;
+		        &::after {
+						content: "";
+					display: block;
+					position: absolute;
+					top: 18px;
+					right: 10px;
+					height: 0;
+					width: 0;
+					border: solid 7px transparent;
+					border-top-color: @mainColor;
+					}
+
+		         select {
+					width: 100%;
+					-webkit-border-radius:4px;
+					-moz-border-radius:4px;
+					border-radius:4px;
+					border:none;
+					outline:none;
+					-webkit-appearance:none;
+					-moz-appearance:none;
+					appearance:none;
+					cursor:pointer;
+					font-size: 15px;
+					padding: 10px;
+
+					&:hover {
+						cursor: pointer;
+					}
+			    }
+		    }
+		    .overSelect {
+		        position: absolute;
+		        left: 0; right: 0; top: 0; bottom: 0;
+		    }
+		    #checkboxes {
+		    	text-align: left;
+		        display: none;
+		        .border-radius(3px);
+		        .shadow();
+		        position: relative;
+		        top: 5px;
+		        background-color: #fff;
+
+		        input {
+		        	margin-right: 10px;
+		        }
+		        label {
+			    	font-weight: 100;
+			    	padding: 5px 10px;
+			    	color: #000;
+			        display: block;
+			        margin: 0;
+			        font-size: 18px;
+			        text-transform: none;
+			    }
+			    label:hover {
+			    	color: #fff;
+			        background-color: @mainColor;
+			    }
+		    }
+		 
             label {
-                margin-top: 4vh;
+                margin-top: 20px;
                 text-transform: uppercase;
                 color: @text;
             }
@@ -1799,12 +1902,7 @@ nav.inset{
 }
 /*
 nb etoiles
-parking
-services
-	wifi
-	demi pension 
-	pension complète
-	petit déjeuner
+
 langue parlée
 
 
