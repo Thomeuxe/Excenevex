@@ -1443,6 +1443,57 @@ nav.inset{
 
 }
 
+.comments{
+	margin:20px;
+	text-align: center;
+	padding: 15px;
+	header{
+		margin-bottom: 10px;
+		h2{
+			color:@greyColor;
+			text-align: center;
+			text-transform: none;
+			font-weight: 400;
+			margin-bottom: 10px;
+			&::after{
+				content: none;
+			}
+		}
+		a{
+			margin: 10px;
+		}
+	}
+	#comments--form{
+	header{
+		h3{
+			text-transform: none;
+			&::after{
+				content: none;
+			}
+		}
+	}
+	
+	form{
+		text-align: center;
+		textarea{
+			padding: 10px;
+			height: 30%;
+			width: 70%;	
+			resize:none;
+			border: 1px solid @light;
+		}
+		input{
+			display: inline-block;
+			width: 70%;
+			background:#f0954b;
+			border: none;
+			text-transform: uppercase;
+			color:white;
+		}
+	}
+	}
+}
+
 /*======================================
 =             HOTEL PAGES              =
 ======================================*/

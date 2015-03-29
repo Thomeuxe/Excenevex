@@ -138,6 +138,37 @@
 				</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor sit numquam ducimus, impedit maiores? Eum odio ipsa delectus dolore laborum sunt sapiente commodi nihil, architecto qui voluptatum facere perferendis doloremque.</p>
 			</div>
+			<div class="row comments">
+					<section id="comments" class="">
+				        <header>
+				                <h2>Pas de commentaire</h2>
+				                <a href="#comments--form"><i class="fa fa-pencil"></i>Laisser un commentaire</a>
+				        </header>
+				                        <!-- If comments are open, but there are no comments. -->  
+				         <section id="comments--form">
+			                <header>
+			                    <h3>Laisser un commentaire</h3>
+			                </header>
+				 
+				               
+			                <form action="http://localhost/Excenevex/tourisme/wp-comments-post.php" method="post" id="commentform">
+			               
+			                <!-- <p>Connecté en tant que <a href="http://localhost/Excenevex/tourisme/wp-admin/profile.php">thomeuxe</a>. <a href="http://localhost/Excenevex/tourisme/wp-login.php?action=logout" title="Déconnecter de ce compte">Déconnection &raquo;</a></p> -->
+			               
+			                <!-- <p><small><strong>XHTML:</strong> Vous pouvez utiliser ces tags&#58; &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </small></p> -->
+			 
+					            <textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea>
+					            <input name="submit" type="submit" id="submit" tabindex="5" value="Envoyer">
+					            <input type="hidden" name="comment_post_ID" value="13">
+
+					            <input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment" value="1a69ad916a"><script>(function(){if(window===window.parent){document.getElementById('_wp_unfiltered_html_comment_disabled').name='_wp_unfiltered_html_comment';}})();</script>
+			 
+			                </form>	
+				               
+				        </section>
+
+					</section>
+			    </div>
 		</article>
 		<aside class="col-lg-3 col-md-3 hidden-xs hidden-sm">
 		</aside>
