@@ -1,0 +1,146 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import "prefixer";
+
+body{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-size: 0;
+	max-height: 100vh;
+}
+
+.flex{
+	.flex-block();
+}
+
+#header{
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+	background: #fff;
+	left: 50%;
+	width: 350px;
+	margin-left: -175px;
+	.border-radius(0 0 175px 175px);
+	padding: 40px 0 30px 0;
+	.box-shadow(0 0 10px rgba(0,0,0,.6));
+	
+	h1{
+		font-family: 'Quicksand', sans-serif;
+		font-size: 40px;
+		text-transform: uppercase;
+		color: #abb8cf;
+	}
+
+	h2{
+		font-family: 'Montserrat', sans-serif;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #ea9951;
+		font-weight: normal;
+	}
+
+	// &:after{
+	// 	content: "";
+	// 	display: block;
+	// 	position: absolute;
+	// 	z-index: -1;
+	// 	left: 0;
+	// 	bottom: 0;
+	// 	width: 350px;
+	// 	height: 350px;
+	// 	border-radius: 50%;
+	// 	bottom: -175px;
+	// 	background: #fff;
+	// }
+}
+
+a{
+	height: 100vh;
+	width: 50%;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+
+	&:hover{
+		article{
+			min-height: 120vh;
+			position: relative;
+			bottom: 20vh;
+		}
+
+		&:first-of-type{
+			img{
+				margin-right: 50px;
+			}
+		}
+
+		&:last-of-type{
+			img{
+				margin-left: 50px;
+			}
+		}
+	}
+
+	article{
+		background-size: cover;
+		background-position: center;
+		min-height: 100vh;
+		width: 100%;
+		position: relative;
+		bottom: 0;
+		.transition(all 0.3s);
+	}
+
+	&:first-of-type{
+		border-right: 2px solid #ccc;
+		text-align: right;
+
+		header{
+			right: 0;
+			.border-radius(5px 0 0 5px);
+		}
+	}
+
+	&:last-of-type{
+		border-left: 2px solid #ccc;
+		text-align: left;
+
+		header{
+			.border-radius(0 5px 5px 0);
+		}
+	}
+
+	header{
+		display: inline-block;
+		position: absolute;
+		bottom: 20vh;
+		font-size: 30px;
+		background: #fff;
+		overflow: hidden;
+		white-space: nowrap;
+		.transition(all 0.3s);
+
+		h1{
+			margin: 0;
+			text-transform: uppercase;
+			color: #737373;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 30px;
+			line-height: normal;
+			display: inline-block;
+			background: #e5e5e5;
+			padding: 10px;
+		}
+
+		img{
+			display: inline-block;
+			height: 70px;
+			width: auto;
+			margin: 0 10px;
+			.transition(all 0.2s);
+		}
+
+	}
+}
