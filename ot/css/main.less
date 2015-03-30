@@ -1702,9 +1702,6 @@ nav.inset{
         margin-top: 0 !important;
         padding: 0;
         background-color: @yellowColor;
-        display: table-cell;
-        float: none;
-        vertical-align: top;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
@@ -1835,7 +1832,7 @@ nav.inset{
             }
             input[type=range]:focus {
                 outline: none;
-                border: none;
+                border-color: #fff;
                 box-shadow: none;
             }
             input[type=range]::-webkit-slider-runnable-track {
