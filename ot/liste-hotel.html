@@ -249,8 +249,9 @@
 					</div> -->
 				</section>
 
-				<label>fourchette de prix</label><br/>
-				<input type="range"><br/>
+				<label>Budget maximum</label><br>
+				<input type="range" min="0" max="200" value="100" step="10" onmousemove="rangevalue.value=value" />
+  				<span class="budget-value" ><output id="rangevalue">100</output>€ par nuit</span><br>
 
 				<label>Services proposés</label>
 				 <div class="multiselect">

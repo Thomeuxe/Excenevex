@@ -8,7 +8,6 @@ jQuery(document).ready(function($) {
     });
 
     //rating-stars
-
     $('#stars li').mouseover(function(event) {
         var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
 
@@ -60,7 +59,3 @@ function responseMessage(msg) {
     // $('.success-box div.text-message').html("<span>" + msg + "</span>");
     window.alert(msg);
 }
-
-
-
-
