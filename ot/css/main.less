@@ -1106,9 +1106,14 @@ aside#sidebar{
                     padding: 10px;
                     border-bottom-left-radius: 0;
                     border-top-left-radius: 0;
+                    border: none;
                     background: @mainColor;
                     color: #fff;
+                    font-size: 18px;
                     text-transform: uppercase;
+        			border-radius: @border-radius;
+        			border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
                 }
             }
             h2, span.screen-reader-text {
@@ -1126,6 +1131,11 @@ aside#sidebar{
                 font-size: 18px;
                 color: #000;
             }
+        }
+
+        li ul li{
+        	border-bottom: 1px solid #ccc;
+        	margin-bottom: 10px;
         }
     }
 }
@@ -1309,7 +1319,7 @@ nav.inset{
 			&:first-child a, &:last-child a{
 				text-transform: uppercase;
 				color: @mainColor;
-				&[href=""]{
+				&.disabled{
 					color: @greyColor;
 				}
 			}
@@ -1714,6 +1724,7 @@ nav.inset{
             padding-top: 2vh;
             text-align: center;
         }
+
         form {
             margin-top: 4vh;
             text-align: center;
