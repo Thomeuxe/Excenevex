@@ -1099,15 +1099,16 @@ aside#sidebar{
                         border-bottom-right-radius: 0;
                         border-top-right-radius: 0;
                     }
-                    &.search-submit {
-                        width: 20%;
-                        padding: 10px;
-                        border-bottom-left-radius: 0;
-                        border-top-left-radius: 0;
-                        background: @mainColor;
-                        color: #fff;
-                        text-transform: uppercase;
-                    }
+                }
+
+                button.search-submit {
+                    width: 20%;
+                    padding: 10px;
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                    background: @mainColor;
+                    color: #fff;
+                    text-transform: uppercase;
                 }
             }
             h2, span.screen-reader-text {
@@ -1309,7 +1310,7 @@ nav.inset{
 				text-transform: uppercase;
 				color: @mainColor;
 				&[href=""]{
-					color: @greyColor
+					color: @greyColor;
 				}
 			}
 
