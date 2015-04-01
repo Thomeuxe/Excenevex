@@ -245,7 +245,9 @@ h2, h3, h4, h5, h6{
 }
 
 .table-container{
-	display: table;
+	@media (min-width: @screen-sm-min) {
+		display: table;
+	}
 }
 
 /*==========  Links  ==========*/
@@ -803,8 +805,10 @@ section{
 =====================================*/
 
 section.actu{
-	display: table-cell;
-	float: none;
+	@media (min-width: @screen-sm-min) {
+		display: table-cell;
+		float: none;
+	}
 	background: #fff;
 	header {
 		margin-left: -16px;
@@ -1400,12 +1404,16 @@ nav.inset{
 
 .articleContent{
 	background: white;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	margin:0px 20px 20px;
+	@media (min-width: @screen-sm-min) {
+		margin:0px 20px 20px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	}
 	#article{
 		padding:0 0 30px 0;
-		display: table-cell;
-		float: none;
+		@media (min-width: @screen-sm-min) {
+			display: table-cell;
+			float: none;
+		}
 		header{
 			.imgUne{
 				background: url("../../img/article/canoe.jpg");
@@ -1471,6 +1479,10 @@ nav.inset{
 					content:none;
 				}
 			}
+
+			img{
+				max-width: 100%;
+			}
 		}
 		
 	}
@@ -1485,6 +1497,11 @@ nav.inset{
 	margin:20px;
 	text-align: center;
 	padding: 15px;
+
+	@media (max-width: @screen-xs-max) {
+		padding: 0 !important;
+	}
+
 	header{
 		margin-bottom: 10px;
 		h2{
@@ -1516,13 +1533,19 @@ nav.inset{
 		textarea{
 			padding: 10px;
 			height: 30%;
-			width: 70%;	
+			width: 70%;
+			@media (max-width: @screen-xs-max) {
+				width: 100%;
+			}
 			resize:none;
 			border: 1px solid @light;
 		}
 		input{
 			display: inline-block;
 			width: 70%;
+			@media (max-width: @screen-xs-max) {
+				width: 100%;
+			}
 			background:#f0954b;
 			padding: 10px;
 			border-radius: 3px;
