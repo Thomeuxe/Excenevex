@@ -1074,8 +1074,7 @@ section.actu{
 =========================================================*/
 
 aside#sidebar{
-	padding-left: 0; //pour coller la sidebar
-    padding-right: 0;
+	padding: 0 @padding;
 	background: #e5e5e5;
 	display: table-cell;
 	float: none;
@@ -1091,7 +1090,7 @@ aside#sidebar{
     }
 
     ul {
-        padding: @padding;
+        padding: @padding 0;
         li {
             form.search-form {
                 font-size: 0;
@@ -1140,6 +1139,10 @@ aside#sidebar{
                 font-family: 'Quicksand', sans-serif;
                 font-size: 18px;
                 color: #000;
+
+                &:hover{
+                	color: @mainColor;
+                }
             }
         }
 
