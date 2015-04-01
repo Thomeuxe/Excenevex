@@ -18,6 +18,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "lib/font-awesome.min.css";
 @import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 /*=================================
 =            VARIABLES            =
@@ -36,6 +37,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @googlePlusColor: #DD4B39;
 
 @specialFont: 'Quicksand', sans-serif;
+@textFont: 'Open Sans', sans-serif;
 
 @border-radius: 3px;
 @padding: 15px;
@@ -248,6 +250,16 @@ h2, h3, h4, h5, h6{
 	@media (min-width: @screen-sm-min) {
 		display: table;
 	}
+}
+
+article.error {
+	text-align: center;
+	font-size: 25px;
+	i.fa {
+		margin-right: 15px;
+	}
+	font-family: @textFont;
+	font-weight: 700;
 }
 
 /*==========  Links  ==========*/
@@ -808,19 +820,22 @@ section.actu{
 	@media (min-width: @screen-sm-min) {
 		display: table-cell;
 		float: none;
-	}
-	background: #fff;
-	header {
-		margin-left: -16px;
-		h2 {
-			background: @mainColor;
-			padding: 15px;
+		width: 75vw;
+		header {
+			margin-left: -16px;
+			h2 {
+				background: @mainColor;
+				padding: 15px;
+			}
 		}
 	}
 
-	@media(min-width: @screen-sm-min) {
-		width: 75vw;
+	@media (max-width: @screen-xs-max) {
+		header {
+			margin-bottom: 15px;
+		}
 	}
+	background: #fff;
 
 	article{
 		padding: @padding;
@@ -1051,6 +1066,7 @@ section.actu{
 				margin-bottom: 15px;
 			}
 			p{
+				font-family: @textFont;
 				font-size: 16px;
 			}
 			aside{
@@ -1145,7 +1161,7 @@ aside#sidebar{
                 display: none;
             }
             a {
-                font-family: 'Quicksand', sans-serif;
+                font-family: @textFont;
                 font-size: 18px;
                 color: #000;
 
@@ -1410,6 +1426,9 @@ nav.inset{
 	}
 	#article{
 		padding:0 0 30px 0;
+		p {
+			font-family: @textFont;
+		}
 		@media (min-width: @screen-sm-min) {
 			display: table-cell;
 			float: none;
@@ -1448,6 +1467,7 @@ nav.inset{
 					text-align: center;
 					color:black;
 					font-weight: bold;
+					font-family: @specialFont;
 					&::before{
 						display: inline-block;
 						content: "\f10d";
@@ -1592,6 +1612,9 @@ nav.inset{
 					}
 				}
 			}
+		}
+		p {
+			font-family: @textFont;
 		}
 		div{
 			padding: 15px;
@@ -1746,6 +1769,9 @@ nav.inset{
                         }
                     }
                 }
+                p {
+                	font-family: @textFont;
+                }
                 .hotelinfo {
                     h4 {
                         color: black;
@@ -1758,6 +1784,9 @@ nav.inset{
         }
     }
     aside#sidebar {
+    	@media(min-width: @screen-sm-min) and (max-width: @screen-md-min) {
+    		display: block;
+    	}
         margin-top: 0 !important;
         padding: 0;
         background-color: @yellowColor;
@@ -1820,6 +1849,7 @@ nav.inset{
             .multiselect {
 		        width: 200px;
 		        margin: auto;
+		        font-family: @textFont;
 		    }
 		    .selectBox {
 		        position: relative;
