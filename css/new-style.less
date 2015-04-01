@@ -2,6 +2,14 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import "prefixer";
 
+
+/* Media-queries values : */
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+
 body{
 	padding: 0;
 	margin: 0;
@@ -11,20 +19,24 @@ body{
 }
 
 .flex{
-	.flex-block();
+	@media(min-width: @screen-sm-min) {
+		.flex-block();
+	}
 }
 
 #header{
-	display: inline-block;
-	position: absolute;
-	z-index: 10;
-	background: #fff;
-	left: 50%;
-	width: 350px;
-	margin-left: -175px;
-	.border-radius(0 0 175px 175px);
-	padding: 40px 0 30px 0;
-	.box-shadow(0 0 10px rgba(0,0,0,.6));
+	@media(min-width: @screen-sm-min) {
+		display: inline-block;
+		position: absolute;
+		z-index: 10;
+		background: #fff;
+		left: 50%;
+		width: 350px;
+		margin-left: -175px;
+		.border-radius(0 0 175px 175px);
+		padding: 40px 0 30px 0;
+		.box-shadow(0 0 10px rgba(0,0,0,.6));
+	}
 	
 	h1{
 		font-family: 'Quicksand', sans-serif;
@@ -40,20 +52,6 @@ body{
 		color: #ea9951;
 		font-weight: normal;
 	}
-
-	// &:after{
-	// 	content: "";
-	// 	display: block;
-	// 	position: absolute;
-	// 	z-index: -1;
-	// 	left: 0;
-	// 	bottom: 0;
-	// 	width: 350px;
-	// 	height: 350px;
-	// 	border-radius: 50%;
-	// 	bottom: -175px;
-	// 	background: #fff;
-	// }
 }
 
 a{
@@ -62,33 +60,37 @@ a{
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-			text-decoration: none;
+	text-decoration: none;
 
-	&:hover{
-		article{
-			min-height: 120vh;
-			position: relative;
-			bottom: 20vh;
-		}
+	@media(min-width: @screen-sm-min) {
+		&:hover{
+			article{
+				min-height: 120vh;
+				position: relative;
+				bottom: 20vh;
+			}
 
-		header{
-		}
+			header{
+			}
 
-		.logo{
-			padding: 50px 0;
-		}
+			.logo{
+				padding: 50px 0;
+			}
 
-		img{
-			//margin-right: 50px;
-		}
+			img{
+				//margin-right: 50px;
+			}
 
 
-		h1{
-			height: 100px;
-			line-height: 100px;
-			font-size: 40px;
+			h1{
+				height: 100px;
+				line-height: 100px;
+				font-size: 40px;
+			}
 		}
 	}
+
+	
 
 	article{
 		background-size: cover;
@@ -155,5 +157,37 @@ a{
 			.transition(all 0.2s);
 		}
 
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	header {
+		min-height: 20vh;
+		h1 {
+			margin: 0;
+		}
+	}
+	a {
+		width: 100%;
+	}
+	article {
+		min-height: 40vh !important;
+		height: 40vh;
+		header {
+			height: 100%;
+			position: inherit;
+			h1 {
+				display: block;
+				height: 30%;
+				padding: 0;
+			}
+			div.logo {
+				height: 70%;
+				vertical-align: middle;
+				img {
+					display: inline-block;
+				}
+			}
+		}
 	}
 }
