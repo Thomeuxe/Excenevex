@@ -22,20 +22,25 @@ Use it to make something cool, have fun, and share what you've learned with othe
 =            VARIABLES            =
 =================================*/
 
-@background: #000;
-@text: #fff;
+
+@black: #000;
+@white: #fff;
 @mainColor: #ec7b1e;
+// @mainColor: blue;
 @complementaryColor: #3a509b;
-@greyColor:#B9B9B9;
-@greyBrownColor: #b5ada2;
-@yellowColor: #f0bc4b;
-@light: lighten(@complementaryColor,50%);
+@titleNavColor: #445FA2;
+@grey:#B9B9B9;
+@greyBrown: #b5ada2;
+@yellow: #f0bc4b;
+@sidebarColor: #e5e5e5;
+
 @facebookColor: #3b5998;
 @twitterColor: #33CCFF;
 @googlePlusColor: #DD4B39;
 
 @specialFont: 'Quicksand', sans-serif;
-@textFont: 'Open Sans', sans-serif;
+@alternativeFont: 'Montserrat', sans-serif;
+@bodyTextFont: 'Open Sans', sans-serif;
 
 @border-radius: 3px;
 @padding: 15px;
@@ -109,7 +114,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		width: 0;
 		padding-top: 0;
 		border-radius: 100%;
-		background-color: rgba(236, 123, 30, .3);
+		background-color: fade(@mainColor, 30%);
 		.translate(-50%, -50%);
 	}
 	
@@ -227,7 +232,7 @@ h2, h3, h4, h5, h6{
 		padding: 0 @padding;
 		text-transform: uppercase;
 		text-align: center;
-		color: @text;
+		color: @white;
 		span {
 			display: inline-block;
 			background-color: rgba(0,0,0,0.3);
@@ -256,7 +261,7 @@ article.error {
 	i.fa {
 		margin-right: 15px;
 	}
-	font-family: @textFont;
+	font-family: @bodyTextFont;
 	font-weight: 700;
 }
 
@@ -298,7 +303,7 @@ a.bubble{
 		width: 100%;
 		text-align: center;
 		background: @mainColor;
-		color: #fff;
+		color: @white;
 		.border-radius(50%);
 		font-size: 25px;
 	}
@@ -317,7 +322,7 @@ a.bubble{
 	display: block;
 	background: @mainColor;
 	text-align: center;
-	color: #fff;
+	color: @white;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-top: @padding;
@@ -368,7 +373,7 @@ a.bubble{
 		background: none;
 		box-shadow: none;
 		h1{
-			background: #fff;
+			background: @white;
 			display: table-cell;
 			vertical-align: bottom;
 			padding: 20px;
@@ -419,7 +424,7 @@ a.bubble{
 
 			&::before{
 				content: "";
-				background: #fff	;
+				background: @white	;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -434,7 +439,7 @@ a.bubble{
 			position: absolute;
 			top: 170px;
 			left: 25px;
-			border: solid 5px #fff;
+			border: solid 5px @white;
 			border-radius: 100%;
 			
 			img {
@@ -449,7 +454,7 @@ a.bubble{
 		}
         #meteo {
             @media(max-width: 1009px) {display: none !important;}
-            font-family: 'Montserrat', sans-serif;
+            font-family: @alternativeFont;
             margin-left: 40px;
             margin-top: 5px;
             display: inline-block;
@@ -476,7 +481,7 @@ a.bubble{
                     width: 75px;
                     font-size: 14px;
                     text-align: right;
-                    color: #fff;
+                    color: @white;
                     span.day {
                         display: block;
                         font-size: 18px;
@@ -504,7 +509,7 @@ a.bubble{
                 background: rgba(0,0,0,0.3);
                 margin-top: 10px;
                 margin-bottom: 0;
-                color: #fff;
+                color: @white;
                 width: 190px;
                 img {
                     width: 50px;
@@ -553,7 +558,7 @@ a.bubble{
 
 				li{
 					a{
-						color: #fff;
+						color: @white;
 						font-weight: 700;
 						text-transform: uppercase;
 						display: block;
@@ -576,7 +581,7 @@ a.bubble{
 					&.current-menu-item a{
 						background: @mainColor;
 						span{
-							color: #fff;
+							color: @white;
 						}
 					}
 					
@@ -655,7 +660,7 @@ a.bubble{
 						transition: @duration;
 						background-color: @mainColor;
 						span {
-							color: #fff;
+							color: @white;
 						}	
 					}
 					
@@ -666,7 +671,7 @@ a.bubble{
 						width: 150px;
 						height: 150px;
 						.shadow();
-						background-color: #fff;
+						background-color: @white;
 						text-decoration: none;
 						shape-outside: circle(50%);
 						webkit-clip-path: circle(50%);
@@ -680,11 +685,11 @@ a.bubble{
 							 text-transform: uppercase;
 							 font-family: @specialFont;
 							 font-weight: 700;
-							 color: #445FA2;
+							 color: @titleNavColor;
 							 transition: all ease 0.3s;
 
 							 &:hover {
-								 color: #fff;
+								 color: @white;
 							 }
 						}
 					}
@@ -692,7 +697,7 @@ a.bubble{
 					&.current-menu-item a{
 						background: @mainColor;
 						span{
-							color: #fff;
+							color: @white;
 						}
 					}
 
@@ -720,7 +725,7 @@ a.bubble{
 								margin: 0;
 								padding-top: 70px;
 								img {
-									background-color: #fff;
+									background-color: @white;
 									border-radius: 100%;
 									padding: 10px;
 									width: 40px;
@@ -728,7 +733,7 @@ a.bubble{
 								}
 								span {
 									opacity: 0;
-									color: #fff;
+									color: @white;
 									font-size: 11px;
 									line-height: 20px;
 								}
@@ -835,12 +840,12 @@ section.actu{
 			margin-bottom: 15px;
 		}
 	}
-	background: #fff;
+	background: @white;
 
 	article{
 		padding: @padding;
 		@media(max-width: @screen-xs-max) {
-			background: @light;
+			background: lighten(@complementaryColor,50%);
 			border-bottom:solid 3px #ccc;
 			.border-radius(3px);
 			margin-bottom: 15px;
@@ -883,14 +888,14 @@ section.actu{
                         span.buttons {
                             text-shadow: 0 2px 2px rgba(0,0,0,0.3);
                             transition-timing-function: ease-in;
-                            background-color: darken(@greyBrownColor, 10%);
+                            background-color: darken(@greyBrown, 10%);
                         }
                     }
                     span.buttons {
                         transition: all ease-out 0.3s;
                         margin-left: 5px;
-                        color: #fff;
-                        background-color: @greyBrownColor;
+                        color: @white;
+                        background-color: @greyBrown;
                         .border-radius(5px);
                         padding: 5px 5px 3px 5px;
                         font-weight: 100;
@@ -910,7 +915,7 @@ section.actu{
                         height: 0;
                         width: 0;
                         border: solid 7px transparent;
-                        border-bottom-color: darken(@greyBrownColor, 10%);
+                        border-bottom-color: darken(@greyBrown, 10%);
                         .transition(top 0.3s);
                     }
                     &.before::before{
@@ -921,23 +926,23 @@ section.actu{
                     z-index: 999;
                     position: absolute;
                     margin-top: 10px;
-                    background-color: darken(@greyBrownColor, 10%);
+                    background-color: darken(@greyBrown, 10%);
                     .border-radius(5px);
                     padding: 15px 20px;
                     
                     h6 {
-                        color: #fff;
+                        color: @white;
                         margin-bottom: 7px;
                     }
                     ul {
                         font-size: 10px;
-                        color: #fff;
+                        color: @white;
                         li {
                             a{
                                 width: 100%;
                                 display: block;
                                 overflow: hidden;
-                                background-color: #fff;
+                                background-color: @white;
                                 .border-radius(20px);
                                 padding: 5px 0;
                                 .transition(all ease-out .2s);
@@ -1066,7 +1071,7 @@ section.actu{
 				margin-bottom: 15px;
 			}
 			p{
-				font-family: @textFont;
+				font-family: @bodyTextFont;
 				font-size: 16px;
 			}
 			aside{
@@ -1080,7 +1085,7 @@ section.actu{
 			border-bottom:solid 3px darken(@mainColor, 10%);
 		}
 		&:hover , &:active, &:focus{
-			color: #fff;
+			color: @white;
 		}
 	}
 }
@@ -1100,7 +1105,7 @@ section.actu{
 
 aside#sidebar{
 	padding: 0 @padding;
-	background: #e5e5e5;
+	background: @sidebarColor;
 	display: table-cell;
 	float: none;
 	vertical-align: top;
@@ -1142,7 +1147,7 @@ aside#sidebar{
                     border-top-left-radius: 0;
                     border: none;
                     background: @mainColor;
-                    color: #fff;
+                    color: @white;
                     font-size: 18px;
                     text-transform: uppercase;
         			border-radius: @border-radius;
@@ -1161,7 +1166,7 @@ aside#sidebar{
                 display: none;
             }
             a {
-                font-family: @textFont;
+                font-family: @bodyTextFont;
                 font-size: 16px;
                 color: #666;
                 display: inline-block;
@@ -1230,11 +1235,11 @@ aside#sidebar{
 		
 		.in-slide-content {
 			display: none;
-			color: #fff;
+			color: @white;
 			.border-radius(5px);
 			background: rgba(0,0,0,0.5);
 			padding: 20px;
-			text-shadow: 0 2px 3px #000;
+			text-shadow: 0 2px 3px @black;
 			float:right;
 			font-size:30px;
 			right:20px;
@@ -1265,13 +1270,13 @@ section.full-slider{
 			width: 100%;
 			background: rgba(0,0,0,.5);
 			font-weight: 700;
-			color: #fff;
+			color: @white;
 			font-size: 28px;
 			h2{
 				font-weight: 700;
 				margin: 0;
 				padding: 0;
-				color: #fff;
+				color: @white;
 
 				&::after{
 					display: none;	
@@ -1309,7 +1314,7 @@ nav.inset{
 	font-weight: 700;
 	//.border-radius(0);
 	padding: @padding;
-	background: @light;
+	background: lighten(@complementaryColor,50%);
 	border-bottom:solid 3px #ccc;
 	header{
 		text-align: left;
@@ -1364,7 +1369,7 @@ nav.inset{
 				text-transform: uppercase;
 				color: @mainColor;
 				&.disabled{
-					color: @greyColor;
+					color: @grey;
 				}
 			}
 
@@ -1375,11 +1380,11 @@ nav.inset{
 				border-radius: 100%;
 				width: 30px; height: 30px;
 				display: block;
-				color: #fff;
+				color: @white;
 				line-height: 30px;
 			}
 			&.current a, &.visited a {
-				background: @greyColor;
+				background: @grey;
 			}
 		}
 	}
@@ -1391,9 +1396,9 @@ nav.inset{
 
 #footer{
 	text-align: center;
-	background: @light;
+	background: lighten(@complementaryColor,50%);
 	padding: @padding;
-	color: #888;
+	color: darken(@grey, 20%);
 }
 
 
@@ -1429,7 +1434,7 @@ nav.inset{
 	#article{
 		padding:0 0 30px 0;
 		p {
-			font-family: @textFont;
+			font-family: @bodyTextFont;
 		}
 		@media (min-width: @screen-sm-min) {
 			display: table-cell;
@@ -1445,7 +1450,7 @@ nav.inset{
 			}
 			.titre{
 				padding: 0 15px;
-				background:#f0954b;
+				background-color: lighten(@mainColor, 10%);
 				h1{
 					line-height:50px;
 					margin:0;
@@ -1467,7 +1472,7 @@ nav.inset{
 				border: none;
 				p{
 					text-align: center;
-					color:black;
+					color: @black;
 					font-weight: bold;
 					font-family: @specialFont;
 					&::before{
@@ -1486,7 +1491,8 @@ nav.inset{
 			}
 			a{
 				text-decoration: underline;
-				color:#3394e7;
+				// color:#3394e7;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
 				&:hover{
 					text-decoration: none;
 				}
@@ -1494,7 +1500,8 @@ nav.inset{
 			}
 			h3.subtitle{
 				margin: 20px 0;
-				color: #bd753a;
+				// color: #bd753a;
+				color: darken(@mainColor, 10%);
 				text-transform: uppercase;
 				text-align: left;
 				&::after{
@@ -1509,7 +1516,7 @@ nav.inset{
 		
 	}
 	aside{
-		background-color:#e5e5e5;
+		background-color: @sidebarColor;
 		min-height: 100%;
 	}
 
@@ -1527,7 +1534,7 @@ nav.inset{
 	header{
 		margin-bottom: 10px;
 		h2{
-			color:@greyColor;
+			color:@grey;
 			text-align: center;
 			text-transform: none;
 			font-weight: 400;
@@ -1560,7 +1567,7 @@ nav.inset{
 				width: 100%;
 			}
 			resize:none;
-			border: 1px solid @light;
+			border: 1px solid lighten(@complementaryColor,50%);
 		}
 		input{
 			display: inline-block;
@@ -1616,7 +1623,7 @@ nav.inset{
 			}
 		}
 		p {
-			font-family: @textFont;
+			font-family: @bodyTextFont;
 		}
 		div{
 			padding: 15px;
@@ -1664,7 +1671,7 @@ nav.inset{
 		}
 	}
 	aside{
-		background-color:#e5e5e5;
+		background-color: @sidebarColor;
 		padding: 0;
 		header{
 			background: @mainColor;
@@ -1709,7 +1716,7 @@ nav.inset{
         float: none;
         h1 {
             margin: 0;
-            color: @text;
+            color: @white;
             text-transform: uppercase;
             text-align: left;
             background-color: @mainColor;
@@ -1742,7 +1749,7 @@ nav.inset{
             }
             .hoteldescription {
                 .hoteltitle {
-                    color: @greyColor;
+                    color: @grey;
                     text-align: center;
                     @media (min-width: @screen-md-min) {
                         text-align: left;
@@ -1751,7 +1758,7 @@ nav.inset{
                         padding: 3vh 0 3vh 0;
                     }
                     h4 {
-                        color: @greyColor;
+                        color: @grey;
                         display: inline-block;
                         text-transform: uppercase;
                         text-align: center;
@@ -1772,7 +1779,7 @@ nav.inset{
                     }
                 }
                 p {
-                	font-family: @textFont;
+                	font-family: @bodyTextFont;
                 }
                 .hotelinfo {
                     h4 {
@@ -1791,7 +1798,7 @@ nav.inset{
     	}
         margin-top: 0 !important;
         padding: 0;
-        background-color: @yellowColor;
+        background-color: @yellow;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
@@ -1828,7 +1835,7 @@ nav.inset{
 			  		}
 			  		> i.fa {
 			  			font-size: 25px;
-			  			color: #fff;
+			  			color: @white;
 			  			transition: all .5s;
 			  		}
 			  	}
@@ -1836,13 +1843,13 @@ nav.inset{
 
 			.budget-value {
 				margin-top: 15px;
-				color: #fff;
+				color: @white;
 				font-weight: 100;
 				font-size: 20px;
 				output {
 					font-size: 20px;
 					font-style: @specialFont;
-					color: #fff;
+					color: @white;
 					font-weight: 700;
 					display: inline;
 				}
@@ -1851,7 +1858,7 @@ nav.inset{
             .multiselect {
 		        width: 200px;
 		        margin: auto;
-		        font-family: @textFont;
+		        font-family: @bodyTextFont;
 		    }
 		    .selectBox {
 		        position: relative;
@@ -1897,7 +1904,7 @@ nav.inset{
 		        .shadow();
 		        position: relative;
 		        top: 5px;
-		        background-color: #fff;
+		        background-color: @white;
 
 		        input {
 		        	margin-right: 10px;
@@ -1905,14 +1912,14 @@ nav.inset{
 		        label {
 			    	font-weight: 100;
 			    	padding: 5px 10px;
-			    	color: #000;
+			    	color: @black;
 			        display: block;
 			        margin: 0;
 			        font-size: 18px;
 			        text-transform: none;
 			    }
 			    label:hover {
-			    	color: #fff;
+			    	color: @white;
 			        background-color: @mainColor;
 			    }
 		    }
@@ -1920,7 +1927,7 @@ nav.inset{
             label {
                 margin-top: 20px;
                 text-transform: uppercase;
-                color: @text;
+                color: @white;
             }
        	/*=================================
 		=     DESIGN INPUT TYPE RANGE     =
@@ -1933,7 +1940,7 @@ nav.inset{
             }
             input[type=range]:focus {
                 outline: none;
-                border-color: #fff;
+                border-color: @white;
                 box-shadow: none;
             }
             input[type=range]::-webkit-slider-runnable-track {
@@ -1941,18 +1948,18 @@ nav.inset{
                 height: 8.4px;
                 cursor: pointer;
                 animate: 0.2s;
-                background: @text;
+                background: @white;
                 border-radius: 1.3px;
             }
             // input[type=range]:focus::-webkit-slider-runnable-track {
-            // 	background: @text;
+            // 	background: @white;
             // }
             input[type=range]::-moz-range-track {
                 // width: 70%;
                 height: 8.4px;
                 cursor: pointer;
                 animate: 0.2s;
-                background: @text;
+                background: @white;
                 border-radius: @border-radius;
             }
             input[type=range]::-ms-track {
@@ -1970,7 +1977,7 @@ nav.inset{
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: #ffffff;
+                background: @white;
                 cursor: pointer;
                 -webkit-appearance: none;
                 margin-top: -4px;
@@ -1980,15 +1987,15 @@ nav.inset{
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: #ffffff;
+                background: @white;
                 cursor: pointer;
             }
             input[type=range]::-ms-thumb {
-                border: 1px solid #000000;
+                border: 1px solid @black;
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: @text;
+                background: @white;
                 cursor: pointer;
             }
             input[type=range]::-ms-fill-lower {
