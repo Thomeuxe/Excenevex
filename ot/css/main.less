@@ -25,14 +25,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @black: #000;
 @white: #fff;
-@mainColor: #ec7b1e;
-// @mainColor: blue;
-@complementaryColor: #3a509b;
-@titleNavColor: #445FA2;
 @grey:#B9B9B9;
 @greyBrown: #b5ada2;
-@yellow: #f0bc4b;
+
+@mainColor: #ec7b1e;
+@complementaryColor: #3a509b;
+@titleNavColor: #445FA2;
+
 @sidebarColor: #e5e5e5;
+@alternativeSidebarColor: #f0bc4b;
 
 @facebookColor: #3b5998;
 @twitterColor: #33CCFF;
@@ -1575,7 +1576,7 @@ nav.inset{
 			@media (max-width: @screen-xs-max) {
 				width: 100%;
 			}
-			background:#f0954b;
+			background: lighten(@mainColor, 10%);
 			padding: 10px;
 			border-radius: 3px;
 			border: none;
@@ -1607,7 +1608,7 @@ nav.inset{
 		header{
 			.titre{
 				padding: 0 15px;
-				background:#f0954b;
+				background: lighten(@mainColor, 10%);
 				h1{
 					line-height:50px;
 					margin:0;
@@ -1632,7 +1633,7 @@ nav.inset{
 			}
 			a{
 				text-decoration: underline;
-				color:#3394e7;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
 				&:hover{
 					text-decoration: none;
 				}
@@ -1640,7 +1641,7 @@ nav.inset{
 			}
 			h3{
 				margin: 20px 0px 10px 0;
-				color: #bd753a;
+				color: darken(@mainColor, 10%);
 				text-transform: uppercase;
 				text-align: left;
 				&::after{
@@ -1798,7 +1799,7 @@ nav.inset{
     	}
         margin-top: 0 !important;
         padding: 0;
-        background-color: @yellow;
+        background-color: @alternativeSidebarColor;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
