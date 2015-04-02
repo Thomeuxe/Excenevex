@@ -25,14 +25,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @black: #000;
 @white: #fff;
+<<<<<<< HEAD
 //@mainColor: #ec7b1e;
 @mainColor: #3a509b;
-@complementaryColor: #3a509b;
-@titleNavColor: #445FA2;
+=======
 @grey:#B9B9B9;
 @greyBrown: #b5ada2;
-@yellow: #f0bc4b;
+
+@mainColor: #ec7b1e;
+>>>>>>> origin/master
+@complementaryColor: #3a509b;
+@titleNavColor: #445FA2;
+
 @sidebarColor: #e5e5e5;
+@alternativeSidebarColor: #f0bc4b;
 
 @facebookColor: #3b5998;
 @twitterColor: #33CCFF;
@@ -665,11 +671,13 @@ a.bubble{
 					}
 					
 					a {
-						@media(max-width: 1289px) {width: 100px; height: 100px;}
+						@media(max-width: 1289px) {width: 100px; height: 100px; line-height: 100px;}
 						display: block;
 						border-radius: 100%;
 						width: 150px;
 						height: 150px;
+						line-height: 150px;
+						text-align: center;
 						.shadow();
 						background-color: @white;
 						text-decoration: none;
@@ -678,10 +686,12 @@ a.bubble{
 						
 						
 						 span {
-						 	@media(max-width: 1289px) {line-height: 100px; font-size: 12px;}
+						 	@media(max-width: 1289px) {line-height: 100px; font-size: 12px; line-height: 1.2}
 							 display: block;
 							 text-align: center;
-							 line-height: 150px;
+							 vertical-align:middle;
+							 display:inline-block;
+							 line-height:1.2;
 							 text-transform: uppercase;
 							 font-family: @specialFont;
 							 font-weight: 700;
@@ -691,6 +701,13 @@ a.bubble{
 							 &:hover {
 								 color: @white;
 							 }
+						}
+
+						@media (min-width: @screen-md-min) {
+							i.fa {
+								display: none;
+							}
+							
 						}
 					}
 					
@@ -717,6 +734,7 @@ a.bubble{
 								width: auto;
 								height: auto;
 								position: relative;
+								line-height: 0;
 								top: 0;
 								background: none;
 								box-shadow: none;
@@ -1575,7 +1593,7 @@ nav.inset{
 			@media (max-width: @screen-xs-max) {
 				width: 100%;
 			}
-			background:#f0954b;
+			background: lighten(@mainColor, 10%);
 			padding: 10px;
 			border-radius: 3px;
 			border: none;
@@ -1607,7 +1625,7 @@ nav.inset{
 		header{
 			.titre{
 				padding: 0 15px;
-				background:#f0954b;
+				background: lighten(@mainColor, 10%);
 				h1{
 					line-height:50px;
 					margin:0;
@@ -1632,7 +1650,7 @@ nav.inset{
 			}
 			a{
 				text-decoration: underline;
-				color:#3394e7;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
 				&:hover{
 					text-decoration: none;
 				}
@@ -1640,7 +1658,7 @@ nav.inset{
 			}
 			h3{
 				margin: 20px 0px 10px 0;
-				color: #bd753a;
+				color: darken(@mainColor, 10%);
 				text-transform: uppercase;
 				text-align: left;
 				&::after{
@@ -1798,7 +1816,7 @@ nav.inset{
     	}
         margin-top: 0 !important;
         padding: 0;
-        background-color: @yellow;
+        background-color: @alternativeSidebarColor;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
@@ -2008,6 +2026,122 @@ nav.inset{
             }
         }
     }
+}
+
+/*======================================
+=             HOTEL PAGES              =
+======================================*/
+
+.contactContent{
+	background: white;
+	margin: 300px 20px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	.imgUne{
+		background: url("../../img/article/canoe.jpg");
+		background-position:70% 60%;
+		background-size: cover;
+		width: 100%;
+		height:50vh;
+	}
+	article{
+		padding:0 0 30px 0;
+		text-align: justify;
+		header{
+			.titre{
+				padding: 0 15px;
+				background: lighten(@mainColor, 10%);
+				h1{
+					line-height:50px;
+					margin:0;
+					text-transform: uppercase;
+					color:white;
+					font-family: @specialFont;
+					font-weight: 700;
+					font-size:30px;
+					@media (max-width:@screen-xs-max){
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		p {
+			font-family: @bodyTextFont;
+		}
+		div{
+			padding: 15px;
+			.chapeau{
+				font-weight: 700;
+			}
+			a{
+				text-decoration: underline;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
+				&:hover{
+					text-decoration: none;
+				}
+			
+			}
+			h3{
+				margin: 20px 0px 10px 0;
+				color: darken(@mainColor, 10%);
+				text-transform: uppercase;
+				text-align: left;
+				&::after{
+					content:none;
+				}
+			}
+			.contact{
+				i{
+					margin-right: 5px;
+				}
+			}
+			
+		}
+		.zoombox{
+			margin: 0 auto;
+			display: flex;
+			align-items:center;
+			justify-content:center;	
+			@media screen and (max-width: 900px){
+				flex-direction:column;
+			} 
+			img{
+				display: inline-block;
+				padding: 10px;
+				max-width: 250px;
+				max-height: 250px;
+			}
+		}
+	}
+	aside{
+		background-color: @sidebarColor;
+		padding: 0;
+		header{
+			background: @mainColor;
+			width: 100%;
+			h2{
+				font-style: italic;
+				font-size: 16px;
+				line-height: 50px;
+				color: white;
+				text-align: center;
+				text-transform: uppercase;
+				&::after{
+					content: none;
+				}
+			}
+		}
+		article{
+			h3{
+				margin: 0px;
+			}
+			.tarifs{
+				font-size: 15px;
+			}
+			i{
+				margin-right: 8px;
+			}
+		}
+	}
 }
 
 /*-----  End of OTHER PAGES  ------*/
