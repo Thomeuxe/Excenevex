@@ -1,14 +1,12 @@
 /*
-Theme Name: Excenevex
-Theme URI: http://wordpress.org/themes/twentythirteen
-Author: the WordPress team
-Author URI: http://wordpress.org/
-Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Theme Name: Excenevex | Office du tourisme
+Author: LECOEUR Thomas
+Author URI: http://www.thomaslecoeur.com/
+Description: Thème du site de l'office du tourisme d'Excenevex
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
-Text Domain: twentythirteen
+Text Domain: excenevex_tourisme
  
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -24,20 +22,26 @@ Use it to make something cool, have fun, and share what you've learned with othe
 =            VARIABLES            =
 =================================*/
 
-@background: #000;
-@text: #fff;
-@mainColor: #ec7b1e;
+
+@black: #000;
+@white: #fff;
+@grey:#B9B9B9;
+@greyBrown: #b5ada2;
+
+@mainColor: #3a509b;
 @complementaryColor: #3a509b;
-@greyColor:#B9B9B9;
-@greyBrownColor: #b5ada2;
-@yellowColor: #f0bc4b;
-@light: lighten(@complementaryColor,50%);
+@titleNavColor: #445FA2;
+
+@sidebarColor: #e5e5e5;
+@alternativeSidebarColor: #f0bc4b;
+
 @facebookColor: #3b5998;
 @twitterColor: #33CCFF;
 @googlePlusColor: #DD4B39;
 
 @specialFont: 'Quicksand', sans-serif;
-@textFont: 'Open Sans', sans-serif;
+@alternativeFont: 'Montserrat', sans-serif;
+@bodyTextFont: 'Open Sans', sans-serif;
 
 @border-radius: 3px;
 @padding: 15px;
@@ -111,7 +115,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		width: 0;
 		padding-top: 0;
 		border-radius: 100%;
-		background-color: rgba(236, 123, 30, .3);
+		background-color: fade(@mainColor, 30%);
 		.translate(-50%, -50%);
 	}
 	
@@ -229,7 +233,7 @@ h2, h3, h4, h5, h6{
 		padding: 0 @padding;
 		text-transform: uppercase;
 		text-align: center;
-		color: @text;
+		color: @white;
 		span {
 			display: inline-block;
 			background-color: rgba(0,0,0,0.3);
@@ -258,7 +262,7 @@ article.error {
 	i.fa {
 		margin-right: 15px;
 	}
-	font-family: @textFont;
+	font-family: @bodyTextFont;
 	font-weight: 700;
 }
 
@@ -300,7 +304,7 @@ a.bubble{
 		width: 100%;
 		text-align: center;
 		background: @mainColor;
-		color: #fff;
+		color: @white;
 		.border-radius(50%);
 		font-size: 25px;
 	}
@@ -319,7 +323,7 @@ a.bubble{
 	display: block;
 	background: @mainColor;
 	text-align: center;
-	color: #fff;
+	color: @white;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-top: @padding;
@@ -370,7 +374,7 @@ a.bubble{
 		background: none;
 		box-shadow: none;
 		h1{
-			background: #fff;
+			background: @white;
 			display: table-cell;
 			vertical-align: bottom;
 			padding: 20px;
@@ -392,9 +396,11 @@ a.bubble{
 			}
 
 			img{
-				width: 250px;
+				width: auto;
 				height: 143px;
 				z-index: 1;
+				position: relative;
+				top: 5px;
 			}
 			
 			.social-buttons {
@@ -419,7 +425,7 @@ a.bubble{
 
 			&::before{
 				content: "";
-				background: #fff	;
+				background: @white	;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -434,7 +440,7 @@ a.bubble{
 			position: absolute;
 			top: 170px;
 			left: 25px;
-			border: solid 5px #fff;
+			border: solid 5px @white;
 			border-radius: 100%;
 			
 			img {
@@ -449,7 +455,7 @@ a.bubble{
 		}
         #meteo {
             @media(max-width: 1009px) {display: none !important;}
-            font-family: 'Montserrat', sans-serif;
+            font-family: @alternativeFont;
             margin-left: 40px;
             margin-top: 5px;
             display: inline-block;
@@ -476,7 +482,7 @@ a.bubble{
                     width: 75px;
                     font-size: 14px;
                     text-align: right;
-                    color: #fff;
+                    color: @white;
                     span.day {
                         display: block;
                         font-size: 18px;
@@ -504,7 +510,7 @@ a.bubble{
                 background: rgba(0,0,0,0.3);
                 margin-top: 10px;
                 margin-bottom: 0;
-                color: #fff;
+                color: @white;
                 width: 190px;
                 img {
                     width: 50px;
@@ -553,7 +559,7 @@ a.bubble{
 
 				li{
 					a{
-						color: #fff;
+						color: @white;
 						font-weight: 700;
 						text-transform: uppercase;
 						display: block;
@@ -576,7 +582,7 @@ a.bubble{
 					&.current-menu-item a{
 						background: @mainColor;
 						span{
-							color: #fff;
+							color: @white;
 						}
 					}
 					
@@ -655,44 +661,55 @@ a.bubble{
 						transition: @duration;
 						background-color: @mainColor;
 						span {
-							color: #fff;
+							color: @white;
 						}	
 					}
 					
 					a {
-						@media(max-width: 1289px) {width: 100px; height: 100px;}
+						@media(max-width: 1289px) {width: 100px; height: 100px; line-height: 100px;}
 						display: block;
 						border-radius: 100%;
 						width: 150px;
 						height: 150px;
+						line-height: 150px;
+						text-align: center;
 						.shadow();
-						background-color: #fff;
+						background-color: @white;
 						text-decoration: none;
 						shape-outside: circle(50%);
 						webkit-clip-path: circle(50%);
 						
 						
 						 span {
-						 	@media(max-width: 1289px) {line-height: 100px; font-size: 12px;}
+						 	@media(max-width: 1289px) {line-height: 100px; font-size: 12px; line-height: 1.2}
 							 display: block;
 							 text-align: center;
-							 line-height: 150px;
+							 vertical-align:middle;
+							 display:inline-block;
+							 line-height:1.2;
 							 text-transform: uppercase;
 							 font-family: @specialFont;
 							 font-weight: 700;
-							 color: #445FA2;
+							 color: @titleNavColor;
 							 transition: all ease 0.3s;
 
 							 &:hover {
-								 color: #fff;
+								 color: @white;
 							 }
+						}
+
+						@media (min-width: @screen-md-min) {
+							i.fa {
+								display: none;
+							}
+							
 						}
 					}
 					
 					&.current-menu-item a{
 						background: @mainColor;
 						span{
-							color: #fff;
+							color: @white;
 						}
 					}
 
@@ -712,6 +729,7 @@ a.bubble{
 								width: auto;
 								height: auto;
 								position: relative;
+								line-height: 0;
 								top: 0;
 								background: none;
 								box-shadow: none;
@@ -720,7 +738,7 @@ a.bubble{
 								margin: 0;
 								padding-top: 70px;
 								img {
-									background-color: #fff;
+									background-color: @white;
 									border-radius: 100%;
 									padding: 10px;
 									width: 40px;
@@ -728,7 +746,7 @@ a.bubble{
 								}
 								span {
 									opacity: 0;
-									color: #fff;
+									color: @white;
 									font-size: 11px;
 									line-height: 20px;
 								}
@@ -835,12 +853,12 @@ section.actu{
 			margin-bottom: 15px;
 		}
 	}
-	background: #fff;
+	background: @white;
 
 	article{
 		padding: @padding;
 		@media(max-width: @screen-xs-max) {
-			background: @light;
+			background: lighten(@complementaryColor,50%);
 			border-bottom:solid 3px #ccc;
 			.border-radius(3px);
 			margin-bottom: 15px;
@@ -883,14 +901,14 @@ section.actu{
                         span.buttons {
                             text-shadow: 0 2px 2px rgba(0,0,0,0.3);
                             transition-timing-function: ease-in;
-                            background-color: darken(@greyBrownColor, 10%);
+                            background-color: darken(@greyBrown, 10%);
                         }
                     }
                     span.buttons {
                         transition: all ease-out 0.3s;
                         margin-left: 5px;
-                        color: #fff;
-                        background-color: @greyBrownColor;
+                        color: @white;
+                        background-color: @greyBrown;
                         .border-radius(5px);
                         padding: 5px 5px 3px 5px;
                         font-weight: 100;
@@ -910,7 +928,7 @@ section.actu{
                         height: 0;
                         width: 0;
                         border: solid 7px transparent;
-                        border-bottom-color: darken(@greyBrownColor, 10%);
+                        border-bottom-color: darken(@greyBrown, 10%);
                         .transition(top 0.3s);
                     }
                     &.before::before{
@@ -921,23 +939,23 @@ section.actu{
                     z-index: 999;
                     position: absolute;
                     margin-top: 10px;
-                    background-color: darken(@greyBrownColor, 10%);
+                    background-color: darken(@greyBrown, 10%);
                     .border-radius(5px);
                     padding: 15px 20px;
                     
                     h6 {
-                        color: #fff;
+                        color: @white;
                         margin-bottom: 7px;
                     }
                     ul {
                         font-size: 10px;
-                        color: #fff;
+                        color: @white;
                         li {
                             a{
                                 width: 100%;
                                 display: block;
                                 overflow: hidden;
-                                background-color: #fff;
+                                background-color: @white;
                                 .border-radius(20px);
                                 padding: 5px 0;
                                 .transition(all ease-out .2s);
@@ -1066,7 +1084,7 @@ section.actu{
 				margin-bottom: 15px;
 			}
 			p{
-				font-family: @textFont;
+				font-family: @bodyTextFont;
 				font-size: 16px;
 			}
 			aside{
@@ -1080,7 +1098,7 @@ section.actu{
 			border-bottom:solid 3px darken(@mainColor, 10%);
 		}
 		&:hover , &:active, &:focus{
-			color: #fff;
+			color: @white;
 		}
 	}
 }
@@ -1100,7 +1118,7 @@ section.actu{
 
 aside#sidebar{
 	padding: 0 @padding;
-	background: #e5e5e5;
+	background: @sidebarColor;
 	display: table-cell;
 	float: none;
 	vertical-align: top;
@@ -1142,7 +1160,7 @@ aside#sidebar{
                     border-top-left-radius: 0;
                     border: none;
                     background: @mainColor;
-                    color: #fff;
+                    color: @white;
                     font-size: 18px;
                     text-transform: uppercase;
         			border-radius: @border-radius;
@@ -1152,7 +1170,7 @@ aside#sidebar{
             }
             h2, span.screen-reader-text {
                 font-size: 24px;
-                color: #bd753a;
+                color: #aaa;
                 text-transform: uppercase;
                 text-align: left;
                 padding: 0;
@@ -1161,9 +1179,11 @@ aside#sidebar{
                 display: none;
             }
             a {
-                font-family: @textFont;
-                font-size: 18px;
-                color: #000;
+                font-family: @bodyTextFont;
+                font-size: 16px;
+                color: #666;
+                display: inline-block;
+                padding: 5px 0;
 
                 &:hover{
                 	color: @mainColor;
@@ -1172,7 +1192,7 @@ aside#sidebar{
         }
 
         li ul li{
-        	border-bottom: 1px solid #ccc;
+        	border-bottom: 1px solid #f2f2f2;
         	margin-bottom: 10px;
         }
     }
@@ -1228,11 +1248,11 @@ aside#sidebar{
 		
 		.in-slide-content {
 			display: none;
-			color: #fff;
+			color: @white;
 			.border-radius(5px);
 			background: rgba(0,0,0,0.5);
 			padding: 20px;
-			text-shadow: 0 2px 3px #000;
+			text-shadow: 0 2px 3px @black;
 			float:right;
 			font-size:30px;
 			right:20px;
@@ -1263,13 +1283,13 @@ section.full-slider{
 			width: 100%;
 			background: rgba(0,0,0,.5);
 			font-weight: 700;
-			color: #fff;
+			color: @white;
 			font-size: 28px;
 			h2{
 				font-weight: 700;
 				margin: 0;
 				padding: 0;
-				color: #fff;
+				color: @white;
 
 				&::after{
 					display: none;	
@@ -1307,7 +1327,7 @@ nav.inset{
 	font-weight: 700;
 	//.border-radius(0);
 	padding: @padding;
-	background: @light;
+	background: lighten(@complementaryColor,50%);
 	border-bottom:solid 3px #ccc;
 	header{
 		text-align: left;
@@ -1362,7 +1382,7 @@ nav.inset{
 				text-transform: uppercase;
 				color: @mainColor;
 				&.disabled{
-					color: @greyColor;
+					color: @grey;
 				}
 			}
 
@@ -1373,11 +1393,11 @@ nav.inset{
 				border-radius: 100%;
 				width: 30px; height: 30px;
 				display: block;
-				color: #fff;
+				color: @white;
 				line-height: 30px;
 			}
 			&.current a, &.visited a {
-				background: @greyColor;
+				background: @grey;
 			}
 		}
 	}
@@ -1389,9 +1409,9 @@ nav.inset{
 
 #footer{
 	text-align: center;
-	background: @light;
+	background: lighten(@complementaryColor,50%);
 	padding: @padding;
-	color: #888;
+	color: darken(@grey, 20%);
 }
 
 
@@ -1427,7 +1447,7 @@ nav.inset{
 	#article{
 		padding:0 0 30px 0;
 		p {
-			font-family: @textFont;
+			font-family: @bodyTextFont;
 		}
 		@media (min-width: @screen-sm-min) {
 			display: table-cell;
@@ -1443,7 +1463,7 @@ nav.inset{
 			}
 			.titre{
 				padding: 0 15px;
-				background:#f0954b;
+				background-color: lighten(@mainColor, 10%);
 				h1{
 					line-height:50px;
 					margin:0;
@@ -1465,7 +1485,7 @@ nav.inset{
 				border: none;
 				p{
 					text-align: center;
-					color:black;
+					color: @black;
 					font-weight: bold;
 					font-family: @specialFont;
 					&::before{
@@ -1484,7 +1504,8 @@ nav.inset{
 			}
 			a{
 				text-decoration: underline;
-				color:#3394e7;
+				// color:#3394e7;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
 				&:hover{
 					text-decoration: none;
 				}
@@ -1492,7 +1513,8 @@ nav.inset{
 			}
 			h3.subtitle{
 				margin: 20px 0;
-				color: #bd753a;
+				// color: #bd753a;
+				color: darken(@mainColor, 10%);
 				text-transform: uppercase;
 				text-align: left;
 				&::after{
@@ -1507,7 +1529,7 @@ nav.inset{
 		
 	}
 	aside{
-		background-color:#e5e5e5;
+		background-color: @sidebarColor;
 		min-height: 100%;
 	}
 
@@ -1525,7 +1547,7 @@ nav.inset{
 	header{
 		margin-bottom: 10px;
 		h2{
-			color:@greyColor;
+			color:@grey;
 			text-align: center;
 			text-transform: none;
 			font-weight: 400;
@@ -1558,7 +1580,7 @@ nav.inset{
 				width: 100%;
 			}
 			resize:none;
-			border: 1px solid @light;
+			border: 1px solid lighten(@complementaryColor,50%);
 		}
 		input{
 			display: inline-block;
@@ -1566,7 +1588,7 @@ nav.inset{
 			@media (max-width: @screen-xs-max) {
 				width: 100%;
 			}
-			background:#f0954b;
+			background: lighten(@mainColor, 10%);
 			padding: 10px;
 			border-radius: 3px;
 			border: none;
@@ -1583,7 +1605,7 @@ nav.inset{
 
 .hotelContent{
 	background: white;
-	margin: 300px 20px 20px;
+	margin: 0px 20px 20px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 	.imgUne{
 		background: url("../../img/article/canoe.jpg");
@@ -1598,7 +1620,7 @@ nav.inset{
 		header{
 			.titre{
 				padding: 0 15px;
-				background:#f0954b;
+				background: lighten(@mainColor, 10%);
 				h1{
 					line-height:50px;
 					margin:0;
@@ -1614,7 +1636,7 @@ nav.inset{
 			}
 		}
 		p {
-			font-family: @textFont;
+			font-family: @bodyTextFont;
 		}
 		div{
 			padding: 15px;
@@ -1623,7 +1645,7 @@ nav.inset{
 			}
 			a{
 				text-decoration: underline;
-				color:#3394e7;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
 				&:hover{
 					text-decoration: none;
 				}
@@ -1631,7 +1653,7 @@ nav.inset{
 			}
 			h3{
 				margin: 20px 0px 10px 0;
-				color: #bd753a;
+				color: darken(@mainColor, 10%);
 				text-transform: uppercase;
 				text-align: left;
 				&::after{
@@ -1662,7 +1684,7 @@ nav.inset{
 		}
 	}
 	aside{
-		background-color:#e5e5e5;
+		background-color: @sidebarColor;
 		padding: 0;
 		header{
 			background: @mainColor;
@@ -1707,7 +1729,7 @@ nav.inset{
         float: none;
         h1 {
             margin: 0;
-            color: @text;
+            color: @white;
             text-transform: uppercase;
             text-align: left;
             background-color: @mainColor;
@@ -1740,7 +1762,7 @@ nav.inset{
             }
             .hoteldescription {
                 .hoteltitle {
-                    color: @greyColor;
+                    color: @grey;
                     text-align: center;
                     @media (min-width: @screen-md-min) {
                         text-align: left;
@@ -1749,7 +1771,7 @@ nav.inset{
                         padding: 3vh 0 3vh 0;
                     }
                     h4 {
-                        color: @greyColor;
+                        color: @grey;
                         display: inline-block;
                         text-transform: uppercase;
                         text-align: center;
@@ -1770,7 +1792,7 @@ nav.inset{
                     }
                 }
                 p {
-                	font-family: @textFont;
+                	font-family: @bodyTextFont;
                 }
                 .hotelinfo {
                     h4 {
@@ -1789,7 +1811,7 @@ nav.inset{
     	}
         margin-top: 0 !important;
         padding: 0;
-        background-color: @yellowColor;
+        background-color: @alternativeSidebarColor;
         @media(max-width: @screen-md-min) {
             height: inherit;
             padding-bottom: 20px;
@@ -1826,7 +1848,7 @@ nav.inset{
 			  		}
 			  		> i.fa {
 			  			font-size: 25px;
-			  			color: #fff;
+			  			color: @white;
 			  			transition: all .5s;
 			  		}
 			  	}
@@ -1834,13 +1856,13 @@ nav.inset{
 
 			.budget-value {
 				margin-top: 15px;
-				color: #fff;
+				color: @white;
 				font-weight: 100;
 				font-size: 20px;
 				output {
 					font-size: 20px;
 					font-style: @specialFont;
-					color: #fff;
+					color: @white;
 					font-weight: 700;
 					display: inline;
 				}
@@ -1849,7 +1871,7 @@ nav.inset{
             .multiselect {
 		        width: 200px;
 		        margin: auto;
-		        font-family: @textFont;
+		        font-family: @bodyTextFont;
 		    }
 		    .selectBox {
 		        position: relative;
@@ -1895,7 +1917,7 @@ nav.inset{
 		        .shadow();
 		        position: relative;
 		        top: 5px;
-		        background-color: #fff;
+		        background-color: @white;
 
 		        input {
 		        	margin-right: 10px;
@@ -1903,14 +1925,14 @@ nav.inset{
 		        label {
 			    	font-weight: 100;
 			    	padding: 5px 10px;
-			    	color: #000;
+			    	color: @black;
 			        display: block;
 			        margin: 0;
 			        font-size: 18px;
 			        text-transform: none;
 			    }
 			    label:hover {
-			    	color: #fff;
+			    	color: @white;
 			        background-color: @mainColor;
 			    }
 		    }
@@ -1918,7 +1940,7 @@ nav.inset{
             label {
                 margin-top: 20px;
                 text-transform: uppercase;
-                color: @text;
+                color: @white;
             }
        	/*=================================
 		=     DESIGN INPUT TYPE RANGE     =
@@ -1931,7 +1953,7 @@ nav.inset{
             }
             input[type=range]:focus {
                 outline: none;
-                border-color: #fff;
+                border-color: @white;
                 box-shadow: none;
             }
             input[type=range]::-webkit-slider-runnable-track {
@@ -1939,18 +1961,18 @@ nav.inset{
                 height: 8.4px;
                 cursor: pointer;
                 animate: 0.2s;
-                background: @text;
+                background: @white;
                 border-radius: 1.3px;
             }
             // input[type=range]:focus::-webkit-slider-runnable-track {
-            // 	background: @text;
+            // 	background: @white;
             // }
             input[type=range]::-moz-range-track {
                 // width: 70%;
                 height: 8.4px;
                 cursor: pointer;
                 animate: 0.2s;
-                background: @text;
+                background: @white;
                 border-radius: @border-radius;
             }
             input[type=range]::-ms-track {
@@ -1968,7 +1990,7 @@ nav.inset{
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: #ffffff;
+                background: @white;
                 cursor: pointer;
                 -webkit-appearance: none;
                 margin-top: -4px;
@@ -1978,15 +2000,15 @@ nav.inset{
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: #ffffff;
+                background: @white;
                 cursor: pointer;
             }
             input[type=range]::-ms-thumb {
-                border: 1px solid #000000;
+                border: 1px solid @black;
                 height: 16px;
                 width: 16px;
                 border-radius: @border-radius;
-                background: @text;
+                background: @white;
                 cursor: pointer;
             }
             input[type=range]::-ms-fill-lower {
@@ -1999,6 +2021,141 @@ nav.inset{
             }
         }
     }
+}
+
+/*======================================
+=            CONTACT PAGES             =
+======================================*/
+
+.contactContent {
+    background: white;
+    margin: 0px 20px 20px;
+    section {
+        padding: 0;
+        display: table-cell;
+        float: none;
+        header h1 {
+            margin: 0;
+            color: @white;
+            text-transform: uppercase;
+            text-align: left;
+            background-color: lighten(@mainColor, 10%);
+            padding: 0 15px;
+            font-family: @specialFont;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 50px;
+            @media (max-width: @screen-xs-max) {
+                font-size: 15px;
+            }
+        }
+        article {
+        	padding: 0 15px;
+			.chapeau{
+				font-weight: 700;
+			}
+			a{
+				text-decoration: underline;
+				color: lighten(saturate(@complementaryColor, 20%), 20%);
+				&:hover{
+					text-decoration: none;
+				}
+			
+			}
+			h3{
+				margin: 20px 0px 10px 0;
+				color: darken(@mainColor, 10%);
+				text-transform: uppercase;
+				text-align: left;
+				&::after{
+					content:none;
+				}
+			}
+			p {
+				font-family: @bodyTextFont;
+			}
+        }
+        article:not(#form) {
+        	padding-top: 15px;
+        }
+        article#form {
+        	text-align: center;
+        	p {
+        		font-size: 0;
+				input, textarea {
+					margin-top: 20px;
+					box-sizing: border-box;
+					width: 70%;
+					.border-radius(3px);
+					border: 1px solid rgba(0, 0, 0, .3);
+					font-size: 18px;
+					padding: 15px;
+
+					&:focus {
+						border: 1px solid @mainColor;
+  						box-shadow: 1px 1px 10px @mainColor;
+					}
+					&[type="submit"] {
+						background: @mainColor;
+						border: 1px solid @mainColor;
+						color: @white;
+						text-transform: uppercase;
+						font-family: @specialFont;
+					}
+
+				}
+				img.ajax-loader {
+					display: inherit;
+				}
+        	}
+        }
+    }
+
+    aside#sidebar {
+        margin-top: 0 !important;
+        padding: 0;
+
+        header {
+        	background: @mainColor;
+        	h2 {
+        		font-style: italic;
+        		font-size: 16px;
+        		line-height: 50px;
+        		color: #fff;
+        		text-transform: uppercase;
+        	}
+        }
+        article {
+        	padding: 15px;
+        	header {
+        		background: none;
+        	}
+        	h4 {
+        		color: #666;
+        	}
+        	span {
+        		font-family: @bodyTextFont;
+        		color: #666;
+        	}
+        	a {
+        		font-size: 18px;
+        		padding: 0;
+        		vertical-align: middle;
+        	}
+        	.fa-stack {
+        		margin-right: 5px;
+        	}
+        	#address {
+        		position: absolute;
+        	}
+        	&.hours {
+        		ul:not(:last-child) {
+        			padding-bottom: 0;
+        		}
+        	}
+        }
+
+	}
 }
 
 /*-----  End of OTHER PAGES  ------*/
