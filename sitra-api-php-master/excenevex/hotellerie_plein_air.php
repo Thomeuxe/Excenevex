@@ -15,15 +15,14 @@ try {
      * Reference
      */
     $excenevex = $client->getReferenceCity(['query' => [ 'codesInsee' => ["74121"] ]]);
-    var_dump($excenevex);
 
 
     /*
      * Object API's
      */
-
+    echo "<h1>Camping et Aires</h1>";
     $search = $client->searchObject(['query' => [
-        "selectionIds" => [32285, 32286, 32289],
+        "selectionIds" => [32289],
         ]]);
     // var_dump($search["objetsTouristiques"]);
     foreach($search["objetsTouristiques"] as $objet) {
@@ -39,20 +38,28 @@ try {
             echo $moyenCom["coordonnees"]["fr"];
             echo "</br>";
         }
-
-        // var_dump($objet);
-         if (isset($objet["illustrations"])) {
-             foreach ($objet["illustrations"] as $imageHotel) {
-                ?> <img src=<?php echo $imageHotel["traductionFichiers"][0]["url"];?> /> <?php
-             }
-         }
+        if (isset($objet["informationsHotelleriePleinAir"])) {
+            if (isset($objet["informationsHotelleriePleinAir"]["classement"])) {
+                echo "Nombre d'étoiles : ".$objet["informationsHotelleriePleinAir"]["classement"]["libelleFr"]."</br>";
+            }
+            if (isset($objet["informationsHotelleriePleinAir"]["capacite"]["nombreEmplacementsClasses"])) {
+                echo "Nombre d'emplacements : ".$objet["informationsHotelleriePleinAir"]["capacite"]["nombreEmplacementsClasses"]."</br>";
+                echo "Nombre de mobilhomes : ".$objet["informationsHotelleriePleinAir"]["capacite"]["nombreLocationMobilhomes"]."</br>";
+                echo "Nombre de bungalows : ".$objet["informationsHotelleriePleinAir"]["capacite"]["nombreLocationBungalows"]."</br>";
+            }
             
 
-    }
+        }
 
-    $searchIdHotel = $client->searchObject(['query' => [
-        "identifiants"=>[ 145253 ],
-        ]]);
+        // var_dump($objet);
+        if (isset($objet["illustrations"])) {
+           foreach ($objet["illustrations"] as $imageHotel) {
+               ?><img src=<?php echo $imageHotel["traductionFichiers"][0]["url"];?> /><?php
+           }
+       }
+
+
+   }
 
 
 } catch (\Sitra\ApiClient\Exception\SitraException $e) {
