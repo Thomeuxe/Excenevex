@@ -166,4 +166,22 @@ jQuery(document).ready(function ($) {
 	      }
 	    }
 	});
+// email changer
+	$("a#my-mail").each(function () {
+
+		var href = $(this).attr('href');
+
+		if (href.indexOf('mailto:') != -1) {
+
+			href = href.replace('|', '@');
+
+			var text = $(this).text().replace('|', '<strong>@</strong>');
+
+			$(this).attr('href', href);
+
+			$(this).html(text);
+
+		}
+
+	});
 });
