@@ -20,7 +20,7 @@ try {
     /*
      * Object API's
      */
-    echo "<h1>Restaurants</h1>";
+    echo "<h1>Activités</h1>";
     $search = $client->searchObject(['query' => [
         "selectionIds" => [32338],
         ]]);
